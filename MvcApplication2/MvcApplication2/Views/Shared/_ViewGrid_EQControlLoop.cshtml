@@ -1,0 +1,28 @@
+﻿@model IEnumerable<MvcApplication2.Models.EQControlLoop>
+
+
+
+
+
+<div id = "webgridConf">
+   @{
+       var grid = new WebGrid(@Model, pageFieldName: "controlloopgrid");
+     }
+
+           @grid.GetHtml(columns: new[] {
+            grid.Column("TagName"),
+            grid.Column("MeasuredValue"),
+            grid.Column("Output"),
+             grid.Column("EquipName"),
+	        grid.Column(
+	           "",
+	            header: "Actions",
+	            format: @<text>
+	                    @Html.ActionLink("Edit", "Edit", "Plant", new { id = item.PlantID }, null) |
+                        @Html.ActionLink("Details", "Details", "Plant", new { id = item.PlantID }, null)
+                        @Html.ActionLink("Create New Tag", "Create", "Plant", new { id = item.PlantID }, null)
+	                   </text>)})
+   
+	
+   </div>
+

@@ -1,0 +1,131 @@
+﻿@model MvcApplication2.Models.EQControlLoop
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>EQControlLoop</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TagName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TagName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MeasuredValue)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MeasuredValue)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SetPoint)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SetPoint)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Output)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Output)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.HIHIAlarm)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.HIHIAlarm)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.HIAlarm)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.HIAlarm)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LOAlarm)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LOAlarm)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LOLOAlarm)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LOLOAlarm)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ReverseActing)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ReverseActing)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SimMeasValue)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SimMeasValue)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EnableTrending)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EnableTrending)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Plant.PlantName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Plant.PlantName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EQType.TypeDescription)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EQType.TypeDescription)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EquipName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EquipName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AssetTag)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AssetTag)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Description)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

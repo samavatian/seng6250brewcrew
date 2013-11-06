@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0ff424cdac544910ab54f13dd4b9c59f" Name="Diagram1" ZoomLevel="86">
+        <EntityTypeShape EntityType="BrewDBTestModel.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BrewDBTestModel.Batch" Width="1.5" PointX="3" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BrewDBTestModel.EQAuxilary" Width="1.5" PointX="7.5" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="BrewDBTestModel.EQControlLoop" Width="1.5" PointX="10.5" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BrewDBTestModel.EQType" Width="1.5" PointX="5.25" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BrewDBTestModel.EQVessel" Width="1.5" PointX="7.5" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BrewDBTestModel.Plant" Width="1.5" PointX="3" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BrewDBTestModel.Recipe" Width="1.5" PointX="0.75" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BrewDBTestModel.RecOperation" Width="1.5" PointX="3" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BrewDBTestModel.UnitOperation" Width="1.5" PointX="3" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BrewDBTestModel.Unit" Width="1.5" PointX="5.25" PointY="5.625" IsExpanded="true" />
+        <AssociationConnector Association="BrewDBTestModel.FK_dbo_Batches_dbo_Recipes_BatchRecipe_RecipeID" ManuallyRouted="false" />
+        <AssociationConnector Association="BrewDBTestModel.FK_dbo_Units_dbo_Batches_Batch_BatchID" ManuallyRouted="false" />
+        <AssociationConnector Association="BrewDBTestModel.FK_dbo_EQAuxilaries_dbo_EQTypes_type_EQTypeID" ManuallyRouted="false" />
+        <AssociationConnector Association="BrewDBTestModel.FK_dbo_EQAuxilaries_dbo_Units_Unit_UnitID" ManuallyRouted="false" />
+        <AssociationConnector Association="BrewDBTestModel.FK_dbo_EQControlLoops_dbo_EQTypes_type_EQTypeID" ManuallyRouted="false" />
+        <AssociationConnector Association="BrewDBTestModel.FK_dbo_EQControlLoops_dbo_Units_Unit_UnitID" ManuallyRouted="false" />
+        <AssociationConnector Association="BrewDBTestModel.FK_dbo_EQVessels_dbo_EQTypes_type_EQTypeID" ManuallyRouted="false" />
+        <AssociationConnector Association="BrewDBTestModel.FK_dbo_EQVessels_dbo_Units_Unit_UnitID" ManuallyRouted="false" />
+        <AssociationConnector Association="BrewDBTestModel.FK_dbo_Units_dbo_Plants_Plant_PlantID" ManuallyRouted="false" />
+        <AssociationConnector Association="BrewDBTestModel.FK_dbo_RecOperations_dbo_Recipes_Recipe_RecipeID" ManuallyRouted="false" />
+        <AssociationConnector Association="BrewDBTestModel.UnitOperationUnits" ManuallyRouted="false" />
+        <AssociationConnector Association="BrewDBTestModel.UnitUnits" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

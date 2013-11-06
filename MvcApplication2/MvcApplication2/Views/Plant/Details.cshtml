@@ -1,0 +1,51 @@
+﻿@model MvcApplication2.ViewModel.ViewPlantDetails
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+<p></p>
+@Html.ActionLink("Add Control Loop", "Create", "EQControlLoop", new { id = Model.Plant.PlantID },null)
+<p></p>
+<fieldset>
+    <legend>Plant</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Plant.PlantName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Plant.PlantName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Plant.PlantLocation)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Plant.PlantLocation)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Plant.PlantAddress)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Plant.PlantAddress)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Plant.BrewPubMenu)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Plant.BrewPubMenu)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Plant.PlantID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+<p></p>
+   <h3>Plants Test</h3>
+             @Html.Partial("_ViewGrid_EQControlLoop", Model.EQControlLoops)
+
+
+<p></p>

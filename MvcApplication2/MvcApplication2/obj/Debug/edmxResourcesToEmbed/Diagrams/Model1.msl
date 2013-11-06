@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BrewDBTestModelStoreContainer" CdmEntityContainer="BrewDBTestEntities2">
+    <EntitySetMapping Name="C__MigrationHistory">
+      <EntityTypeMapping TypeName="BrewDBTestModel.C__MigrationHistory">
+        <MappingFragment StoreEntitySet="__MigrationHistory">
+          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Batches">
+      <EntityTypeMapping TypeName="BrewDBTestModel.Batch">
+        <MappingFragment StoreEntitySet="Batches">
+          <ScalarProperty Name="BatchID" ColumnName="BatchID" />
+          <ScalarProperty Name="BatchName" ColumnName="BatchName" />
+          <ScalarProperty Name="BatchLocation" ColumnName="BatchLocation" />
+          <ScalarProperty Name="BatchRecipe_MasterRecipeID" ColumnName="BatchRecipe_MasterRecipeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EQAuxilaries">
+      <EntityTypeMapping TypeName="BrewDBTestModel.EQAuxilary">
+        <MappingFragment StoreEntitySet="EQAuxilaries">
+          <ScalarProperty Name="BaseEquipID" ColumnName="BaseEquipID" />
+          <ScalarProperty Name="OnOff" ColumnName="OnOff" />
+          <ScalarProperty Name="Running" ColumnName="Running" />
+          <ScalarProperty Name="EquipName" ColumnName="EquipName" />
+          <ScalarProperty Name="AssetTag" ColumnName="AssetTag" />
+          <ScalarProperty Name="EQTypeID" ColumnName="EQTypeID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Plant_PlantID" ColumnName="Plant_PlantID" />
+          <ScalarProperty Name="Unit_UnitID" ColumnName="Unit_UnitID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EQControlLoops">
+      <EntityTypeMapping TypeName="BrewDBTestModel.EQControlLoop">
+        <MappingFragment StoreEntitySet="EQControlLoops">
+          <ScalarProperty Name="BaseEquipID" ColumnName="BaseEquipID" />
+          <ScalarProperty Name="TagName" ColumnName="TagName" />
+          <ScalarProperty Name="MeasuredValue" ColumnName="MeasuredValue" />
+          <ScalarProperty Name="SetPoint" ColumnName="SetPoint" />
+          <ScalarProperty Name="Output" ColumnName="Output" />
+          <ScalarProperty Name="HIHIAlarm" ColumnName="HIHIAlarm" />
+          <ScalarProperty Name="HIAlarm" ColumnName="HIAlarm" />
+          <ScalarProperty Name="LOAlarm" ColumnName="LOAlarm" />
+          <ScalarProperty Name="LOLOAlarm" ColumnName="LOLOAlarm" />
+          <ScalarProperty Name="ReverseActing" ColumnName="ReverseActing" />
+          <ScalarProperty Name="SimMeasValue" ColumnName="SimMeasValue" />
+          <ScalarProperty Name="EnableTrending" ColumnName="EnableTrending" />
+          <ScalarProperty Name="EquipName" ColumnName="EquipName" />
+          <ScalarProperty Name="AssetTag" ColumnName="AssetTag" />
+          <ScalarProperty Name="EQTypeID" ColumnName="EQTypeID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Plant_PlantID" ColumnName="Plant_PlantID" />
+          <ScalarProperty Name="Unit_UnitID" ColumnName="Unit_UnitID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EQTypes">
+      <EntityTypeMapping TypeName="BrewDBTestModel.EQType">
+        <MappingFragment StoreEntitySet="EQTypes">
+          <ScalarProperty Name="EQTypeID" ColumnName="EQTypeID" />
+          <ScalarProperty Name="TypeDescription" ColumnName="TypeDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EQUnitOperations">
+      <EntityTypeMapping TypeName="BrewDBTestModel.EQUnitOperation">
+        <MappingFragment StoreEntitySet="EQUnitOperations">
+          <ScalarProperty Name="UnitOperationID" ColumnName="UnitOperationID" />
+          <ScalarProperty Name="NameOfOperation" ColumnName="NameOfOperation" />
+          <ScalarProperty Name="WhatTheEquipmentCanDo" ColumnName="WhatTheEquipmentCanDo" />
+          <ScalarProperty Name="Unit_UnitID" ColumnName="Unit_UnitID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EQVessels">
+      <EntityTypeMapping TypeName="BrewDBTestModel.EQVessel">
+        <MappingFragment StoreEntitySet="EQVessels">
+          <ScalarProperty Name="BaseEquipID" ColumnName="BaseEquipID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="MaxVolume" ColumnName="MaxVolume" />
+          <ScalarProperty Name="MinVolume" ColumnName="MinVolume" />
+          <ScalarProperty Name="MaxTemp" ColumnName="MaxTemp" />
+          <ScalarProperty Name="EquipName" ColumnName="EquipName" />
+          <ScalarProperty Name="AssetTag" ColumnName="AssetTag" />
+          <ScalarProperty Name="EQTypeID" ColumnName="EQTypeID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Plant_PlantID" ColumnName="Plant_PlantID" />
+          <ScalarProperty Name="Unit_UnitID" ColumnName="Unit_UnitID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ingredients">
+      <EntityTypeMapping TypeName="BrewDBTestModel.Ingredient">
+        <MappingFragment StoreEntitySet="Ingredients">
+          <ScalarProperty Name="IngredientID" ColumnName="IngredientID" />
+          <ScalarProperty Name="AmountNeeded" ColumnName="AmountNeeded" />
+          <ScalarProperty Name="AmountActuallyRecieved" ColumnName="AmountActuallyRecieved" />
+          <ScalarProperty Name="type_IngredientTypeID" ColumnName="type_IngredientTypeID" />
+          <ScalarProperty Name="MasterRecipe_MasterRecipeID" ColumnName="MasterRecipe_MasterRecipeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IngredientTypes">
+      <EntityTypeMapping TypeName="BrewDBTestModel.IngredientType">
+        <MappingFragment StoreEntitySet="IngredientTypes">
+          <ScalarProperty Name="IngredientTypeID" ColumnName="IngredientTypeID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="FinancialSystemCode" ColumnName="FinancialSystemCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MasterRecipes">
+      <EntityTypeMapping TypeName="BrewDBTestModel.MasterRecipe">
+        <MappingFragment StoreEntitySet="MasterRecipes">
+          <ScalarProperty Name="MasterRecipeID" ColumnName="MasterRecipeID" />
+          <ScalarProperty Name="BrandName" ColumnName="BrandName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Plants">
+      <EntityTypeMapping TypeName="BrewDBTestModel.Plant">
+        <MappingFragment StoreEntitySet="Plants">
+          <ScalarProperty Name="PlantID" ColumnName="PlantID" />
+          <ScalarProperty Name="PlantName" ColumnName="PlantName" />
+          <ScalarProperty Name="PlantLocation" ColumnName="PlantLocation" />
+          <ScalarProperty Name="PlantAddress" ColumnName="PlantAddress" />
+          <ScalarProperty Name="BrewPubMenu" ColumnName="BrewPubMenu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RecOperations">
+      <EntityTypeMapping TypeName="BrewDBTestModel.RecOperation">
+        <MappingFragment StoreEntitySet="RecOperations">
+          <ScalarProperty Name="RecOperationID" ColumnName="RecOperationID" />
+          <ScalarProperty Name="WhatTheRecipeNeedsToHappen" ColumnName="WhatTheRecipeNeedsToHappen" />
+          <ScalarProperty Name="Transition_WhatEndsThisOperation" ColumnName="Transition_WhatEndsThisOperation" />
+          <ScalarProperty Name="MasterRecipe_MasterRecipeID" ColumnName="MasterRecipe_MasterRecipeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Units">
+      <EntityTypeMapping TypeName="BrewDBTestModel.Unit">
+        <MappingFragment StoreEntitySet="Units">
+          <ScalarProperty Name="UnitID" ColumnName="UnitID" />
+          <ScalarProperty Name="UnitName" ColumnName="UnitName" />
+          <ScalarProperty Name="Unit_UnitID" ColumnName="Unit_UnitID" />
+          <ScalarProperty Name="Unit_UnitID1" ColumnName="Unit_UnitID1" />
+          <ScalarProperty Name="CurrentEQOperation_UnitOperationID" ColumnName="CurrentEQOperation_UnitOperationID" />
+          <ScalarProperty Name="CurrentBatch_BatchID" ColumnName="CurrentBatch_BatchID" />
+          <ScalarProperty Name="plant_PlantID" ColumnName="plant_PlantID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

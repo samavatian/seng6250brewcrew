@@ -1,0 +1,27 @@
+﻿@model IEnumerable<MvcApplication2.Models.Plant>
+
+
+
+<div id = "webgridConf">
+   @{
+       var grid = new WebGrid(@Model, pageFieldName: "plantgrid");
+     }
+
+           @grid.GetHtml(columns: new[] {
+            grid.Column("PlantName"),
+            grid.Column("PlantLocation"),
+            grid.Column("PlantAddress"),
+             grid.Column("BrewPubMenu"),
+	        grid.Column(
+	           "",
+	            header: "Actions",
+	            format: @<text>
+	                    @Html.ActionLink("Edit", "Edit", "Plant", new { id = item.PlantID }, null) |
+                        @Html.ActionLink("Details", "Details", "Plant", new { id = item.PlantID }, null)
+                        @Html.ActionLink("Create New Pub", "Create", "Plant", new { id = item.PlantID }, null)
+	                   </text>)})
+   
+	
+   </div>
+
+

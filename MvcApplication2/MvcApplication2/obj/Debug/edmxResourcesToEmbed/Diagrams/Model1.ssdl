@@ -1,0 +1,471 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BrewDBTestModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="BrewDBTestModelStoreContainer">
+    <EntitySet Name="__MigrationHistory" EntityType="BrewDBTestModel.Store.__MigrationHistory" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Batches" EntityType="BrewDBTestModel.Store.Batches" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EQAuxilaries" EntityType="BrewDBTestModel.Store.EQAuxilaries" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EQControlLoops" EntityType="BrewDBTestModel.Store.EQControlLoops" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EQTypes" EntityType="BrewDBTestModel.Store.EQTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EQUnitOperations" EntityType="BrewDBTestModel.Store.EQUnitOperations" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EQVessels" EntityType="BrewDBTestModel.Store.EQVessels" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Ingredients" EntityType="BrewDBTestModel.Store.Ingredients" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="IngredientTypes" EntityType="BrewDBTestModel.Store.IngredientTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MasterRecipes" EntityType="BrewDBTestModel.Store.MasterRecipes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Plants" EntityType="BrewDBTestModel.Store.Plants" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RecOperations" EntityType="BrewDBTestModel.Store.RecOperations" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Units" EntityType="BrewDBTestModel.Store.Units" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_dbo_Batches_dbo_MasterRecipes_BatchRecipe_MasterRecipeID" Association="BrewDBTestModel.Store.FK_dbo_Batches_dbo_MasterRecipes_BatchRecipe_MasterRecipeID">
+      <End Role="MasterRecipes" EntitySet="MasterRecipes" />
+      <End Role="Batches" EntitySet="Batches" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_EQAuxilaries_dbo_EQTypes_EQTypeID" Association="BrewDBTestModel.Store.FK_dbo_EQAuxilaries_dbo_EQTypes_EQTypeID">
+      <End Role="EQTypes" EntitySet="EQTypes" />
+      <End Role="EQAuxilaries" EntitySet="EQAuxilaries" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_EQAuxilaries_dbo_Plants_Plant_PlantID" Association="BrewDBTestModel.Store.FK_dbo_EQAuxilaries_dbo_Plants_Plant_PlantID">
+      <End Role="Plants" EntitySet="Plants" />
+      <End Role="EQAuxilaries" EntitySet="EQAuxilaries" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_EQAuxilaries_dbo_Units_Unit_UnitID" Association="BrewDBTestModel.Store.FK_dbo_EQAuxilaries_dbo_Units_Unit_UnitID">
+      <End Role="Units" EntitySet="Units" />
+      <End Role="EQAuxilaries" EntitySet="EQAuxilaries" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_EQControlLoops_dbo_EQTypes_EQTypeID" Association="BrewDBTestModel.Store.FK_dbo_EQControlLoops_dbo_EQTypes_EQTypeID">
+      <End Role="EQTypes" EntitySet="EQTypes" />
+      <End Role="EQControlLoops" EntitySet="EQControlLoops" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_EQControlLoops_dbo_Plants_Plant_PlantID" Association="BrewDBTestModel.Store.FK_dbo_EQControlLoops_dbo_Plants_Plant_PlantID">
+      <End Role="Plants" EntitySet="Plants" />
+      <End Role="EQControlLoops" EntitySet="EQControlLoops" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_EQControlLoops_dbo_Units_Unit_UnitID" Association="BrewDBTestModel.Store.FK_dbo_EQControlLoops_dbo_Units_Unit_UnitID">
+      <End Role="Units" EntitySet="Units" />
+      <End Role="EQControlLoops" EntitySet="EQControlLoops" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_EQUnitOperations_dbo_Units_Unit_UnitID" Association="BrewDBTestModel.Store.FK_dbo_EQUnitOperations_dbo_Units_Unit_UnitID">
+      <End Role="Units" EntitySet="Units" />
+      <End Role="EQUnitOperations" EntitySet="EQUnitOperations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_EQVessels_dbo_EQTypes_EQTypeID" Association="BrewDBTestModel.Store.FK_dbo_EQVessels_dbo_EQTypes_EQTypeID">
+      <End Role="EQTypes" EntitySet="EQTypes" />
+      <End Role="EQVessels" EntitySet="EQVessels" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_EQVessels_dbo_Plants_Plant_PlantID" Association="BrewDBTestModel.Store.FK_dbo_EQVessels_dbo_Plants_Plant_PlantID">
+      <End Role="Plants" EntitySet="Plants" />
+      <End Role="EQVessels" EntitySet="EQVessels" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_EQVessels_dbo_Units_Unit_UnitID" Association="BrewDBTestModel.Store.FK_dbo_EQVessels_dbo_Units_Unit_UnitID">
+      <End Role="Units" EntitySet="Units" />
+      <End Role="EQVessels" EntitySet="EQVessels" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Ingredients_dbo_IngredientTypes_type_IngredientTypeID" Association="BrewDBTestModel.Store.FK_dbo_Ingredients_dbo_IngredientTypes_type_IngredientTypeID">
+      <End Role="IngredientTypes" EntitySet="IngredientTypes" />
+      <End Role="Ingredients" EntitySet="Ingredients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Ingredients_dbo_MasterRecipes_MasterRecipe_MasterRecipeID" Association="BrewDBTestModel.Store.FK_dbo_Ingredients_dbo_MasterRecipes_MasterRecipe_MasterRecipeID">
+      <End Role="MasterRecipes" EntitySet="MasterRecipes" />
+      <End Role="Ingredients" EntitySet="Ingredients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_RecOperations_dbo_MasterRecipes_MasterRecipe_MasterRecipeID" Association="BrewDBTestModel.Store.FK_dbo_RecOperations_dbo_MasterRecipes_MasterRecipe_MasterRecipeID">
+      <End Role="MasterRecipes" EntitySet="MasterRecipes" />
+      <End Role="RecOperations" EntitySet="RecOperations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Units_dbo_Batches_CurrentBatch_BatchID" Association="BrewDBTestModel.Store.FK_dbo_Units_dbo_Batches_CurrentBatch_BatchID">
+      <End Role="Batches" EntitySet="Batches" />
+      <End Role="Units" EntitySet="Units" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Units_dbo_EQUnitOperations_CurrentEQOperation_UnitOperationID" Association="BrewDBTestModel.Store.FK_dbo_Units_dbo_EQUnitOperations_CurrentEQOperation_UnitOperationID">
+      <End Role="EQUnitOperations" EntitySet="EQUnitOperations" />
+      <End Role="Units" EntitySet="Units" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Units_dbo_Plants_plant_PlantID" Association="BrewDBTestModel.Store.FK_dbo_Units_dbo_Plants_plant_PlantID">
+      <End Role="Plants" EntitySet="Plants" />
+      <End Role="Units" EntitySet="Units" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Units_dbo_Units_Unit_UnitID" Association="BrewDBTestModel.Store.FK_dbo_Units_dbo_Units_Unit_UnitID">
+      <End Role="Units" EntitySet="Units" />
+      <End Role="Units1" EntitySet="Units" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Units_dbo_Units_Unit_UnitID1" Association="BrewDBTestModel.Store.FK_dbo_Units_dbo_Units_Unit_UnitID1">
+      <End Role="Units" EntitySet="Units" />
+      <End Role="Units1" EntitySet="Units" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+    </Key>
+    <Property Name="MigrationId" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+    <Property Name="ProductVersion" Type="nvarchar" Nullable="false" MaxLength="32" />
+  </EntityType>
+  <EntityType Name="Batches">
+    <Key>
+      <PropertyRef Name="BatchID" />
+    </Key>
+    <Property Name="BatchID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="BatchName" Type="nvarchar(max)" />
+    <Property Name="BatchLocation" Type="nvarchar(max)" />
+    <Property Name="BatchRecipe_MasterRecipeID" Type="int" />
+  </EntityType>
+  <EntityType Name="EQAuxilaries">
+    <Key>
+      <PropertyRef Name="BaseEquipID" />
+    </Key>
+    <Property Name="BaseEquipID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="OnOff" Type="int" Nullable="false" />
+    <Property Name="Running" Type="int" Nullable="false" />
+    <Property Name="EquipName" Type="nvarchar(max)" />
+    <Property Name="AssetTag" Type="nvarchar(max)" />
+    <Property Name="EQTypeID" Type="int" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Plant_PlantID" Type="int" />
+    <Property Name="Unit_UnitID" Type="int" />
+  </EntityType>
+  <EntityType Name="EQControlLoops">
+    <Key>
+      <PropertyRef Name="BaseEquipID" />
+    </Key>
+    <Property Name="BaseEquipID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="TagName" Type="nvarchar(max)" />
+    <Property Name="MeasuredValue" Type="real" Nullable="false" />
+    <Property Name="SetPoint" Type="real" Nullable="false" />
+    <Property Name="Output" Type="real" Nullable="false" />
+    <Property Name="HIHIAlarm" Type="real" Nullable="false" />
+    <Property Name="HIAlarm" Type="real" Nullable="false" />
+    <Property Name="LOAlarm" Type="real" Nullable="false" />
+    <Property Name="LOLOAlarm" Type="real" Nullable="false" />
+    <Property Name="ReverseActing" Type="bit" Nullable="false" />
+    <Property Name="SimMeasValue" Type="real" Nullable="false" />
+    <Property Name="EnableTrending" Type="bit" Nullable="false" />
+    <Property Name="EquipName" Type="nvarchar(max)" />
+    <Property Name="AssetTag" Type="nvarchar(max)" />
+    <Property Name="EQTypeID" Type="int" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Plant_PlantID" Type="int" />
+    <Property Name="Unit_UnitID" Type="int" />
+  </EntityType>
+  <EntityType Name="EQTypes">
+    <Key>
+      <PropertyRef Name="EQTypeID" />
+    </Key>
+    <Property Name="EQTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="TypeDescription" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="EQUnitOperations">
+    <Key>
+      <PropertyRef Name="UnitOperationID" />
+    </Key>
+    <Property Name="UnitOperationID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="NameOfOperation" Type="nvarchar(max)" />
+    <Property Name="WhatTheEquipmentCanDo" Type="nvarchar(max)" />
+    <Property Name="Unit_UnitID" Type="int" />
+  </EntityType>
+  <EntityType Name="EQVessels">
+    <Key>
+      <PropertyRef Name="BaseEquipID" />
+    </Key>
+    <Property Name="BaseEquipID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="MaxVolume" Type="real" Nullable="false" />
+    <Property Name="MinVolume" Type="real" Nullable="false" />
+    <Property Name="MaxTemp" Type="real" Nullable="false" />
+    <Property Name="EquipName" Type="nvarchar(max)" />
+    <Property Name="AssetTag" Type="nvarchar(max)" />
+    <Property Name="EQTypeID" Type="int" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Plant_PlantID" Type="int" />
+    <Property Name="Unit_UnitID" Type="int" />
+  </EntityType>
+  <EntityType Name="Ingredients">
+    <Key>
+      <PropertyRef Name="IngredientID" />
+    </Key>
+    <Property Name="IngredientID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="AmountNeeded" Type="int" Nullable="false" />
+    <Property Name="AmountActuallyRecieved" Type="int" Nullable="false" />
+    <Property Name="type_IngredientTypeID" Type="int" />
+    <Property Name="MasterRecipe_MasterRecipeID" Type="int" />
+  </EntityType>
+  <EntityType Name="IngredientTypes">
+    <Key>
+      <PropertyRef Name="IngredientTypeID" />
+    </Key>
+    <Property Name="IngredientTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="Cost" Type="int" Nullable="false" />
+    <Property Name="FinancialSystemCode" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MasterRecipes">
+    <Key>
+      <PropertyRef Name="MasterRecipeID" />
+    </Key>
+    <Property Name="MasterRecipeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="BrandName" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Plants">
+    <Key>
+      <PropertyRef Name="PlantID" />
+    </Key>
+    <Property Name="PlantID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PlantName" Type="nvarchar(max)" />
+    <Property Name="PlantLocation" Type="nvarchar(max)" />
+    <Property Name="PlantAddress" Type="nvarchar(max)" />
+    <Property Name="BrewPubMenu" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="RecOperations">
+    <Key>
+      <PropertyRef Name="RecOperationID" />
+    </Key>
+    <Property Name="RecOperationID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WhatTheRecipeNeedsToHappen" Type="nvarchar(max)" />
+    <Property Name="Transition_WhatEndsThisOperation" Type="nvarchar(max)" />
+    <Property Name="MasterRecipe_MasterRecipeID" Type="int" />
+  </EntityType>
+  <EntityType Name="Units">
+    <Key>
+      <PropertyRef Name="UnitID" />
+    </Key>
+    <Property Name="UnitID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UnitName" Type="nvarchar(max)" />
+    <Property Name="Unit_UnitID" Type="int" />
+    <Property Name="Unit_UnitID1" Type="int" />
+    <Property Name="CurrentEQOperation_UnitOperationID" Type="int" />
+    <Property Name="CurrentBatch_BatchID" Type="int" />
+    <Property Name="plant_PlantID" Type="int" />
+  </EntityType>
+  <Association Name="FK_dbo_Batches_dbo_MasterRecipes_BatchRecipe_MasterRecipeID">
+    <End Role="MasterRecipes" Type="BrewDBTestModel.Store.MasterRecipes" Multiplicity="0..1" />
+    <End Role="Batches" Type="BrewDBTestModel.Store.Batches" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MasterRecipes">
+        <PropertyRef Name="MasterRecipeID" />
+      </Principal>
+      <Dependent Role="Batches">
+        <PropertyRef Name="BatchRecipe_MasterRecipeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_EQAuxilaries_dbo_EQTypes_EQTypeID">
+    <End Role="EQTypes" Type="BrewDBTestModel.Store.EQTypes" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="EQAuxilaries" Type="BrewDBTestModel.Store.EQAuxilaries" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EQTypes">
+        <PropertyRef Name="EQTypeID" />
+      </Principal>
+      <Dependent Role="EQAuxilaries">
+        <PropertyRef Name="EQTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_EQAuxilaries_dbo_Plants_Plant_PlantID">
+    <End Role="Plants" Type="BrewDBTestModel.Store.Plants" Multiplicity="0..1" />
+    <End Role="EQAuxilaries" Type="BrewDBTestModel.Store.EQAuxilaries" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Plants">
+        <PropertyRef Name="PlantID" />
+      </Principal>
+      <Dependent Role="EQAuxilaries">
+        <PropertyRef Name="Plant_PlantID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_EQAuxilaries_dbo_Units_Unit_UnitID">
+    <End Role="Units" Type="BrewDBTestModel.Store.Units" Multiplicity="0..1" />
+    <End Role="EQAuxilaries" Type="BrewDBTestModel.Store.EQAuxilaries" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Units">
+        <PropertyRef Name="UnitID" />
+      </Principal>
+      <Dependent Role="EQAuxilaries">
+        <PropertyRef Name="Unit_UnitID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_EQControlLoops_dbo_EQTypes_EQTypeID">
+    <End Role="EQTypes" Type="BrewDBTestModel.Store.EQTypes" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="EQControlLoops" Type="BrewDBTestModel.Store.EQControlLoops" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EQTypes">
+        <PropertyRef Name="EQTypeID" />
+      </Principal>
+      <Dependent Role="EQControlLoops">
+        <PropertyRef Name="EQTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_EQControlLoops_dbo_Plants_Plant_PlantID">
+    <End Role="Plants" Type="BrewDBTestModel.Store.Plants" Multiplicity="0..1" />
+    <End Role="EQControlLoops" Type="BrewDBTestModel.Store.EQControlLoops" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Plants">
+        <PropertyRef Name="PlantID" />
+      </Principal>
+      <Dependent Role="EQControlLoops">
+        <PropertyRef Name="Plant_PlantID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_EQControlLoops_dbo_Units_Unit_UnitID">
+    <End Role="Units" Type="BrewDBTestModel.Store.Units" Multiplicity="0..1" />
+    <End Role="EQControlLoops" Type="BrewDBTestModel.Store.EQControlLoops" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Units">
+        <PropertyRef Name="UnitID" />
+      </Principal>
+      <Dependent Role="EQControlLoops">
+        <PropertyRef Name="Unit_UnitID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_EQUnitOperations_dbo_Units_Unit_UnitID">
+    <End Role="Units" Type="BrewDBTestModel.Store.Units" Multiplicity="0..1" />
+    <End Role="EQUnitOperations" Type="BrewDBTestModel.Store.EQUnitOperations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Units">
+        <PropertyRef Name="UnitID" />
+      </Principal>
+      <Dependent Role="EQUnitOperations">
+        <PropertyRef Name="Unit_UnitID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_EQVessels_dbo_EQTypes_EQTypeID">
+    <End Role="EQTypes" Type="BrewDBTestModel.Store.EQTypes" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="EQVessels" Type="BrewDBTestModel.Store.EQVessels" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EQTypes">
+        <PropertyRef Name="EQTypeID" />
+      </Principal>
+      <Dependent Role="EQVessels">
+        <PropertyRef Name="EQTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_EQVessels_dbo_Plants_Plant_PlantID">
+    <End Role="Plants" Type="BrewDBTestModel.Store.Plants" Multiplicity="0..1" />
+    <End Role="EQVessels" Type="BrewDBTestModel.Store.EQVessels" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Plants">
+        <PropertyRef Name="PlantID" />
+      </Principal>
+      <Dependent Role="EQVessels">
+        <PropertyRef Name="Plant_PlantID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_EQVessels_dbo_Units_Unit_UnitID">
+    <End Role="Units" Type="BrewDBTestModel.Store.Units" Multiplicity="0..1" />
+    <End Role="EQVessels" Type="BrewDBTestModel.Store.EQVessels" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Units">
+        <PropertyRef Name="UnitID" />
+      </Principal>
+      <Dependent Role="EQVessels">
+        <PropertyRef Name="Unit_UnitID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Ingredients_dbo_IngredientTypes_type_IngredientTypeID">
+    <End Role="IngredientTypes" Type="BrewDBTestModel.Store.IngredientTypes" Multiplicity="0..1" />
+    <End Role="Ingredients" Type="BrewDBTestModel.Store.Ingredients" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="IngredientTypes">
+        <PropertyRef Name="IngredientTypeID" />
+      </Principal>
+      <Dependent Role="Ingredients">
+        <PropertyRef Name="type_IngredientTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Ingredients_dbo_MasterRecipes_MasterRecipe_MasterRecipeID">
+    <End Role="MasterRecipes" Type="BrewDBTestModel.Store.MasterRecipes" Multiplicity="0..1" />
+    <End Role="Ingredients" Type="BrewDBTestModel.Store.Ingredients" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MasterRecipes">
+        <PropertyRef Name="MasterRecipeID" />
+      </Principal>
+      <Dependent Role="Ingredients">
+        <PropertyRef Name="MasterRecipe_MasterRecipeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_RecOperations_dbo_MasterRecipes_MasterRecipe_MasterRecipeID">
+    <End Role="MasterRecipes" Type="BrewDBTestModel.Store.MasterRecipes" Multiplicity="0..1" />
+    <End Role="RecOperations" Type="BrewDBTestModel.Store.RecOperations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MasterRecipes">
+        <PropertyRef Name="MasterRecipeID" />
+      </Principal>
+      <Dependent Role="RecOperations">
+        <PropertyRef Name="MasterRecipe_MasterRecipeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Units_dbo_Batches_CurrentBatch_BatchID">
+    <End Role="Batches" Type="BrewDBTestModel.Store.Batches" Multiplicity="0..1" />
+    <End Role="Units" Type="BrewDBTestModel.Store.Units" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Batches">
+        <PropertyRef Name="BatchID" />
+      </Principal>
+      <Dependent Role="Units">
+        <PropertyRef Name="CurrentBatch_BatchID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Units_dbo_EQUnitOperations_CurrentEQOperation_UnitOperationID">
+    <End Role="EQUnitOperations" Type="BrewDBTestModel.Store.EQUnitOperations" Multiplicity="0..1" />
+    <End Role="Units" Type="BrewDBTestModel.Store.Units" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EQUnitOperations">
+        <PropertyRef Name="UnitOperationID" />
+      </Principal>
+      <Dependent Role="Units">
+        <PropertyRef Name="CurrentEQOperation_UnitOperationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Units_dbo_Plants_plant_PlantID">
+    <End Role="Plants" Type="BrewDBTestModel.Store.Plants" Multiplicity="0..1" />
+    <End Role="Units" Type="BrewDBTestModel.Store.Units" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Plants">
+        <PropertyRef Name="PlantID" />
+      </Principal>
+      <Dependent Role="Units">
+        <PropertyRef Name="plant_PlantID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Units_dbo_Units_Unit_UnitID">
+    <End Role="Units" Type="BrewDBTestModel.Store.Units" Multiplicity="0..1" />
+    <End Role="Units1" Type="BrewDBTestModel.Store.Units" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Units">
+        <PropertyRef Name="UnitID" />
+      </Principal>
+      <Dependent Role="Units1">
+        <PropertyRef Name="Unit_UnitID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Units_dbo_Units_Unit_UnitID1">
+    <End Role="Units" Type="BrewDBTestModel.Store.Units" Multiplicity="0..1" />
+    <End Role="Units1" Type="BrewDBTestModel.Store.Units" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Units">
+        <PropertyRef Name="UnitID" />
+      </Principal>
+      <Dependent Role="Units1">
+        <PropertyRef Name="Unit_UnitID1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
