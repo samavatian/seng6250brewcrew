@@ -50,6 +50,7 @@
     <Compile Include="DAL\BrewDBDAL.cs" />
     <Compile Include="DAL\FluentPlant.cs" />
     <Compile Include="DAL\FluentRecipe.cs" />
+    <Compile Include="DAL\TestAddingFile.cs" />
     <Compile Include="Migrations\201311090238085_s.cs" />
     <Compile Include="Migrations\201311090238085_s.Designer.cs">
       <DependentUpon>201311090238085_s.cs</DependentUpon>
