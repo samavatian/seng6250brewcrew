@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrewMLLib", "BrewMLLib\BrewMLLib.csproj", "{61076F22-189E-419C-817E-0BC13F855377}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleTesting", "ConsoleTesting\ConsoleTesting.csproj", "{FA519B9A-17A0-4258-B1AF-6C97AC8667BB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{61076F22-189E-419C-817E-0BC13F855377}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61076F22-189E-419C-817E-0BC13F855377}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61076F22-189E-419C-817E-0BC13F855377}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61076F22-189E-419C-817E-0BC13F855377}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA519B9A-17A0-4258-B1AF-6C97AC8667BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA519B9A-17A0-4258-B1AF-6C97AC8667BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA519B9A-17A0-4258-B1AF-6C97AC8667BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA519B9A-17A0-4258-B1AF-6C97AC8667BB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
