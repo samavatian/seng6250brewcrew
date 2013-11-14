@@ -1,0 +1,11 @@
+C:\JamesWorkingFolders\Visual Studio 2012\Projects\BrewMLLib\BrewMLLib\bin\Debug\EntityFramework.xml
+C:\JamesWorkingFolders\Visual Studio 2012\Projects\BrewMLLib\BrewMLLib\bin\Debug\EntityFramework.dll
+C:\JamesWorkingFolders\Visual Studio 2012\Projects\BrewMLLib\BrewMLLib\bin\Debug\EntityFramework.SqlServer.dll
+C:\JamesWorkingFolders\Visual Studio 2012\Projects\BrewMLLib\BrewMLLib\bin\Debug\EntityFramework.SqlServer.xml
+C:\JamesWorkingFolders\Visual Studio 2012\Projects\BrewMLLib\BrewMLLib\obj\Debug\BrewMLLib.dll
+C:\JamesWorkingFolders\Visual Studio 2012\Projects\BrewMLLib\BrewMLLib\obj\Debug\BrewMLLib.pdb
+C:\JamesWorkingFolders\Visual Studio 2012\Projects\BrewMLLib\BrewMLLib\bin\Debug\BrewMLLib.dll.config
+C:\JamesWorkingFolders\Visual Studio 2012\Projects\BrewMLLib\BrewMLLib\bin\Debug\BrewMLLib.dll
+C:\JamesWorkingFolders\Visual Studio 2012\Projects\BrewMLLib\BrewMLLib\bin\Debug\BrewMLLib.pdb
+C:\JamesWorkingFolders\Visual Studio 2012\Projects\BrewMLLib\BrewMLLib\obj\Debug\BrewMLLib.Migrations.s.resources
+C:\JamesWorkingFolders\Visual Studio 2012\Projects\BrewMLLib\BrewMLLib\obj\Debug\BrewMLLib.csproj.GenerateResource.Cache
