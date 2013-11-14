@@ -8,7 +8,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.21022</ProductVersion>
-    <ProjectGuid>cc94a4d2-313f-4ab2-be25-f1cc59e7d484</ProjectGuid>
+    <ProjectGuid>7a7667ef-d212-43f0-b917-ecf33f1a1dc2</ProjectGuid>
     <!-- update GUID here -->
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -51,12 +51,12 @@
       <Aliases>mqttf</Aliases>
     </Reference>
     <Reference Include="BrewMLLib">
-      <HintPath>C:\JamesWorkingFolders\Visual Studio 2012\Projects\BrewMLLib\BrewMLLib\bin\Debug\BrewMLLib.dll</HintPath>
+      <HintPath>C:\JamesWorkingFolders\Visual Studio 2012\Projects\NewRepBrewMLLib\seng6250brewcrew-master\seng6250brewcrew-master\seng6250brewcrew\BrewMLLib\BrewMLLib\bin\Debug\BrewMLLib.dll</HintPath>
       <Aliases>bmll</Aliases>
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="EntityFramework">
-      <HintPath>C:\JamesWorkingFolders\Visual Studio 2012\Projects\BrewMLLib\BrewMLLib\bin\Debug\EntityFramework.dll</HintPath>
+      <HintPath>C:\JamesWorkingFolders\Visual Studio 2012\Projects\NewRepBrewMLLib\seng6250brewcrew-master\seng6250brewcrew-master\seng6250brewcrew\BrewMLLib\BrewMLLib\bin\Debug\EntityFramework.dll</HintPath>
       <Aliases>ef</Aliases>
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
