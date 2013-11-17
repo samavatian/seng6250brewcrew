@@ -32,21 +32,28 @@ namespace ConsoleTesting
 
             FluentEQType types = new FluentEQType();
 
-            types.AddEQType("Pump").Final();
-            types.AddEQType("Valve").Final();
-            types.AddEQType("TempController").Final();
+            //types.AddEQType("Pump").Final();
+            //types.AddEQType("Valve").Final();
+            //types.AddEQType("TempController").Final();
+
+
+            types.AddEQType("Pump");
+            types.AddEQType("Valve");
+            types.AddEQType("TempController");
 
             Report.reportit();
 
             FluentPlant pd = new FluentPlant();
 
-            pd.AddPlant("Little Jakes").Final();
-            
+//            pd.AddPlant("Little Jakes").Final();
+            pd.AddPlant("Little Jakes");
+ 
+
             pd.ForPlant("Little Jakes")
                 .HasLoops()
                 .AddControlLoop("WaterPump","Pump")
-                .SetSetPoint(215)
-                .Final();
+                .SetSetPoint(215);
+//                .Final();
 
             //Console.WriteLine(pd.GetMessage());
             //Console.WriteLine(pd.ForPlant("Little Jakes").HasLoops("WaterInfeed").GetSetPoint());
@@ -54,8 +61,8 @@ namespace ConsoleTesting
             pd.ForPlant("Little Jakes")
                 .HasLoops()
                 .AddControlLoop("TempControl1", "TempController")
-                .SetSetPoint(222)
-                .Final();
+                .SetSetPoint(222);
+//                .Final();
 
             Report.reportit();
 
@@ -65,25 +72,35 @@ namespace ConsoleTesting
             pd.ForPlant("Little Jakes")
                 .HasLoops("TempControl1")
                 .SetSetPoint(678)
-                .HasType("Valve")
-                .Final();
+                .HasType("Valve");
+//                .Final();
 
-            pd.ForPlant("Little Jakes").HasLoops().ForControlLoop("TempControl1").SetSetPoint(33).Final();
+            pd.ForPlant("Little Jakes")
+               .HasLoops()
+               .AddControlLoop("TempControl122", "TempController")
+               .SetSetPoint(678)
+               .HasType("Valve");
+               //.Final();
+
+            pd.ForPlant("Little Jakes").HasLoops().ForControlLoop("TempControl1").SetSetPoint(353);
 
             //Console.WriteLine(pd.ForPlant("Little Jakes").HasLoops("TempControl1").GetSetPoint());
 
-            pd.AddPlant("Big Jakes").Final();
+//            pd.AddPlant("Big Jakes").Final();
+            pd.AddPlant("Big Jakes");
 
             pd.ForPlant("Big Jakes")
                 .HasLoops()
                 .AddControlLoop("ValveXV1321", "Valve")
-                .SetSetPoint(33)
-                .Final()
+                .SetSetPoint(33);
+//                .Final();
+
+                pd.ForPlant("Big Jakes")
                 .HasLoops()
                 .AddControlLoop("DumpValve12", "Valve")
-                .SetSetPoint(123)
-                .Final()
-                .Final();
+                .SetSetPoint(123);
+//                .Final();
+                //.Final();
 
 
             //Console.WriteLine("-------------------");
@@ -93,8 +110,8 @@ namespace ConsoleTesting
                 .HasLoops("ValveXV1321")
                 .SetSetPoint(678)
                 .HasType("Valve")
-                .SetSetPoint(99)
-                .Final();
+                .SetSetPoint(99);
+//                .Final();
 
             //Console.WriteLine(pd.ForPlant("Big Jakes").HasLoops("ValveXV1321").GetSetPoint());
 
@@ -108,44 +125,43 @@ namespace ConsoleTesting
 
             rec.AddRecipe("Big Eddy")
                 .SetBrandDescription("hey this is big stuff")
-                .SetQualityTarget("always high quality")
-                .Final();
+                .SetQualityTarget("always high quality");
+//                .Final();
 
             rec.ForRecipe("Big Eddy")
                 .HasRecOperations()
                 .AddOperation("Heat 12")
-                .SetSetPoint(33)
-                .Final()
-                .Final();
+                .SetSetPoint(33);
+//                .Final()
+ //               .Final();
 
 
             rec.AddRecipe("So Smooth")
                 .SetQualityTarget("top notch")
                 .HasRecOperations()
                 .AddOperation("Heat Phase 1")
-                .SetSetPoint(170)
-                .Final()
-                .Final();
+                .SetSetPoint(170);
+                //.Final()
+                //.Final();
 
             rec.ForRecipe("So Smooth")
                 .HasRecOperations()
                 .AddOperation("heat phase 2")
                 .SetSetPoint(33)
-                .Final()
-                .HasRecOperations()
+                //.HasRecOperations()
                 .AddOperation("Heat Phase 3")
-                .SetSetPoint(34)
-                .Final()
-                .Final();
+                .SetSetPoint(34);
+                //.Final()
+                //.Final();
             
             rec.ForRecipe("So Smooth")
                 .HasRecOperations()
                 .AddOperation("cool phase 3")
                 .SetSetPoint(123)
-                .Final()
-                .HasRecOperations()
+                //.HasRecOperations()
                 .AddOperation("cool phase 4")
-                .SetSetPoint(155).Final().Final();
+                .SetSetPoint(155);
+            //.Final().Final();
 
 
 

@@ -823,9 +823,6 @@
         <member name="M:BrewMLLib.DAL.Fakes.StubIFluentControlLoop.bmll::BrewMLLib#DAL#IFluentControlLoop#AddControlLoop(System.String,System.String)">
             <summary>Sets the stub of IFluentControlLoop.AddControlLoop(String s, String t)</summary>
         </member>
-        <member name="M:BrewMLLib.DAL.Fakes.StubIFluentControlLoop.bmll::BrewMLLib#DAL#IFluentControlLoop#Final">
-            <summary>Sets the stub of IFluentControlLoop.Final()</summary>
-        </member>
         <member name="M:BrewMLLib.DAL.Fakes.StubIFluentControlLoop.bmll::BrewMLLib#DAL#IFluentControlLoop#ForControlLoop(System.String)">
             <summary>Sets the stub of IFluentControlLoop.ForControlLoop(String s)</summary>
         </member>
@@ -840,9 +837,6 @@
         </member>
         <member name="M:BrewMLLib.DAL.Fakes.StubIFluentControlLoop.bmll::BrewMLLib#DAL#IFluentControlLoop#SetSetPoint(System.Single)">
             <summary>Sets the stub of IFluentControlLoop.SetSetPoint(Single sp)</summary>
-        </member>
-        <member name="F:BrewMLLib.DAL.Fakes.StubIFluentControlLoop.Final">
-            <summary>Sets the stub of IFluentControlLoop.Final()</summary>
         </member>
         <member name="F:BrewMLLib.DAL.Fakes.StubIFluentControlLoop.ForControlLoopString">
             <summary>Sets the stub of IFluentControlLoop.ForControlLoop(String s)</summary>
@@ -871,9 +865,6 @@
         <member name="M:BrewMLLib.DAL.Fakes.StubIFluentEQType.bmll::BrewMLLib#DAL#IFluentEQType#AddEQType(System.String)">
             <summary>Sets the stub of IFluentEQType.AddEQType(String s)</summary>
         </member>
-        <member name="M:BrewMLLib.DAL.Fakes.StubIFluentEQType.bmll::BrewMLLib#DAL#IFluentEQType#Final">
-            <summary>Sets the stub of IFluentEQType.Final()</summary>
-        </member>
         <member name="M:BrewMLLib.DAL.Fakes.StubIFluentEQType.bmll::BrewMLLib#DAL#IFluentEQType#ForEQType(System.String)">
             <summary>Sets the stub of IFluentEQType.ForEQType(String s)</summary>
         </member>
@@ -882,9 +873,6 @@
         </member>
         <member name="M:BrewMLLib.DAL.Fakes.StubIFluentEQType.bmll::BrewMLLib#DAL#IFluentEQType#GetMessage">
             <summary>Sets the stub of IFluentEQType.GetMessage()</summary>
-        </member>
-        <member name="F:BrewMLLib.DAL.Fakes.StubIFluentEQType.Final">
-            <summary>Sets the stub of IFluentEQType.Final()</summary>
         </member>
         <member name="F:BrewMLLib.DAL.Fakes.StubIFluentEQType.ForEQTypeString">
             <summary>Sets the stub of IFluentEQType.ForEQType(String s)</summary>
@@ -907,9 +895,6 @@
         <member name="M:BrewMLLib.DAL.Fakes.StubIFluentPlant.bmll::BrewMLLib#DAL#IFluentPlant#AddPlant(System.String)">
             <summary>Sets the stub of IFluentPlant.AddPlant(String a)</summary>
         </member>
-        <member name="M:BrewMLLib.DAL.Fakes.StubIFluentPlant.bmll::BrewMLLib#DAL#IFluentPlant#Final">
-            <summary>Sets the stub of IFluentPlant.Final()</summary>
-        </member>
         <member name="M:BrewMLLib.DAL.Fakes.StubIFluentPlant.bmll::BrewMLLib#DAL#IFluentPlant#ForPlant(System.String)">
             <summary>Sets the stub of IFluentPlant.ForPlant(String a)</summary>
         </member>
@@ -924,9 +909,6 @@
         </member>
         <member name="M:BrewMLLib.DAL.Fakes.StubIFluentPlant.bmll::BrewMLLib#DAL#IFluentPlant#HasLoops(System.String)">
             <summary>Sets the stub of IFluentPlant.HasLoops(String name)</summary>
-        </member>
-        <member name="F:BrewMLLib.DAL.Fakes.StubIFluentPlant.Final">
-            <summary>Sets the stub of IFluentPlant.Final()</summary>
         </member>
         <member name="F:BrewMLLib.DAL.Fakes.StubIFluentPlant.ForPlantString">
             <summary>Sets the stub of IFluentPlant.ForPlant(String a)</summary>
@@ -955,9 +937,6 @@
         <member name="M:BrewMLLib.DAL.Fakes.StubIFluentRecipe.bmll::BrewMLLib#DAL#IFluentRecipe#AddRecipe(System.String)">
             <summary>Sets the stub of IFluentRecipe.AddRecipe(String s)</summary>
         </member>
-        <member name="M:BrewMLLib.DAL.Fakes.StubIFluentRecipe.bmll::BrewMLLib#DAL#IFluentRecipe#Final">
-            <summary>Sets the stub of IFluentRecipe.Final()</summary>
-        </member>
         <member name="M:BrewMLLib.DAL.Fakes.StubIFluentRecipe.bmll::BrewMLLib#DAL#IFluentRecipe#ForRecipe(System.String)">
             <summary>Sets the stub of IFluentRecipe.ForRecipe(String s)</summary>
         </member>
@@ -981,9 +960,6 @@
         </member>
         <member name="M:BrewMLLib.DAL.Fakes.StubIFluentRecipe.bmll::BrewMLLib#DAL#IFluentRecipe#SetQualityTarget(System.String)">
             <summary>Sets the stub of IFluentRecipe.SetQualityTarget(String s)</summary>
-        </member>
-        <member name="F:BrewMLLib.DAL.Fakes.StubIFluentRecipe.Final">
-            <summary>Sets the stub of IFluentRecipe.Final()</summary>
         </member>
         <member name="F:BrewMLLib.DAL.Fakes.StubIFluentRecipe.ForRecipeString">
             <summary>Sets the stub of IFluentRecipe.ForRecipe(String s)</summary>
@@ -1021,9 +997,6 @@
         <member name="M:BrewMLLib.DAL.Fakes.StubIFluentRecipeOperations.bmll::BrewMLLib#DAL#IFluentRecipeOperations#AddOperation(System.String)">
             <summary>Sets the stub of IFluentRecipeOperations.AddOperation(String s)</summary>
         </member>
-        <member name="M:BrewMLLib.DAL.Fakes.StubIFluentRecipeOperations.bmll::BrewMLLib#DAL#IFluentRecipeOperations#Final">
-            <summary>Sets the stub of IFluentRecipeOperations.Final()</summary>
-        </member>
         <member name="M:BrewMLLib.DAL.Fakes.StubIFluentRecipeOperations.bmll::BrewMLLib#DAL#IFluentRecipeOperations#ForOperation(System.String)">
             <summary>Sets the stub of IFluentRecipeOperations.ForOperation(String s)</summary>
         </member>
@@ -1038,9 +1011,6 @@
         </member>
         <member name="M:BrewMLLib.DAL.Fakes.StubIFluentRecipeOperations.bmll::BrewMLLib#DAL#IFluentRecipeOperations#SetSetPoint(System.Single)">
             <summary>Sets the stub of IFluentRecipeOperations.SetSetPoint(Single f)</summary>
-        </member>
-        <member name="F:BrewMLLib.DAL.Fakes.StubIFluentRecipeOperations.Final">
-            <summary>Sets the stub of IFluentRecipeOperations.Final()</summary>
         </member>
         <member name="F:BrewMLLib.DAL.Fakes.StubIFluentRecipeOperations.ForOperationString">
             <summary>Sets the stub of IFluentRecipeOperations.ForOperation(String s)</summary>
@@ -1069,9 +1039,6 @@
         <member name="M:BrewMLLib.DAL.Fakes.StubIFluentTransitions.bmll::BrewMLLib#DAL#IFluentTransitions#AddTranstion(System.String)">
             <summary>Sets the stub of IFluentTransitions.AddTranstion(String s)</summary>
         </member>
-        <member name="M:BrewMLLib.DAL.Fakes.StubIFluentTransitions.bmll::BrewMLLib#DAL#IFluentTransitions#Final">
-            <summary>Sets the stub of IFluentTransitions.Final()</summary>
-        </member>
         <member name="M:BrewMLLib.DAL.Fakes.StubIFluentTransitions.bmll::BrewMLLib#DAL#IFluentTransitions#ForTranstion(System.String)">
             <summary>Sets the stub of IFluentTransitions.ForTranstion(String s)</summary>
         </member>
@@ -1089,9 +1056,6 @@
         </member>
         <member name="M:BrewMLLib.DAL.Fakes.StubIFluentTransitions.bmll::BrewMLLib#DAL#IFluentTransitions#SetTime(System.Int32)">
             <summary>Sets the stub of IFluentTransitions.SetTime(Int32 i)</summary>
-        </member>
-        <member name="F:BrewMLLib.DAL.Fakes.StubIFluentTransitions.Final">
-            <summary>Sets the stub of IFluentTransitions.Final()</summary>
         </member>
         <member name="F:BrewMLLib.DAL.Fakes.StubIFluentTransitions.ForTranstionString">
             <summary>Sets the stub of IFluentTransitions.ForTranstion(String s)</summary>
@@ -1153,65 +1117,65 @@
         <member name="P:BrewMLLib.Fakes.StubBrewML.InstanceObserver">
             <summary>Gets or sets the instance observer.</summary>
         </member>
-        <member name="T:BrewMLLib.Migrations.Fakes.Shims">
-            <summary>Shim type of BrewMLLib.Migrations.s</summary>
+        <member name="T:BrewMLLib.Migrations.Fakes.Shiminit">
+            <summary>Shim type of BrewMLLib.Migrations.init</summary>
         </member>
-        <member name="M:BrewMLLib.Migrations.Fakes.Shims.#ctor">
+        <member name="M:BrewMLLib.Migrations.Fakes.Shiminit.#ctor">
             <summary>Initializes a new shim instance</summary>
         </member>
-        <member name="M:BrewMLLib.Migrations.Fakes.Shims.#ctor(BrewMLLib.Migrations.s)">
+        <member name="M:BrewMLLib.Migrations.Fakes.Shiminit.#ctor(BrewMLLib.Migrations.init)">
             <summary>Initializes a new shim for the given instance</summary>
         </member>
-        <member name="M:BrewMLLib.Migrations.Fakes.Shims.BehaveAsCurrent">
+        <member name="M:BrewMLLib.Migrations.Fakes.Shiminit.BehaveAsCurrent">
             <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
         </member>
-        <member name="M:BrewMLLib.Migrations.Fakes.Shims.BehaveAsNotImplemented">
+        <member name="M:BrewMLLib.Migrations.Fakes.Shiminit.BehaveAsNotImplemented">
             <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
         </member>
-        <member name="M:BrewMLLib.Migrations.Fakes.Shims.Bind(System.Data.Entity.Migrations.Infrastructure.IDbMigration)">
+        <member name="M:BrewMLLib.Migrations.Fakes.Shiminit.Bind(System.Data.Entity.Migrations.Infrastructure.IDbMigration)">
             <summary>Binds the members of the interface to the shim.</summary>
         </member>
-        <member name="M:BrewMLLib.Migrations.Fakes.Shims.Bind(System.Data.Entity.Migrations.Infrastructure.IMigrationMetadata)">
+        <member name="M:BrewMLLib.Migrations.Fakes.Shiminit.Bind(System.Data.Entity.Migrations.Infrastructure.IMigrationMetadata)">
             <summary>Binds the members of the interface to the shim.</summary>
         </member>
-        <member name="P:BrewMLLib.Migrations.Fakes.Shims.Behavior">
+        <member name="P:BrewMLLib.Migrations.Fakes.Shiminit.Behavior">
             <summary>Assigns the behavior for all methods of the shimmed type</summary>
         </member>
-        <member name="P:BrewMLLib.Migrations.Fakes.Shims.Constructor">
-            <summary>Sets the shim of s.s()</summary>
+        <member name="P:BrewMLLib.Migrations.Fakes.Shiminit.Constructor">
+            <summary>Sets the shim of init.init()</summary>
         </member>
-        <member name="P:BrewMLLib.Migrations.Fakes.Shims.Down">
-            <summary>Sets the shim of s.Down()</summary>
+        <member name="P:BrewMLLib.Migrations.Fakes.Shiminit.Down">
+            <summary>Sets the shim of init.Down()</summary>
         </member>
-        <member name="P:BrewMLLib.Migrations.Fakes.Shims.IdSystemDataEntityMigrationsInfrastructureIMigrationMetadataget">
-            <summary>Sets the shim of s.System.Data.Entity.Migrations.Infrastructure.IMigrationMetadata.get_Id()</summary>
+        <member name="P:BrewMLLib.Migrations.Fakes.Shiminit.IdSystemDataEntityMigrationsInfrastructureIMigrationMetadataget">
+            <summary>Sets the shim of init.System.Data.Entity.Migrations.Infrastructure.IMigrationMetadata.get_Id()</summary>
         </member>
-        <member name="P:BrewMLLib.Migrations.Fakes.Shims.SourceSystemDataEntityMigrationsInfrastructureIMigrationMetadataget">
-            <summary>Sets the shim of s.System.Data.Entity.Migrations.Infrastructure.IMigrationMetadata.get_Source()</summary>
+        <member name="P:BrewMLLib.Migrations.Fakes.Shiminit.SourceSystemDataEntityMigrationsInfrastructureIMigrationMetadataget">
+            <summary>Sets the shim of init.System.Data.Entity.Migrations.Infrastructure.IMigrationMetadata.get_Source()</summary>
         </member>
-        <member name="P:BrewMLLib.Migrations.Fakes.Shims.TargetSystemDataEntityMigrationsInfrastructureIMigrationMetadataget">
-            <summary>Sets the shim of s.System.Data.Entity.Migrations.Infrastructure.IMigrationMetadata.get_Target()</summary>
+        <member name="P:BrewMLLib.Migrations.Fakes.Shiminit.TargetSystemDataEntityMigrationsInfrastructureIMigrationMetadataget">
+            <summary>Sets the shim of init.System.Data.Entity.Migrations.Infrastructure.IMigrationMetadata.get_Target()</summary>
         </member>
-        <member name="P:BrewMLLib.Migrations.Fakes.Shims.Up">
-            <summary>Sets the shim of s.Up()</summary>
+        <member name="P:BrewMLLib.Migrations.Fakes.Shiminit.Up">
+            <summary>Sets the shim of init.Up()</summary>
         </member>
-        <member name="T:BrewMLLib.Migrations.Fakes.Shims.AllInstances">
+        <member name="T:BrewMLLib.Migrations.Fakes.Shiminit.AllInstances">
             <summary>Define shims for all instances members</summary>
         </member>
-        <member name="P:BrewMLLib.Migrations.Fakes.Shims.AllInstances.Down">
-            <summary>Sets the shim of s.Down()</summary>
+        <member name="P:BrewMLLib.Migrations.Fakes.Shiminit.AllInstances.Down">
+            <summary>Sets the shim of init.Down()</summary>
         </member>
-        <member name="P:BrewMLLib.Migrations.Fakes.Shims.AllInstances.IdSystemDataEntityMigrationsInfrastructureIMigrationMetadataget">
-            <summary>Sets the shim of s.System.Data.Entity.Migrations.Infrastructure.IMigrationMetadata.get_Id()</summary>
+        <member name="P:BrewMLLib.Migrations.Fakes.Shiminit.AllInstances.IdSystemDataEntityMigrationsInfrastructureIMigrationMetadataget">
+            <summary>Sets the shim of init.System.Data.Entity.Migrations.Infrastructure.IMigrationMetadata.get_Id()</summary>
         </member>
-        <member name="P:BrewMLLib.Migrations.Fakes.Shims.AllInstances.SourceSystemDataEntityMigrationsInfrastructureIMigrationMetadataget">
-            <summary>Sets the shim of s.System.Data.Entity.Migrations.Infrastructure.IMigrationMetadata.get_Source()</summary>
+        <member name="P:BrewMLLib.Migrations.Fakes.Shiminit.AllInstances.SourceSystemDataEntityMigrationsInfrastructureIMigrationMetadataget">
+            <summary>Sets the shim of init.System.Data.Entity.Migrations.Infrastructure.IMigrationMetadata.get_Source()</summary>
         </member>
-        <member name="P:BrewMLLib.Migrations.Fakes.Shims.AllInstances.TargetSystemDataEntityMigrationsInfrastructureIMigrationMetadataget">
-            <summary>Sets the shim of s.System.Data.Entity.Migrations.Infrastructure.IMigrationMetadata.get_Target()</summary>
+        <member name="P:BrewMLLib.Migrations.Fakes.Shiminit.AllInstances.TargetSystemDataEntityMigrationsInfrastructureIMigrationMetadataget">
+            <summary>Sets the shim of init.System.Data.Entity.Migrations.Infrastructure.IMigrationMetadata.get_Target()</summary>
         </member>
-        <member name="P:BrewMLLib.Migrations.Fakes.Shims.AllInstances.Up">
-            <summary>Sets the shim of s.Up()</summary>
+        <member name="P:BrewMLLib.Migrations.Fakes.Shiminit.AllInstances.Up">
+            <summary>Sets the shim of init.Up()</summary>
         </member>
         <member name="T:BrewMLLib.Models.Fakes.ShimBaseEquip">
             <summary>Shim type of BrewMLLib.Models.BaseEquip</summary>
@@ -1594,12 +1558,6 @@
         <member name="P:BrewMLLib.Models.Fakes.ShimEQControlLoop.EQTypeGet">
             <summary>Sets the shim of EQControlLoop.get_EQType()</summary>
         </member>
-        <member name="P:BrewMLLib.Models.Fakes.ShimEQControlLoop.EQTypeIDGet">
-            <summary>Sets the shim of EQControlLoop.get_EQTypeID()</summary>
-        </member>
-        <member name="P:BrewMLLib.Models.Fakes.ShimEQControlLoop.EQTypeIDSetInt32">
-            <summary>Sets the shim of EQControlLoop.set_EQTypeID(Int32 value)</summary>
-        </member>
         <member name="P:BrewMLLib.Models.Fakes.ShimEQControlLoop.EQTypeSetEQType">
             <summary>Sets the shim of EQControlLoop.set_EQType(EQType value)</summary>
         </member>
@@ -1648,12 +1606,6 @@
         <member name="P:BrewMLLib.Models.Fakes.ShimEQControlLoop.PlantGet">
             <summary>Sets the shim of EQControlLoop.get_Plant()</summary>
         </member>
-        <member name="P:BrewMLLib.Models.Fakes.ShimEQControlLoop.PlantIDGet">
-            <summary>Sets the shim of EQControlLoop.get_PlantID()</summary>
-        </member>
-        <member name="P:BrewMLLib.Models.Fakes.ShimEQControlLoop.PlantIDSetInt32">
-            <summary>Sets the shim of EQControlLoop.set_PlantID(Int32 value)</summary>
-        </member>
         <member name="P:BrewMLLib.Models.Fakes.ShimEQControlLoop.PlantSetPlant">
             <summary>Sets the shim of EQControlLoop.set_Plant(Plant value)</summary>
         </member>
@@ -1689,12 +1641,6 @@
         </member>
         <member name="P:BrewMLLib.Models.Fakes.ShimEQControlLoop.AllInstances.EQTypeGet">
             <summary>Sets the shim of EQControlLoop.get_EQType()</summary>
-        </member>
-        <member name="P:BrewMLLib.Models.Fakes.ShimEQControlLoop.AllInstances.EQTypeIDGet">
-            <summary>Sets the shim of EQControlLoop.get_EQTypeID()</summary>
-        </member>
-        <member name="P:BrewMLLib.Models.Fakes.ShimEQControlLoop.AllInstances.EQTypeIDSetInt32">
-            <summary>Sets the shim of EQControlLoop.set_EQTypeID(Int32 value)</summary>
         </member>
         <member name="P:BrewMLLib.Models.Fakes.ShimEQControlLoop.AllInstances.EQTypeSetEQType">
             <summary>Sets the shim of EQControlLoop.set_EQType(EQType value)</summary>
@@ -1743,12 +1689,6 @@
         </member>
         <member name="P:BrewMLLib.Models.Fakes.ShimEQControlLoop.AllInstances.PlantGet">
             <summary>Sets the shim of EQControlLoop.get_Plant()</summary>
-        </member>
-        <member name="P:BrewMLLib.Models.Fakes.ShimEQControlLoop.AllInstances.PlantIDGet">
-            <summary>Sets the shim of EQControlLoop.get_PlantID()</summary>
-        </member>
-        <member name="P:BrewMLLib.Models.Fakes.ShimEQControlLoop.AllInstances.PlantIDSetInt32">
-            <summary>Sets the shim of EQControlLoop.set_PlantID(Int32 value)</summary>
         </member>
         <member name="P:BrewMLLib.Models.Fakes.ShimEQControlLoop.AllInstances.PlantSetPlant">
             <summary>Sets the shim of EQControlLoop.set_Plant(Plant value)</summary>

@@ -28,7 +28,7 @@ namespace BrewMLLib.DAL
         IFluentControlLoop HasLoops();
         IFluentControlLoop HasLoops(string name);
 
-        IFluentPlant Final();
+        //int Final();
 
         string GetMessage();
 
@@ -43,7 +43,7 @@ namespace BrewMLLib.DAL
 
         EQType GetEQType(string s);
 
-        IFluentEQType Final();
+        //int Final();
 
         string GetMessage();
 
@@ -60,7 +60,7 @@ namespace BrewMLLib.DAL
         IFluentControlLoop SetSetPoint(float sp);
         IFluentControlLoop HasType(string name);
 
-        IFluentPlant Final();
+        //int Final();
 
         string GetMessage();
 
@@ -94,7 +94,7 @@ namespace BrewMLLib.DAL
 
                 _isnew = false;
                 _plant = contx.Plants.FirstOrDefault(p => p.PlantName == name);
-
+                _message = "";
                 //if (_plant == null)
                 //{
                 //    AddPlant(name);
@@ -130,6 +130,9 @@ namespace BrewMLLib.DAL
                     _plant.PlantVessels = new List<EQVessel>();
 
                     _plant.Units = new List<Unit>();
+
+                    contx.Plants.Add(_plant);
+                    contx.SaveChanges();
                 }
                 catch (Exception ex)
                 {
@@ -170,9 +173,9 @@ namespace BrewMLLib.DAL
             return eq;
 
         }
-       
 
-        public IFluentPlant Final()
+
+        public int Final()
         {
             try
             {
@@ -189,7 +192,7 @@ namespace BrewMLLib.DAL
             {
                 _message = _message + ex.ToString();
             }
-            return this;
+            return 1;
         }
         
 
@@ -218,6 +221,7 @@ namespace BrewMLLib.DAL
             _plant = parent.GetPlant();
             _parent = parent;
             _isnew = false;
+            _message = "";
 
         }
         public FluentControlLoop(IFluentPlant parent, string name)
@@ -227,12 +231,16 @@ namespace BrewMLLib.DAL
             {
 
                 Plant plant = parent.GetPlant();
+                _plant = contx.Plants.FirstOrDefault(g => g.PlantID == plant.PlantID);
+
                 _parent = parent;
                 _isnew = false;
+                _message = "";
 
                 //_loop = contx.Plants.FirstOrDefault(g => g.PlantID == _plant.PlantID).PlantLoops.FirstOrDefault(g => g.EquipName == name);
 
-                _loop = plant.PlantLoops.FirstOrDefault(g => g.EquipName == name);
+                //_loop = plant.PlantLoops.FirstOrDefault(g => g.EquipName == name);
+                _loop = contx.EQControlLoops.FirstOrDefault(g => g.EquipName == name);
 
 
                 //if (_loop == null)
@@ -272,13 +280,21 @@ namespace BrewMLLib.DAL
                     _isnew = true;
 
                     _loop = new EQControlLoop();
+                    
                     _loop.AssetTag = "111";
                     _loop.Description = "default";
                     _loop.EnableTrending = false;
                     _loop.EquipName = s;
                    
                     _loop.EQType = contx.EQTypes.FirstOrDefault(f => f.TypeDescription == t);
-                    _loop.Plant = _parent.GetPlant();
+                    //_loop.Plant = _parent.GetPlant();
+                    _loop.Plant = contx.Plants.FirstOrDefault(e => e.PlantID == p.PlantID);
+
+                    contx.EQControlLoops.Add(_loop);
+                    contx.SaveChanges();
+                    contx.Plants.FirstOrDefault(g => g.PlantID == p.PlantID).PlantLoops.Add(contx.EQControlLoops.FirstOrDefault(e=>e.BaseEquipID == _loop.BaseEquipID));
+                    //p.PlantLoops.Add(_loop);
+                    contx.SaveChanges();
                 }
                 catch (Exception ex)
                 {
@@ -296,6 +312,7 @@ namespace BrewMLLib.DAL
         {
             //_loop.EquipName = name;
             _loop.SetPoint = sp;
+            contx.SaveChanges();
             return this;
         }
 
@@ -314,7 +331,7 @@ namespace BrewMLLib.DAL
             return this;
         }
 
-        public IFluentPlant Final()
+        public int Final()
         {
             
             if (_isnew)
@@ -331,7 +348,8 @@ namespace BrewMLLib.DAL
             }
             
             contx.SaveChanges();
-            return this._parent;
+            //return this._parent;
+            return 1;
         }
     }
 
@@ -343,7 +361,8 @@ namespace BrewMLLib.DAL
 
         private string _message;
 
-        public string GetMessage() { return _message; }
+
+        public string GetMessage() { _message = "wut?"; return _message; }
 
         public IFluentEQType AddEQType(string s)
         {
@@ -360,7 +379,8 @@ namespace BrewMLLib.DAL
                 _eqtype = new EQType();
                 _eqtype.TypeDescription = s;
 
-
+                contx.EQTypes.Add(_eqtype);
+                contx.SaveChanges();
             }
 
             return this;
@@ -377,7 +397,7 @@ namespace BrewMLLib.DAL
             return _eqtype;
         }
 
-        public IFluentEQType Final()
+        public int Final()
         {
 
 
@@ -388,7 +408,8 @@ namespace BrewMLLib.DAL
                 contx.SaveChanges();
 
             }
-            return this;
+            //return this;
+            return 1;
         }
 
     }

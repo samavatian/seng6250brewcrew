@@ -173,7 +173,7 @@ namespace BrewMLLib.DAL
         public List<EQControlLoop> GetEQControlLoopsByPlantID(int plantID)
         {
             BrewDBContext cont = new BrewDBContext();
-            List<EQControlLoop> loops = cont.Plants.SelectMany(g => g.PlantLoops).Where(g => g.PlantID == plantID).ToList();
+            List<EQControlLoop> loops = cont.Plants.SelectMany(g => g.PlantLoops).Where(g => g.Plant.PlantID == plantID).ToList();
 
             return loops;
 

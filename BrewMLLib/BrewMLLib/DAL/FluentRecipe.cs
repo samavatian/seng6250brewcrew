@@ -36,7 +36,7 @@ namespace BrewMLLib.DAL
 
         //IFluentRecipe InPlant(string s);
 
-        IFluentRecipe Final();
+        //IFluentRecipe Final();
     }
 
     public interface IFluentRecipeOperations
@@ -53,7 +53,7 @@ namespace BrewMLLib.DAL
         IFluentRecipeOperations HasTransitions(string s);
         IFluentRecipeOperations HasAllowedUnits(string s);
 
-        IFluentRecipe Final();
+        //IFluentRecipe Final();
     }
 
 
@@ -73,7 +73,7 @@ namespace BrewMLLib.DAL
 
         IFluentTransitions HasLoop(string s);
 
-        IFluentRecipe Final();
+        //IFluentRecipe Final();
 
 
     }
@@ -113,6 +113,10 @@ namespace BrewMLLib.DAL
                 _recipe.QaulityTargets = "default";
 
                 _recipe.Plants = new List<Plant>();
+
+                contx.MasterRecipes.Add(_recipe);
+                contx.SaveChanges();
+
             }
 
             return this;
@@ -132,12 +136,14 @@ namespace BrewMLLib.DAL
         {
 
             _recipe.BrandName = s;
+            contx.SaveChanges();
             return this;
 
         }
         public IFluentRecipe SetBrandDescription(string s)
         {
             _recipe.BrandDescription = s;
+            contx.SaveChanges();
             return this;
 
 
@@ -145,6 +151,7 @@ namespace BrewMLLib.DAL
         public IFluentRecipe SetQualityTarget(string s)
         {
             _recipe.QaulityTargets = s;
+            contx.SaveChanges();
             return this;
 
         }
@@ -276,7 +283,14 @@ namespace BrewMLLib.DAL
                 _operation.SetPoint = 0;
                 _operation.Transitions = new List<Transition>();
                 _operation.AllowedUnits = new List<Unit>();
+                
 
+                contx.RecUnitOperations.Add(_operation);
+                contx.SaveChanges();
+
+                contx.MasterRecipes.FirstOrDefault(f => f.BrandName == rec.BrandName).RecOperations.Add(_operation);
+
+                contx.SaveChanges();
             }
 
             return this;
@@ -292,6 +306,7 @@ namespace BrewMLLib.DAL
         public IFluentRecipeOperations SetSetPoint(float f)
         {
             _operation.SetPoint = f;
+            contx.SaveChanges();
             return this;
         }
 

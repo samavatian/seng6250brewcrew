@@ -32,9 +32,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BrewMLLib">
-      <HintPath>..\BrewMLLib\bin\Debug\BrewMLLib.dll</HintPath>
-    </Reference>
     <Reference Include="EntityFramework">
       <HintPath>..\BrewMLLib\bin\Debug\EntityFramework.dll</HintPath>
     </Reference>
@@ -57,6 +54,12 @@
   <ItemGroup>
     <None Include="App.config" />
     <Fakes Include="Fakes\BrewMLLib.fakes" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BrewMLLib\BrewMLLib.csproj">
+      <Project>{61076f22-189e-419c-817e-0bc13f855377}</Project>
+      <Name>BrewMLLib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

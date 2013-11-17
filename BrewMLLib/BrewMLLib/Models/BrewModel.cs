@@ -87,13 +87,16 @@ namespace BrewMLLib.Models
 
 
         public virtual Plant Plant { get; set; }
-        [Required]
-        [ForeignKey("Plant")]
-        public int PlantID { get; set; }
+
+        //james - nov 17 see if we can just work with entity types and not they keys
+        //[Required]
+        //[ForeignKey("Plant")]
+        //public int PlantID { get; set; }
 
         public virtual EQType EQType { get; set; }
-        [ForeignKey("EQType")]
-        public int EQTypeID { get; set; }
+        //james - nov 17 see if we can just work with entity types and not they keys
+        //[ForeignKey("EQType")]
+        //public int EQTypeID { get; set; }
 
     }
     /// <summary>

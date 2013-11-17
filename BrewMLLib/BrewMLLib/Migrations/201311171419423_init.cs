@@ -3,7 +3,7 @@ namespace BrewMLLib.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class s : DbMigration
+    public partial class init : DbMigration
     {
         public override void Up()
         {
@@ -115,19 +115,19 @@ namespace BrewMLLib.Migrations
                         ReverseActing = c.Boolean(),
                         SimMeasValue = c.Single(),
                         EnableTrending = c.Boolean(nullable: false),
-                        PlantID = c.Int(nullable: false),
-                        EQTypeID = c.Int(nullable: false),
                         EquipName = c.String(),
                         AssetTag = c.String(),
                         Description = c.String(),
+                        EQType_EQTypeID = c.Int(),
+                        Plant_PlantID = c.Int(nullable: false),
                         Unit_UnitID = c.Int(),
                     })
                 .PrimaryKey(t => t.BaseEquipID)
-                .ForeignKey("dbo.EQTypes", t => t.EQTypeID, cascadeDelete: true)
-                .ForeignKey("dbo.Plants", t => t.PlantID, cascadeDelete: true)
+                .ForeignKey("dbo.EQTypes", t => t.EQType_EQTypeID)
+                .ForeignKey("dbo.Plants", t => t.Plant_PlantID, cascadeDelete: true)
                 .ForeignKey("dbo.Units", t => t.Unit_UnitID)
-                .Index(t => t.EQTypeID)
-                .Index(t => t.PlantID)
+                .Index(t => t.EQType_EQTypeID)
+                .Index(t => t.Plant_PlantID)
                 .Index(t => t.Unit_UnitID);
             
             CreateTable(
@@ -312,8 +312,8 @@ namespace BrewMLLib.Migrations
             DropForeignKey("dbo.Ingredients", "IngredientTypeID", "dbo.IngredientTypes");
             DropForeignKey("dbo.EQVessels", "PlantID", "dbo.Plants");
             DropForeignKey("dbo.EQVessels", "EQTypeID", "dbo.EQTypes");
-            DropForeignKey("dbo.EQControlLoops", "PlantID", "dbo.Plants");
-            DropForeignKey("dbo.EQControlLoops", "EQTypeID", "dbo.EQTypes");
+            DropForeignKey("dbo.EQControlLoops", "Plant_PlantID", "dbo.Plants");
+            DropForeignKey("dbo.EQControlLoops", "EQType_EQTypeID", "dbo.EQTypes");
             DropForeignKey("dbo.EQAuxilaries", "PlantID", "dbo.Plants");
             DropForeignKey("dbo.EQAuxilaries", "EQTypeID", "dbo.EQTypes");
             DropForeignKey("dbo.UnitUnits", "Unit_UnitID1", "dbo.Units");
@@ -339,8 +339,8 @@ namespace BrewMLLib.Migrations
             DropIndex("dbo.Ingredients", new[] { "IngredientTypeID" });
             DropIndex("dbo.EQVessels", new[] { "PlantID" });
             DropIndex("dbo.EQVessels", new[] { "EQTypeID" });
-            DropIndex("dbo.EQControlLoops", new[] { "PlantID" });
-            DropIndex("dbo.EQControlLoops", new[] { "EQTypeID" });
+            DropIndex("dbo.EQControlLoops", new[] { "Plant_PlantID" });
+            DropIndex("dbo.EQControlLoops", new[] { "EQType_EQTypeID" });
             DropIndex("dbo.EQAuxilaries", new[] { "PlantID" });
             DropIndex("dbo.EQAuxilaries", new[] { "EQTypeID" });
             DropIndex("dbo.UnitUnits", new[] { "Unit_UnitID1" });
