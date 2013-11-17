@@ -14,6 +14,10 @@ namespace BrewMLLib.DAL
     {
     }
 
+
+    /// <summary>
+    /// The EF class that creates the DB
+    /// </summary>
     public class BrewDBContext : DbContext 
     {
 
