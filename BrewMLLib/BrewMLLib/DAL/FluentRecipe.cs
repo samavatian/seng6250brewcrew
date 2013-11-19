@@ -20,19 +20,19 @@ namespace BrewMLLib.DAL
     {
         
 
-        IFluentRecipe AddRecipe(string s);
-        IFluentRecipe ForRecipe(string s);
+        IFluentRecipe AddRecipe(string Name);
+        IFluentRecipe ForRecipe(string Name);
 
         MasterRecipe GetRecipe();
 
-        IFluentRecipe SetBrandName(string s);
-        IFluentRecipe SetBrandDescription(string s);
-        IFluentRecipe SetQualityTarget(string s);
+        IFluentRecipe SetBrandName(string BrandName);
+        IFluentRecipe SetBrandDescription(string BrandDescription);
+        IFluentRecipe SetQualityTarget(string QTarget);
 
         IFluentRecipeOperations HasRecOperations();
-        IFluentRecipeOperations HasRecOperations(string s);
+        IFluentRecipeOperations HasRecOperations(string RecOperation);
 
-        IFluentRecipe HasIngredients(string s, float amount);
+        IFluentRecipe HasIngredients(string Name, float AmountToAdd);
 
         //IFluentRecipe InPlant(string s);
 
@@ -43,15 +43,15 @@ namespace BrewMLLib.DAL
     {
         
 
-        IFluentRecipeOperations AddOperation(string s);
-        IFluentRecipeOperations ForOperation(string s);
+        IFluentRecipeOperations AddOperation(string Name);
+        IFluentRecipeOperations ForOperation(string Name);
 
         RecUnitOperation GetRecUnitOperation();
 
-        IFluentRecipeOperations SetSetPoint(float f);
+        IFluentRecipeOperations SetSetPoint(float SetPoint);
 
-        IFluentRecipeOperations HasTransitions(string s);
-        IFluentRecipeOperations HasAllowedUnits(string s);
+        IFluentRecipeOperations HasTransitions();
+        IFluentRecipeOperations HasAllowedUnits();
 
         //IFluentRecipe Final();
     }
@@ -61,17 +61,18 @@ namespace BrewMLLib.DAL
     {
         
 
-        IFluentTransitions AddTranstion(string s);
-        IFluentTransitions ForTranstion(string s);
+//        IFluentTransitions AddTranstion(string Name);
+        IFluentTransitions AddTranstion(string Name, string loopname, Operants op, float SetPoint);
+        IFluentTransitions ForTranstion(string Name);
 
-        Transition GetTranstion();
+        IFluentTransitions GetTranstion();
 
-        IFluentTransitions SetName(string s);
-        IFluentTransitions SetTime(int i);
+        IFluentTransitions SetName(string Name);
+        IFluentTransitions SetTime(int Time);
 
-        IFluentTransitions SetOperant(Operants o);
 
-        IFluentTransitions HasLoop(string s);
+
+        IFluentTransitions HasLoop(string LoopName);
 
         //IFluentRecipe Final();
 
@@ -219,6 +220,11 @@ namespace BrewMLLib.DAL
     }
 
 
+
+
+    /// <summary>
+    ///  Recipe Operations
+    /// </summary>
     public class FluentRecipeOperations : IFluentRecipeOperations
     {
 
@@ -310,42 +316,138 @@ namespace BrewMLLib.DAL
             return this;
         }
 
-        public IFluentRecipeOperations HasTransitions(string s)
+        public IFluentRecipeOperations HasTransitions()
         {
             
             return this;
         }
-        public IFluentRecipeOperations HasAllowedUnits(string s)
+        public IFluentRecipeOperations HasAllowedUnits()
         {
             return this;
         }
 
 
-        public IFluentRecipe Final()
-        {
+        //public IFluentRecipe Final()
+        //{
 
-            if (_isnew)
-            {
-                //contx.MasterRecipes.FirstOrDefault(g=>g.RecOperations.Add(_operation);
+        //    if (_isnew)
+        //    {
+        //        //contx.MasterRecipes.FirstOrDefault(g=>g.RecOperations.Add(_operation);
 
-                //contx.RecUnitOperations.Add(_operation);
-                //contx.MasterRecipes.FirstOrDefault(g => g.MasterRecipeID == _parent.GetRecipe().MasterRecipeID).RecOperations.Add(_operation);
+        //        //contx.RecUnitOperations.Add(_operation);
+        //        //contx.MasterRecipes.FirstOrDefault(g => g.MasterRecipeID == _parent.GetRecipe().MasterRecipeID).RecOperations.Add(_operation);
 
-                MasterRecipe rec = _parent.GetRecipe();
+        //        MasterRecipe rec = _parent.GetRecipe();
 
-                rec.RecOperations.Add(_operation);
-                //contx.MasterRecipes.FirstOrDefault(g => g.MasterRecipeID == rec.MasterRecipeID).RecOperations.Add(_operation);
+        //        rec.RecOperations.Add(_operation);
+        //        //contx.MasterRecipes.FirstOrDefault(g => g.MasterRecipeID == rec.MasterRecipeID).RecOperations.Add(_operation);
 
-            }
-            else
-            {
+        //    }
+        //    else
+        //    {
 
-                //cont.SaveChanges();
-            }
-            contx.SaveChanges();
-            return this._parent;
-        }
+        //        //cont.SaveChanges();
+        //    }
+        //    contx.SaveChanges();
+        //    return this._parent;
+        //}
     }
 
+    public class FluentTransition: IFluentTransitions
+    {
+
+        private IFluentRecipeOperations _parent;
+        private Transition _transition;
+        private BrewDBContext contx = new BrewDBContext();
+        private bool _isnew;
+
+
+
+        public FluentTransition(IFluentRecipeOperations parent)
+        {
+            _parent = parent;
+            _isnew = false;
+
+        }
+        public FluentTransition()
+        {
+            //_parent = parent;
+            _isnew = false;
+
+        }
+
+
+
+        public IFluentTransitions AddTranstion(string s, string loopname, Operants op, float SetPoint)
+        {
+            RecUnitOperation r = _parent.GetRecUnitOperation();
+
+            _transition = contx.Transitions.FirstOrDefault(g => g.TransitionName == s);
+
+            if (_transition == null)
+            {
+
+                _isnew = true;
+
+                _transition.TransitionName = s;
+                
+                _transition.loop = contx.EQControlLoops.FirstOrDefault(k => k.EquipName == loopname);
+                _transition.operant = op;
+                //_transition.SetPoint = 
+
+
+
+            }
+
+            return this;
+
+        }
+        public IFluentTransitions ForTranstion(string s)
+        {
+
+
+            return this;
+        }
+
+        public IFluentTransitions GetTranstion()
+        {
+
+
+
+            return this;
+        }
+
+        public IFluentTransitions SetName(string s)
+        {
+        
+            
+            return this;
+        }
+        public IFluentTransitions SetTime(int i)
+        {
+
+
+            return this;
+
+        }
+
+        public IFluentTransitions SetOperant(Operants o)
+        {
+
+            return this;
+
+        }
+
+        public IFluentTransitions HasLoop(string s)
+        {
+
+            return this;
+
+        }
+
+        //IFluentRecipe Final();
+
+
+    }
 
 }

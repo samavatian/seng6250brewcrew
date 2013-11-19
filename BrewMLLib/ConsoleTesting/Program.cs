@@ -150,7 +150,10 @@ namespace ConsoleTesting
                 .SetSetPoint(33)
                 //.HasRecOperations()
                 .AddOperation("Heat Phase 3")
-                .SetSetPoint(34);
+                .SetSetPoint(34)
+                .AddOperation("test chain 3")
+                .SetSetPoint(55);
+                
                 //.Final()
                 //.Final();
             

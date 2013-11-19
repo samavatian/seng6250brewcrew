@@ -595,20 +595,17 @@
         <member name="P:BrewMLLib.DAL.Fakes.ShimFluentRecipeOperations.ConstructorIFluentRecipeString">
             <summary>Sets the shim of FluentRecipeOperations.FluentRecipeOperations(IFluentRecipe parent, String s)</summary>
         </member>
-        <member name="P:BrewMLLib.DAL.Fakes.ShimFluentRecipeOperations.Final">
-            <summary>Sets the shim of FluentRecipeOperations.Final()</summary>
-        </member>
         <member name="P:BrewMLLib.DAL.Fakes.ShimFluentRecipeOperations.ForOperationString">
             <summary>Sets the shim of FluentRecipeOperations.ForOperation(String s)</summary>
         </member>
         <member name="P:BrewMLLib.DAL.Fakes.ShimFluentRecipeOperations.GetRecUnitOperation">
             <summary>Sets the shim of FluentRecipeOperations.GetRecUnitOperation()</summary>
         </member>
-        <member name="P:BrewMLLib.DAL.Fakes.ShimFluentRecipeOperations.HasAllowedUnitsString">
-            <summary>Sets the shim of FluentRecipeOperations.HasAllowedUnits(String s)</summary>
+        <member name="P:BrewMLLib.DAL.Fakes.ShimFluentRecipeOperations.HasAllowedUnits">
+            <summary>Sets the shim of FluentRecipeOperations.HasAllowedUnits()</summary>
         </member>
-        <member name="P:BrewMLLib.DAL.Fakes.ShimFluentRecipeOperations.HasTransitionsString">
-            <summary>Sets the shim of FluentRecipeOperations.HasTransitions(String s)</summary>
+        <member name="P:BrewMLLib.DAL.Fakes.ShimFluentRecipeOperations.HasTransitions">
+            <summary>Sets the shim of FluentRecipeOperations.HasTransitions()</summary>
         </member>
         <member name="P:BrewMLLib.DAL.Fakes.ShimFluentRecipeOperations.SetSetPointSingle">
             <summary>Sets the shim of FluentRecipeOperations.SetSetPoint(Single f)</summary>
@@ -619,23 +616,92 @@
         <member name="P:BrewMLLib.DAL.Fakes.ShimFluentRecipeOperations.AllInstances.AddOperationString">
             <summary>Sets the shim of FluentRecipeOperations.AddOperation(String s)</summary>
         </member>
-        <member name="P:BrewMLLib.DAL.Fakes.ShimFluentRecipeOperations.AllInstances.Final">
-            <summary>Sets the shim of FluentRecipeOperations.Final()</summary>
-        </member>
         <member name="P:BrewMLLib.DAL.Fakes.ShimFluentRecipeOperations.AllInstances.ForOperationString">
             <summary>Sets the shim of FluentRecipeOperations.ForOperation(String s)</summary>
         </member>
         <member name="P:BrewMLLib.DAL.Fakes.ShimFluentRecipeOperations.AllInstances.GetRecUnitOperation">
             <summary>Sets the shim of FluentRecipeOperations.GetRecUnitOperation()</summary>
         </member>
-        <member name="P:BrewMLLib.DAL.Fakes.ShimFluentRecipeOperations.AllInstances.HasAllowedUnitsString">
-            <summary>Sets the shim of FluentRecipeOperations.HasAllowedUnits(String s)</summary>
+        <member name="P:BrewMLLib.DAL.Fakes.ShimFluentRecipeOperations.AllInstances.HasAllowedUnits">
+            <summary>Sets the shim of FluentRecipeOperations.HasAllowedUnits()</summary>
         </member>
-        <member name="P:BrewMLLib.DAL.Fakes.ShimFluentRecipeOperations.AllInstances.HasTransitionsString">
-            <summary>Sets the shim of FluentRecipeOperations.HasTransitions(String s)</summary>
+        <member name="P:BrewMLLib.DAL.Fakes.ShimFluentRecipeOperations.AllInstances.HasTransitions">
+            <summary>Sets the shim of FluentRecipeOperations.HasTransitions()</summary>
         </member>
         <member name="P:BrewMLLib.DAL.Fakes.ShimFluentRecipeOperations.AllInstances.SetSetPointSingle">
             <summary>Sets the shim of FluentRecipeOperations.SetSetPoint(Single f)</summary>
+        </member>
+        <member name="T:BrewMLLib.DAL.Fakes.ShimFluentTransition">
+            <summary>Shim type of BrewMLLib.DAL.FluentTransition</summary>
+        </member>
+        <member name="M:BrewMLLib.DAL.Fakes.ShimFluentTransition.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:BrewMLLib.DAL.Fakes.ShimFluentTransition.#ctor(BrewMLLib.DAL.FluentTransition)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:BrewMLLib.DAL.Fakes.ShimFluentTransition.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:BrewMLLib.DAL.Fakes.ShimFluentTransition.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:BrewMLLib.DAL.Fakes.ShimFluentTransition.Bind(BrewMLLib.DAL.IFluentTransitions)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:BrewMLLib.DAL.Fakes.ShimFluentTransition.AddTranstionStringStringOperantsSingle">
+            <summary>Sets the shim of FluentTransition.AddTranstion(String s, String loopname, Operants op, Single SetPoint)</summary>
+        </member>
+        <member name="P:BrewMLLib.DAL.Fakes.ShimFluentTransition.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:BrewMLLib.DAL.Fakes.ShimFluentTransition.Constructor">
+            <summary>Sets the shim of FluentTransition.FluentTransition()</summary>
+        </member>
+        <member name="P:BrewMLLib.DAL.Fakes.ShimFluentTransition.ConstructorIFluentRecipeOperations">
+            <summary>Sets the shim of FluentTransition.FluentTransition(IFluentRecipeOperations parent)</summary>
+        </member>
+        <member name="P:BrewMLLib.DAL.Fakes.ShimFluentTransition.ForTranstionString">
+            <summary>Sets the shim of FluentTransition.ForTranstion(String s)</summary>
+        </member>
+        <member name="P:BrewMLLib.DAL.Fakes.ShimFluentTransition.GetTranstion">
+            <summary>Sets the shim of FluentTransition.GetTranstion()</summary>
+        </member>
+        <member name="P:BrewMLLib.DAL.Fakes.ShimFluentTransition.HasLoopString">
+            <summary>Sets the shim of FluentTransition.HasLoop(String s)</summary>
+        </member>
+        <member name="P:BrewMLLib.DAL.Fakes.ShimFluentTransition.SetNameString">
+            <summary>Sets the shim of FluentTransition.SetName(String s)</summary>
+        </member>
+        <member name="P:BrewMLLib.DAL.Fakes.ShimFluentTransition.SetOperantOperants">
+            <summary>Sets the shim of FluentTransition.SetOperant(Operants o)</summary>
+        </member>
+        <member name="P:BrewMLLib.DAL.Fakes.ShimFluentTransition.SetTimeInt32">
+            <summary>Sets the shim of FluentTransition.SetTime(Int32 i)</summary>
+        </member>
+        <member name="T:BrewMLLib.DAL.Fakes.ShimFluentTransition.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:BrewMLLib.DAL.Fakes.ShimFluentTransition.AllInstances.AddTranstionStringStringOperantsSingle">
+            <summary>Sets the shim of FluentTransition.AddTranstion(String s, String loopname, Operants op, Single SetPoint)</summary>
+        </member>
+        <member name="P:BrewMLLib.DAL.Fakes.ShimFluentTransition.AllInstances.ForTranstionString">
+            <summary>Sets the shim of FluentTransition.ForTranstion(String s)</summary>
+        </member>
+        <member name="P:BrewMLLib.DAL.Fakes.ShimFluentTransition.AllInstances.GetTranstion">
+            <summary>Sets the shim of FluentTransition.GetTranstion()</summary>
+        </member>
+        <member name="P:BrewMLLib.DAL.Fakes.ShimFluentTransition.AllInstances.HasLoopString">
+            <summary>Sets the shim of FluentTransition.HasLoop(String s)</summary>
+        </member>
+        <member name="P:BrewMLLib.DAL.Fakes.ShimFluentTransition.AllInstances.SetNameString">
+            <summary>Sets the shim of FluentTransition.SetName(String s)</summary>
+        </member>
+        <member name="P:BrewMLLib.DAL.Fakes.ShimFluentTransition.AllInstances.SetOperantOperants">
+            <summary>Sets the shim of FluentTransition.SetOperant(Operants o)</summary>
+        </member>
+        <member name="P:BrewMLLib.DAL.Fakes.ShimFluentTransition.AllInstances.SetTimeInt32">
+            <summary>Sets the shim of FluentTransition.SetTime(Int32 i)</summary>
         </member>
         <member name="T:BrewMLLib.DAL.Fakes.StubBrewDBContext">
             <summary>Stub type of BrewMLLib.DAL.BrewDBContext</summary>
@@ -811,6 +877,27 @@
         <member name="P:BrewMLLib.DAL.Fakes.StubFluentRecipeOperations.InstanceObserver">
             <summary>Gets or sets the instance observer.</summary>
         </member>
+        <member name="T:BrewMLLib.DAL.Fakes.StubFluentTransition">
+            <summary>Stub type of BrewMLLib.DAL.FluentTransition</summary>
+        </member>
+        <member name="M:BrewMLLib.DAL.Fakes.StubFluentTransition.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:BrewMLLib.DAL.Fakes.StubFluentTransition.#ctor(BrewMLLib.DAL.IFluentRecipeOperations)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:BrewMLLib.DAL.Fakes.StubFluentTransition.InitializeStub">
+            <summary>Initializes a new instance of type StubFluentTransition</summary>
+        </member>
+        <member name="P:BrewMLLib.DAL.Fakes.StubFluentTransition.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:BrewMLLib.DAL.Fakes.StubFluentTransition.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:BrewMLLib.DAL.Fakes.StubFluentTransition.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
         <member name="T:BrewMLLib.DAL.Fakes.StubIFluentControlLoop">
             <summary>Stub type of BrewMLLib.DAL.IFluentControlLoop</summary>
         </member>
@@ -932,58 +1019,58 @@
             <summary>Initializes a new instance of type StubIFluentRecipe</summary>
         </member>
         <member name="F:BrewMLLib.DAL.Fakes.StubIFluentRecipe.AddRecipeString">
-            <summary>Sets the stub of IFluentRecipe.AddRecipe(String s)</summary>
+            <summary>Sets the stub of IFluentRecipe.AddRecipe(String Name)</summary>
         </member>
         <member name="M:BrewMLLib.DAL.Fakes.StubIFluentRecipe.bmll::BrewMLLib#DAL#IFluentRecipe#AddRecipe(System.String)">
-            <summary>Sets the stub of IFluentRecipe.AddRecipe(String s)</summary>
+            <summary>Sets the stub of IFluentRecipe.AddRecipe(String Name)</summary>
         </member>
         <member name="M:BrewMLLib.DAL.Fakes.StubIFluentRecipe.bmll::BrewMLLib#DAL#IFluentRecipe#ForRecipe(System.String)">
-            <summary>Sets the stub of IFluentRecipe.ForRecipe(String s)</summary>
+            <summary>Sets the stub of IFluentRecipe.ForRecipe(String Name)</summary>
         </member>
         <member name="M:BrewMLLib.DAL.Fakes.StubIFluentRecipe.bmll::BrewMLLib#DAL#IFluentRecipe#GetRecipe">
             <summary>Sets the stub of IFluentRecipe.GetRecipe()</summary>
         </member>
         <member name="M:BrewMLLib.DAL.Fakes.StubIFluentRecipe.bmll::BrewMLLib#DAL#IFluentRecipe#HasIngredients(System.String,System.Single)">
-            <summary>Sets the stub of IFluentRecipe.HasIngredients(String s, Single amount)</summary>
+            <summary>Sets the stub of IFluentRecipe.HasIngredients(String Name, Single AmountToAdd)</summary>
         </member>
         <member name="M:BrewMLLib.DAL.Fakes.StubIFluentRecipe.bmll::BrewMLLib#DAL#IFluentRecipe#HasRecOperations">
             <summary>Sets the stub of IFluentRecipe.HasRecOperations()</summary>
         </member>
         <member name="M:BrewMLLib.DAL.Fakes.StubIFluentRecipe.bmll::BrewMLLib#DAL#IFluentRecipe#HasRecOperations(System.String)">
-            <summary>Sets the stub of IFluentRecipe.HasRecOperations(String s)</summary>
+            <summary>Sets the stub of IFluentRecipe.HasRecOperations(String RecOperation)</summary>
         </member>
         <member name="M:BrewMLLib.DAL.Fakes.StubIFluentRecipe.bmll::BrewMLLib#DAL#IFluentRecipe#SetBrandDescription(System.String)">
-            <summary>Sets the stub of IFluentRecipe.SetBrandDescription(String s)</summary>
+            <summary>Sets the stub of IFluentRecipe.SetBrandDescription(String BrandDescription)</summary>
         </member>
         <member name="M:BrewMLLib.DAL.Fakes.StubIFluentRecipe.bmll::BrewMLLib#DAL#IFluentRecipe#SetBrandName(System.String)">
-            <summary>Sets the stub of IFluentRecipe.SetBrandName(String s)</summary>
+            <summary>Sets the stub of IFluentRecipe.SetBrandName(String BrandName)</summary>
         </member>
         <member name="M:BrewMLLib.DAL.Fakes.StubIFluentRecipe.bmll::BrewMLLib#DAL#IFluentRecipe#SetQualityTarget(System.String)">
-            <summary>Sets the stub of IFluentRecipe.SetQualityTarget(String s)</summary>
+            <summary>Sets the stub of IFluentRecipe.SetQualityTarget(String QTarget)</summary>
         </member>
         <member name="F:BrewMLLib.DAL.Fakes.StubIFluentRecipe.ForRecipeString">
-            <summary>Sets the stub of IFluentRecipe.ForRecipe(String s)</summary>
+            <summary>Sets the stub of IFluentRecipe.ForRecipe(String Name)</summary>
         </member>
         <member name="F:BrewMLLib.DAL.Fakes.StubIFluentRecipe.GetRecipe">
             <summary>Sets the stub of IFluentRecipe.GetRecipe()</summary>
         </member>
         <member name="F:BrewMLLib.DAL.Fakes.StubIFluentRecipe.HasIngredientsStringSingle">
-            <summary>Sets the stub of IFluentRecipe.HasIngredients(String s, Single amount)</summary>
+            <summary>Sets the stub of IFluentRecipe.HasIngredients(String Name, Single AmountToAdd)</summary>
         </member>
         <member name="F:BrewMLLib.DAL.Fakes.StubIFluentRecipe.HasRecOperations">
             <summary>Sets the stub of IFluentRecipe.HasRecOperations()</summary>
         </member>
         <member name="F:BrewMLLib.DAL.Fakes.StubIFluentRecipe.HasRecOperationsString">
-            <summary>Sets the stub of IFluentRecipe.HasRecOperations(String s)</summary>
+            <summary>Sets the stub of IFluentRecipe.HasRecOperations(String RecOperation)</summary>
         </member>
         <member name="F:BrewMLLib.DAL.Fakes.StubIFluentRecipe.SetBrandDescriptionString">
-            <summary>Sets the stub of IFluentRecipe.SetBrandDescription(String s)</summary>
+            <summary>Sets the stub of IFluentRecipe.SetBrandDescription(String BrandDescription)</summary>
         </member>
         <member name="F:BrewMLLib.DAL.Fakes.StubIFluentRecipe.SetBrandNameString">
-            <summary>Sets the stub of IFluentRecipe.SetBrandName(String s)</summary>
+            <summary>Sets the stub of IFluentRecipe.SetBrandName(String BrandName)</summary>
         </member>
         <member name="F:BrewMLLib.DAL.Fakes.StubIFluentRecipe.SetQualityTargetString">
-            <summary>Sets the stub of IFluentRecipe.SetQualityTarget(String s)</summary>
+            <summary>Sets the stub of IFluentRecipe.SetQualityTarget(String QTarget)</summary>
         </member>
         <member name="T:BrewMLLib.DAL.Fakes.StubIFluentRecipeOperations">
             <summary>Stub type of BrewMLLib.DAL.IFluentRecipeOperations</summary>
@@ -992,40 +1079,40 @@
             <summary>Initializes a new instance of type StubIFluentRecipeOperations</summary>
         </member>
         <member name="F:BrewMLLib.DAL.Fakes.StubIFluentRecipeOperations.AddOperationString">
-            <summary>Sets the stub of IFluentRecipeOperations.AddOperation(String s)</summary>
+            <summary>Sets the stub of IFluentRecipeOperations.AddOperation(String Name)</summary>
         </member>
         <member name="M:BrewMLLib.DAL.Fakes.StubIFluentRecipeOperations.bmll::BrewMLLib#DAL#IFluentRecipeOperations#AddOperation(System.String)">
-            <summary>Sets the stub of IFluentRecipeOperations.AddOperation(String s)</summary>
+            <summary>Sets the stub of IFluentRecipeOperations.AddOperation(String Name)</summary>
         </member>
         <member name="M:BrewMLLib.DAL.Fakes.StubIFluentRecipeOperations.bmll::BrewMLLib#DAL#IFluentRecipeOperations#ForOperation(System.String)">
-            <summary>Sets the stub of IFluentRecipeOperations.ForOperation(String s)</summary>
+            <summary>Sets the stub of IFluentRecipeOperations.ForOperation(String Name)</summary>
         </member>
         <member name="M:BrewMLLib.DAL.Fakes.StubIFluentRecipeOperations.bmll::BrewMLLib#DAL#IFluentRecipeOperations#GetRecUnitOperation">
             <summary>Sets the stub of IFluentRecipeOperations.GetRecUnitOperation()</summary>
         </member>
-        <member name="M:BrewMLLib.DAL.Fakes.StubIFluentRecipeOperations.bmll::BrewMLLib#DAL#IFluentRecipeOperations#HasAllowedUnits(System.String)">
-            <summary>Sets the stub of IFluentRecipeOperations.HasAllowedUnits(String s)</summary>
+        <member name="M:BrewMLLib.DAL.Fakes.StubIFluentRecipeOperations.bmll::BrewMLLib#DAL#IFluentRecipeOperations#HasAllowedUnits">
+            <summary>Sets the stub of IFluentRecipeOperations.HasAllowedUnits()</summary>
         </member>
-        <member name="M:BrewMLLib.DAL.Fakes.StubIFluentRecipeOperations.bmll::BrewMLLib#DAL#IFluentRecipeOperations#HasTransitions(System.String)">
-            <summary>Sets the stub of IFluentRecipeOperations.HasTransitions(String s)</summary>
+        <member name="M:BrewMLLib.DAL.Fakes.StubIFluentRecipeOperations.bmll::BrewMLLib#DAL#IFluentRecipeOperations#HasTransitions">
+            <summary>Sets the stub of IFluentRecipeOperations.HasTransitions()</summary>
         </member>
         <member name="M:BrewMLLib.DAL.Fakes.StubIFluentRecipeOperations.bmll::BrewMLLib#DAL#IFluentRecipeOperations#SetSetPoint(System.Single)">
-            <summary>Sets the stub of IFluentRecipeOperations.SetSetPoint(Single f)</summary>
+            <summary>Sets the stub of IFluentRecipeOperations.SetSetPoint(Single SetPoint)</summary>
         </member>
         <member name="F:BrewMLLib.DAL.Fakes.StubIFluentRecipeOperations.ForOperationString">
-            <summary>Sets the stub of IFluentRecipeOperations.ForOperation(String s)</summary>
+            <summary>Sets the stub of IFluentRecipeOperations.ForOperation(String Name)</summary>
         </member>
         <member name="F:BrewMLLib.DAL.Fakes.StubIFluentRecipeOperations.GetRecUnitOperation">
             <summary>Sets the stub of IFluentRecipeOperations.GetRecUnitOperation()</summary>
         </member>
-        <member name="F:BrewMLLib.DAL.Fakes.StubIFluentRecipeOperations.HasAllowedUnitsString">
-            <summary>Sets the stub of IFluentRecipeOperations.HasAllowedUnits(String s)</summary>
+        <member name="F:BrewMLLib.DAL.Fakes.StubIFluentRecipeOperations.HasAllowedUnits">
+            <summary>Sets the stub of IFluentRecipeOperations.HasAllowedUnits()</summary>
         </member>
-        <member name="F:BrewMLLib.DAL.Fakes.StubIFluentRecipeOperations.HasTransitionsString">
-            <summary>Sets the stub of IFluentRecipeOperations.HasTransitions(String s)</summary>
+        <member name="F:BrewMLLib.DAL.Fakes.StubIFluentRecipeOperations.HasTransitions">
+            <summary>Sets the stub of IFluentRecipeOperations.HasTransitions()</summary>
         </member>
         <member name="F:BrewMLLib.DAL.Fakes.StubIFluentRecipeOperations.SetSetPointSingle">
-            <summary>Sets the stub of IFluentRecipeOperations.SetSetPoint(Single f)</summary>
+            <summary>Sets the stub of IFluentRecipeOperations.SetSetPoint(Single SetPoint)</summary>
         </member>
         <member name="T:BrewMLLib.DAL.Fakes.StubIFluentTransitions">
             <summary>Stub type of BrewMLLib.DAL.IFluentTransitions</summary>
@@ -1033,47 +1120,41 @@
         <member name="M:BrewMLLib.DAL.Fakes.StubIFluentTransitions.#ctor">
             <summary>Initializes a new instance of type StubIFluentTransitions</summary>
         </member>
-        <member name="F:BrewMLLib.DAL.Fakes.StubIFluentTransitions.AddTranstionString">
-            <summary>Sets the stub of IFluentTransitions.AddTranstion(String s)</summary>
+        <member name="F:BrewMLLib.DAL.Fakes.StubIFluentTransitions.AddTranstionStringStringOperantsSingle">
+            <summary>Sets the stub of IFluentTransitions.AddTranstion(String Name, String loopname, Operants op, Single SetPoint)</summary>
         </member>
-        <member name="M:BrewMLLib.DAL.Fakes.StubIFluentTransitions.bmll::BrewMLLib#DAL#IFluentTransitions#AddTranstion(System.String)">
-            <summary>Sets the stub of IFluentTransitions.AddTranstion(String s)</summary>
+        <member name="M:BrewMLLib.DAL.Fakes.StubIFluentTransitions.bmll::BrewMLLib#DAL#IFluentTransitions#AddTranstion(System.String,System.String,BrewMLLib.Models.Operants,System.Single)">
+            <summary>Sets the stub of IFluentTransitions.AddTranstion(String Name, String loopname, Operants op, Single SetPoint)</summary>
         </member>
         <member name="M:BrewMLLib.DAL.Fakes.StubIFluentTransitions.bmll::BrewMLLib#DAL#IFluentTransitions#ForTranstion(System.String)">
-            <summary>Sets the stub of IFluentTransitions.ForTranstion(String s)</summary>
+            <summary>Sets the stub of IFluentTransitions.ForTranstion(String Name)</summary>
         </member>
         <member name="M:BrewMLLib.DAL.Fakes.StubIFluentTransitions.bmll::BrewMLLib#DAL#IFluentTransitions#GetTranstion">
             <summary>Sets the stub of IFluentTransitions.GetTranstion()</summary>
         </member>
         <member name="M:BrewMLLib.DAL.Fakes.StubIFluentTransitions.bmll::BrewMLLib#DAL#IFluentTransitions#HasLoop(System.String)">
-            <summary>Sets the stub of IFluentTransitions.HasLoop(String s)</summary>
+            <summary>Sets the stub of IFluentTransitions.HasLoop(String LoopName)</summary>
         </member>
         <member name="M:BrewMLLib.DAL.Fakes.StubIFluentTransitions.bmll::BrewMLLib#DAL#IFluentTransitions#SetName(System.String)">
-            <summary>Sets the stub of IFluentTransitions.SetName(String s)</summary>
-        </member>
-        <member name="M:BrewMLLib.DAL.Fakes.StubIFluentTransitions.bmll::BrewMLLib#DAL#IFluentTransitions#SetOperant(BrewMLLib.Models.Operants)">
-            <summary>Sets the stub of IFluentTransitions.SetOperant(Operants o)</summary>
+            <summary>Sets the stub of IFluentTransitions.SetName(String Name)</summary>
         </member>
         <member name="M:BrewMLLib.DAL.Fakes.StubIFluentTransitions.bmll::BrewMLLib#DAL#IFluentTransitions#SetTime(System.Int32)">
-            <summary>Sets the stub of IFluentTransitions.SetTime(Int32 i)</summary>
+            <summary>Sets the stub of IFluentTransitions.SetTime(Int32 Time)</summary>
         </member>
         <member name="F:BrewMLLib.DAL.Fakes.StubIFluentTransitions.ForTranstionString">
-            <summary>Sets the stub of IFluentTransitions.ForTranstion(String s)</summary>
+            <summary>Sets the stub of IFluentTransitions.ForTranstion(String Name)</summary>
         </member>
         <member name="F:BrewMLLib.DAL.Fakes.StubIFluentTransitions.GetTranstion">
             <summary>Sets the stub of IFluentTransitions.GetTranstion()</summary>
         </member>
         <member name="F:BrewMLLib.DAL.Fakes.StubIFluentTransitions.HasLoopString">
-            <summary>Sets the stub of IFluentTransitions.HasLoop(String s)</summary>
+            <summary>Sets the stub of IFluentTransitions.HasLoop(String LoopName)</summary>
         </member>
         <member name="F:BrewMLLib.DAL.Fakes.StubIFluentTransitions.SetNameString">
-            <summary>Sets the stub of IFluentTransitions.SetName(String s)</summary>
-        </member>
-        <member name="F:BrewMLLib.DAL.Fakes.StubIFluentTransitions.SetOperantOperants">
-            <summary>Sets the stub of IFluentTransitions.SetOperant(Operants o)</summary>
+            <summary>Sets the stub of IFluentTransitions.SetName(String Name)</summary>
         </member>
         <member name="F:BrewMLLib.DAL.Fakes.StubIFluentTransitions.SetTimeInt32">
-            <summary>Sets the stub of IFluentTransitions.SetTime(Int32 i)</summary>
+            <summary>Sets the stub of IFluentTransitions.SetTime(Int32 Time)</summary>
         </member>
         <member name="T:BrewMLLib.Fakes.ShimBrewML">
             <summary>Shim type of BrewMLLib.BrewML</summary>
@@ -2686,6 +2767,12 @@
         <member name="P:BrewMLLib.Models.Fakes.ShimTransition.EvaluateConditionSetNullableOfBoolean">
             <summary>Sets the shim of Transition.set_EvaluateCondition(Nullable`1&lt;Boolean&gt; value)</summary>
         </member>
+        <member name="P:BrewMLLib.Models.Fakes.ShimTransition.SetPointGet">
+            <summary>Sets the shim of Transition.get_SetPoint()</summary>
+        </member>
+        <member name="P:BrewMLLib.Models.Fakes.ShimTransition.SetPointSetSingle">
+            <summary>Sets the shim of Transition.set_SetPoint(Single value)</summary>
+        </member>
         <member name="P:BrewMLLib.Models.Fakes.ShimTransition.TimeGet">
             <summary>Sets the shim of Transition.get_Time()</summary>
         </member>
@@ -2730,6 +2817,12 @@
         </member>
         <member name="P:BrewMLLib.Models.Fakes.ShimTransition.AllInstances.EvaluateConditionSetNullableOfBoolean">
             <summary>Sets the shim of Transition.set_EvaluateCondition(Nullable`1&lt;Boolean&gt; value)</summary>
+        </member>
+        <member name="P:BrewMLLib.Models.Fakes.ShimTransition.AllInstances.SetPointGet">
+            <summary>Sets the shim of Transition.get_SetPoint()</summary>
+        </member>
+        <member name="P:BrewMLLib.Models.Fakes.ShimTransition.AllInstances.SetPointSetSingle">
+            <summary>Sets the shim of Transition.set_SetPoint(Single value)</summary>
         </member>
         <member name="P:BrewMLLib.Models.Fakes.ShimTransition.AllInstances.TimeGet">
             <summary>Sets the shim of Transition.get_Time()</summary>

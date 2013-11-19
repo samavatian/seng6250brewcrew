@@ -51,9 +51,9 @@
     <Compile Include="DAL\FluentPlant.cs" />
     <Compile Include="DAL\FluentRecipe.cs" />
     <Compile Include="DAL\TestAddingFile.cs" />
-    <Compile Include="Migrations\201311171419423_init.cs" />
-    <Compile Include="Migrations\201311171419423_init.Designer.cs">
-      <DependentUpon>201311171419423_init.cs</DependentUpon>
+    <Compile Include="Migrations\201311190030267_init.cs" />
+    <Compile Include="Migrations\201311190030267_init.Designer.cs">
+      <DependentUpon>201311190030267_init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BrewModel.cs" />
@@ -65,8 +65,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201311171419423_init.resx">
-      <DependentUpon>201311171419423_init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201311190030267_init.resx">
+      <DependentUpon>201311190030267_init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

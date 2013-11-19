@@ -213,6 +213,7 @@ namespace BrewMLLib.Migrations
                     {
                         TransitionID = c.Int(nullable: false, identity: true),
                         TransitionName = c.String(),
+                        SetPoint = c.Single(nullable: false),
                         Timer = c.Int(),
                         Time = c.Int(nullable: false),
                         EvaluateCondition = c.Boolean(),

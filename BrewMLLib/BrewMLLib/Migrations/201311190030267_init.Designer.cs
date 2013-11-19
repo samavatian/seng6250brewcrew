@@ -13,7 +13,7 @@ namespace BrewMLLib.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201311171419423_init"; }
+            get { return "201311190030267_init"; }
         }
         
         string IMigrationMetadata.Source

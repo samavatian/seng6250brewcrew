@@ -292,6 +292,7 @@ namespace BrewMLLib.Models
         /// Will be the set point to the controller
         /// </summary>
         public float SetPoint { get; set; }
+        //public float SetPointToEQOperation { get; set; }
 
         //public string Transition_WhatEndsThisOperation { get; set; }
 
@@ -322,6 +323,7 @@ namespace BrewMLLib.Models
         public string TransitionName { get; set; }
 
         public EQControlLoop loop { get; set; }
+        public float SetPoint { get; set; }
 
         public int? Timer { get; set; }
         public int Time { get; set; }
