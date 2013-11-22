@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 
 using BrewMLLib;
-using BrewMLLib.DAL;
-using BrewMLLib.Models;
+//using BrewMLLib.DAL;
+//using BrewMLLib.Models;
 
 namespace ConsoleTesting
 {
@@ -35,6 +35,7 @@ namespace ConsoleTesting
             //types.AddEQType("Pump").Final();
             //types.AddEQType("Valve").Final();
             //types.AddEQType("TempController").Final();
+            Console.WriteLine("---------------------------------------------");
 
 
             types.AddEQType("Pump");
@@ -42,6 +43,7 @@ namespace ConsoleTesting
             types.AddEQType("TempController");
 
             Report.reportit();
+            Console.WriteLine("---------------------------------------------");
 
             FluentPlant pd = new FluentPlant();
 
@@ -113,9 +115,35 @@ namespace ConsoleTesting
                 .SetSetPoint(99);
 //                .Final();
 
+
+            Console.WriteLine("---------------------------------------------");
+            Console.WriteLine("-------adding units--------------------------------------");
+
+
+            FluentUnit fu = new FluentUnit();
+
+            //fu.AddUnit("test unit 1","Big Jakes");
+
+            pd.ForPlant("Big Jakes").HasUnits().AddUnit("test unit 1");
+
+
+            pd.ForPlant("Little Jakes").HasUnits().AddUnit("test unit 1");
+            pd.ForPlant("Big Jakes").HasUnits().AddUnit("test unit 1");
+
+            //pd.ForPlant("Little Jakes").HasLoopsInUnit("test unit 1").AddControlLoop("ValveXV1321");
+
+            //fu.ForUnit("test unit 1").HasLoops().AddControlLoop("ValveXV1321");
+
+            pd.ForPlant("Little Jakes").HasUnits().AddUnit("asdfasdf").HasLoops().AddControlLoop("ValveXV1321");
+
+            pd.ForPlant("Big Jakes").HasUnits().AddUnit("asdfaddsdf").HasLoops().AddControlLoop("ValveXV1321x","Valve");
+
+            pd.ForPlant("Big Jakes").HasUnits().AddUnit("again").HasLoops().AddControlLoop("ValveXV1321xxx", "Valve");
             //Console.WriteLine(pd.ForPlant("Big Jakes").HasLoops("ValveXV1321").GetSetPoint());
 
             //Console.WriteLine(pd.ForPlant("Big Jakes").HasLoops("ValveXV1321").GetSetPoint());
+            Console.WriteLine("---------------------------------------------");
+            Console.WriteLine("-------------------");
 
             Console.WriteLine("-------------------");
             Console.WriteLine("Recipe Test ");

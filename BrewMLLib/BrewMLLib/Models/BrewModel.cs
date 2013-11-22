@@ -8,9 +8,10 @@ using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 
-using BrewMLLib.DAL;
+//using BrewMLLib.DAL;
 
-namespace BrewMLLib.Models
+//namespace BrewMLLib.Models
+namespace BrewMLLib
 {
     class BrewModel
     {
@@ -85,9 +86,14 @@ namespace BrewMLLib.Models
 
         public void DoSomething(int blah) { }
 
-
+       
         public virtual Plant Plant { get; set; }
+        
+        public virtual Unit Unit { get; set; }
 
+        //public virtual Plant Plant { get; set; }
+
+        //public virtual Unit Unit { get; set; }
         //james - nov 17 see if we can just work with entity types and not they keys
         //[Required]
         //[ForeignKey("Plant")]
@@ -177,9 +183,9 @@ namespace BrewMLLib.Models
         //        public void AddLoop(EQControlLoop loop) { EQControlLoops.Add(loop); }
 
         public virtual Plant Plant { get; set; }
-        [Required]
-        [ForeignKey("Plant")]
-        public int PlantID { get; set; }
+        //[Required]
+        //[ForeignKey("Plant")]
+        //public int PlantID { get; set; }
 
     }
 

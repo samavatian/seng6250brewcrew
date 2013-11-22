@@ -5,14 +5,14 @@ namespace BrewMLLib.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<BrewMLLib.DAL.BrewDBContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<BrewMLLib.BrewDBContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(BrewMLLib.DAL.BrewDBContext context)
+        protected override void Seed(BrewMLLib.BrewDBContext context)
         {
             //  This method will be called after migrating to the latest version.
 

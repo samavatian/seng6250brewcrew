@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 ///What I added
 using System.Data.Entity;
-using BrewMLLib.Models;
+//using BrewMLLib.Models;
 
-namespace BrewMLLib.DAL
+//namespace BrewMLLib.DAL
+namespace BrewMLLib
 {
     class BrewDBDAL
     {
@@ -130,7 +131,31 @@ namespace BrewMLLib.DAL
 
 
         }
+        public Plant GetPlantByPlantName(string plantname)
+        {
+            BrewDBContext cont = new BrewDBContext();
 
+            Plant p = new Plant();
+            p = cont.Plants.FirstOrDefault(g => g.PlantName == plantname);
+            return p;
+
+
+        }
+
+
+        public EQControlLoop GetLoopByPlantIDAndName(int PlantID, string EqName)
+        {
+            BrewDBContext contx = new BrewDBContext();
+            var test = contx.EQControlLoops
+                    .Where(b => b.Plant.PlantID == PlantID)
+                    .Where(c => c.EquipName == EqName)
+                    .FirstOrDefault();
+
+            EQControlLoop _loop = test;
+
+            return _loop;
+
+        }
 
         //----------------------------------------------------------------------------------------------------
         //----------------------------------------------------------------------------------------------------
@@ -139,6 +164,54 @@ namespace BrewMLLib.DAL
         //----------------------------------------------------------------------------------------------------
         //----------------------------------------------------------------------------------------------------
 
+
+
+        public EQControlLoop CreateNewLoop(string name, string type, Plant plant, Unit unit)
+        {
+            BrewDBContext contx = new BrewDBContext();
+            EQControlLoop _loop = new EQControlLoop();
+            //Plant plant = new Plant();
+
+            _loop.AssetTag = "111";
+            _loop.Description = "default";
+            _loop.EnableTrending = false;
+            _loop.EquipName = name;
+
+            if (type == "")
+            {
+
+                _loop.EQType = contx.EQTypes.FirstOrDefault();
+
+            }
+            else
+            {
+                _loop.EQType = contx.EQTypes.FirstOrDefault(f => f.TypeDescription == type);
+            }
+            //_loop.Plant = _parent.GetPlant();
+            _loop.Plant = contx.Plants.FirstOrDefault(e => e.PlantID == plant.PlantID);
+
+            if (unit != null)
+            {
+                _loop.Unit = contx.Units.FirstOrDefault(e => e.UnitID == unit.UnitID);
+            }
+
+            //if (unit != null)
+            //{
+            //    _loop.Unit = contx.Units.FirstOrDefault(u => u.UnitID == unit.UnitID);
+
+            //}
+            contx.EQControlLoops.Add(_loop);
+            contx.Plants.FirstOrDefault(l => l.PlantID == plant.PlantID).PlantLoops.Add(_loop);
+
+            contx.SaveChanges();
+            //contx.Plants.FirstOrDefault(g => g.PlantID == plant.PlantID).PlantLoops.Add(contx.EQControlLoops.FirstOrDefault(e => e.EquipName == _loop.BaseEquipID));
+            //p.PlantLoops.Add(_loop);
+            //contx.SaveChanges();
+
+            //contx.Units.FirstOrDefault(u => u.UnitID == unit.UnitID).UnitLoops.Add(contx.EQControlLoops.FirstOrDefault(e => e.BaseEquipID == _loop.BaseEquipID));
+
+            return _loop;
+        }
 
 
         public List<EQControlLoop> AddEQControlLoopToPlant(int plantID, EQControlLoop loop)
@@ -155,6 +228,32 @@ namespace BrewMLLib.DAL
             cont.SaveChanges();
 
             return cont.EQControlLoops.SelectMany(g => EQControlLoops).Where(g => g.Plant.PlantID == plantID).ToList();
+
+        }
+
+        public EQControlLoop AddEQControlLoopToUnit(int unitID, string name)
+        {
+
+
+            BrewDBContext cont = new BrewDBContext();
+            Unit u = new Unit();
+
+            u = cont.Units.FirstOrDefault(g => g.UnitID == unitID);
+
+            Plant plant = cont.Plants.FirstOrDefault(g => g.PlantID == u.Plant.PlantID);
+
+            EQControlLoop loop = new EQControlLoop();
+
+            loop = plant.PlantLoops.FirstOrDefault(g => g.EquipName == name);
+
+            //plant.PlantLoops.Add(loop);
+
+            cont.Units.FirstOrDefault(g => g.UnitID == unitID).UnitLoops.Add(loop);
+
+            cont.SaveChanges();
+
+            //return cont.EQControlLoops.SelectMany(g => EQControlLoops).Where(g => g.Plant.PlantID == plantID).ToList();
+            return loop;
 
         }
 
@@ -178,6 +277,92 @@ namespace BrewMLLib.DAL
             return loops;
 
         }
+
+
+        public EQControlLoop GetEQControlLoopsByPlantByName(Plant plant, string name)
+        {
+
+            BrewDBContext cont = new BrewDBContext();
+
+            //List<EQControlLoop> loops = cont.EQControlLoops.SelectMany(g => EQControlLoops).Where(g => g.Plant == plant).ToList();
+
+            var loopq = from p in cont.EQControlLoops
+                        where (p.EquipName == name) && (p.Plant.PlantID == plant.PlantID)
+                        select p;
+                      
+
+            EQControlLoop loop = new EQControlLoop();
+            loop = loopq.FirstOrDefault();
+            return loop;
+             
+
+        }
+
+        public Unit CreateUnit(int PlantID, string unitname)
+        {
+            BrewDBContext contx = new BrewDBContext();
+            //Plant p = _parent.GetPlant();
+            Unit unit = new Unit();
+            Plant p = new Plant();
+            p = contx.Plants.FirstOrDefault(s => s.PlantID == PlantID);
+            unit = contx.GetUnitByPlantByPlantID(PlantID, unitname);
+
+            //unit = contx.Units.FirstOrDefault(l => l.UnitName == UnitName);
+            //_plant = contx.Plants.FirstOrDefault(p => p.PlantName == PlantName);
+
+            //_isnew = false;
+            if (unit == null & p != null)
+            {
+
+
+
+                unit = new Unit();
+
+                //if (_plant != null)
+//                unit.Plant = contx.Plants.FirstOrDefault(h => h.PlantID == p.PlantID);
+                unit.Plant = p;
+                unit.UnitName = unitname;
+                unit.AvailableOperations = new List<EQUnitOperation>();
+                unit.InputUnits = new List<Unit>();
+                unit.OutputUnits = new List<Unit>();
+                unit.UnitAux = new List<EQAuxilary>();
+                unit.UnitLoops = new List<EQControlLoop>();
+                unit.UnitVessels = new List<EQVessel>();
+
+                contx.Units.Add(unit);
+                contx.SaveChanges();
+                //if (_plant != null)
+                contx.Plants.FirstOrDefault(g => g.PlantID == unit.Plant.PlantID).Units.Add(contx.Units.FirstOrDefault(e => e.UnitName == unit.UnitName));
+                contx.SaveChanges();
+
+            }
+            //else
+            //{
+            //    if (_plant != null)
+            //        _unit.Plant = contx.Plants.FirstOrDefault(h => h.PlantID == _plant.PlantID);
+
+            //    if (_plant != null)
+            //        contx.Plants.FirstOrDefault(g => g.PlantID == _unit.Plant.PlantID).Units.Add(contx.Units.FirstOrDefault(e => e.UnitName == _unit.UnitName));
+
+            //    contx.SaveChanges();
+
+            //}
+            unit = contx.Units.FirstOrDefault(l => l.UnitName == unitname);
+            return unit;
+
+        }
+
+
+
+        //----------------------------------------------------------------------------------------------------
+        //----------------------------------------------------------------------------------------------------
+        //----------------------------------------------------------------------------------------------------
+        //          Recipe
+
+        //----------------------------------------------------------------------------------------------------
+        //----------------------------------------------------------------------------------------------------
+
+
 
         public List<MasterRecipe> AddMasterRecipeToPlant(int plantID, int masterRecipeID)
         {
@@ -213,6 +398,45 @@ namespace BrewMLLib.DAL
 
 
 
+        public Unit GetUnitByPlantByName(string plantname, string unitname)
+        {
+
+            BrewDBContext contx = new BrewDBContext();
+
+            var unit = from u in Units 
+                       where (u.UnitName ==  unitname) && (u.Plant.PlantName == plantname)
+                       select u;
+
+            Unit uu = unit.FirstOrDefault();
+
+            return uu;
+
+
+        }
+        public Unit GetUnitByPlantByPlantID(int plantid, string unitname)
+        {
+
+            BrewDBContext contx = new BrewDBContext();
+
+            var unit = from u in Units
+                       where (u.UnitName == unitname) && (u.Plant.PlantID == plantid)
+                       select u;
+
+            Unit uu = unit.FirstOrDefault();
+
+            return uu;
+
+
+        }
+        //public Plant GetPlantByUnitID(int unitID)
+        //{
+        //    BrewDBContext contx = new BrewDBContext();
+
+        //    Plant p = new Plant();
+                        
+
+
+        //}
 
     }
 }
