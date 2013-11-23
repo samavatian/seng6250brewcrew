@@ -203,11 +203,20 @@ namespace ConsoleTesting
             Console.WriteLine("-------------------"); 
             Report.reportMasterRecipes();
             rec.ForRecipe("So Smooth").HasRecOperations("cool phase 3").AddAllowedUnits("asdfasdf").AddAllowedUnits("asdfaddsdf");
-            
+
+            pd.ForPlant("Big Jakes").HasUnits().AddUnit("test2ss3Unit");
+            rec.ForRecipe("So Smooth").HasRecOperations("cool phase 3").AddAllowedUnits("test2ss3Unit");
+
+            rec.ForRecipe("So Smooth").HasRecOperations("cool phase 3").AddAllowedUnits("test unit 1").AddAllowedUnits("asdfaddsdf");
             Console.WriteLine("-------------------");
             Report.reportMasterRecipes();
             rec.ForRecipe("So Smooth").HasRecOperations().AddAllowedUnits("test unit 1");
 
+            
+            rec.ForRecipe("Big Eddy")
+               .HasRecOperations()
+               .AddOperation("Heat 33")
+               .SetSetPoint(33);
             Console.WriteLine("-------------------");
             Report.reportMasterRecipes();
             Console.WriteLine("-------------------");
@@ -277,7 +286,7 @@ namespace ConsoleTesting
         {
             foreach (EQControlLoop l in contx.Units.SelectMany(g => g.UnitLoops).Where(g => g.UnitID == u.UnitID))
             {
-                line = "loop-----------" +l.EquipName + "   ";
+                line = "loop-----------" +l.EquipName + "   SP:" + l.SetPoint.ToString();
                 Console.WriteLine(line);
             }
 

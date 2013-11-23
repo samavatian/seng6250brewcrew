@@ -20,4 +20,3 @@ C:\JamesWorkingFolders\Visual Studio 2012\Projects\NewRepBrewMLLib\seng6250brewc
 C:\JamesWorkingFolders\Visual Studio 2012\Projects\NewRepBrewMLLib\seng6250brewcrew-master\seng6250brewcrew-master\seng6250brewcrew\BrewMLLib\BrewMLLib\bin\Debug\BrewMLLib.pdb
 C:\JamesWorkingFolders\Visual Studio 2012\Projects\NewRepBrewMLLib\seng6250brewcrew-master\seng6250brewcrew-master\seng6250brewcrew\BrewMLLib\BrewMLLib\obj\Debug\BrewMLLib.Migrations.init.resources
 C:\JamesWorkingFolders\Visual Studio 2012\Projects\NewRepBrewMLLib\seng6250brewcrew-master\seng6250brewcrew-master\seng6250brewcrew\BrewMLLib\BrewMLLib\obj\Debug\BrewMLLib.csproj.GenerateResource.Cache
-C:\JamesWorkingFolders\Visual Studio 2012\Projects\NewRepBrewMLLib\seng6250brewcrew-master\seng6250brewcrew-master\seng6250brewcrew\BrewMLLib\BrewMLLib\obj\Debug\BrewMLLib.csprojResolveAssemblyReference.cache

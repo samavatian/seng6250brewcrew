@@ -351,16 +351,18 @@ namespace BrewMLLib
         }
         public IFluentRecipeOperations AddAllowedUnits(string UnitName)
         {
+
+            //RecUnitOperation op = _operation;
             if (_recipe.RecOperations == null)
             {
                 return this;
             }
             else
             {
-                foreach (RecUnitOperation op in _recipe.RecOperations.ToList())
+                //foreach (RecUnitOperation op in _recipe.RecOperations.ToList())
                 {
                     //_operation = _recipe.RecOperations.FirstOrDefault();
-                    contx.AddUnitToRecUnitOperation(op, UnitName);
+                    contx.AddUnitToRecUnitOperation(_operation, UnitName);
                 }
             }
             return this;
