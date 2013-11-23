@@ -86,9 +86,9 @@ namespace BrewMLLib
 
         public void DoSomething(int blah) { }
 
-       
+        public int PlantID { get; set; }
         public virtual Plant Plant { get; set; }
-        
+        public int UnitID { get; set; }
         public virtual Unit Unit { get; set; }
 
         //public virtual Plant Plant { get; set; }
@@ -99,10 +99,15 @@ namespace BrewMLLib
         //[ForeignKey("Plant")]
         //public int PlantID { get; set; }
 
-        public virtual EQType EQType { get; set; }
+        //[Required]
+        //[ForeignKey("Unit")]
+        //public int UnitID { get; set; }
+
+        //public EQType EQType { get; set; }
         //james - nov 17 see if we can just work with entity types and not they keys
-        //[ForeignKey("EQType")]
-        //public int EQTypeID { get; set; }
+        [ForeignKey("EQType")]
+        public int EQTypeID { get; set; }
+        public virtual EQType EQType { get; set; }
 
     }
     /// <summary>
@@ -114,15 +119,21 @@ namespace BrewMLLib
         public int OnOff { get; set; }
         public int Running { get; set; }
 
-
-        public virtual Plant Plant { get; set; }
         [Required]
         [ForeignKey("Plant")]
         public int PlantID { get; set; }
+        public virtual Plant Plant { get; set; }
+       
 
-        public virtual EQType EQType { get; set; }
+        //[Required]
+        [ForeignKey("Unit")]
+        public int UnitID { get; set; }
+        public virtual Unit Unit { get; set; }
+
         [ForeignKey("EQType")]
         public int EQTypeID { get; set; }
+        public virtual EQType EQType { get; set; }
+        
     }
 
     public class EQVessel : BaseEquip
@@ -133,15 +144,20 @@ namespace BrewMLLib
         public float MinVolume { get; set; }
         public float MaxTemp { get; set; }
 
-
-        public virtual Plant Plant { get; set; }
         [Required]
         [ForeignKey("Plant")]
         public int PlantID { get; set; }
+        public virtual Plant Plant { get; set; }
 
-        public virtual EQType EQType { get; set; }
+        [ForeignKey("Unit")]
+        public int UnitID { get; set; }
+        public virtual Unit Unit { get; set; }
+
+
         [ForeignKey("EQType")]
         public int EQTypeID { get; set; }
+        public virtual EQType EQType { get; set; }
+       
 
     }
 
@@ -161,14 +177,14 @@ namespace BrewMLLib
         /// <summary>
         /// potential units that can feed this unit
         /// </summary>
-        public virtual ICollection<Unit> InputUnits { get; set; }
+        public ICollection<Unit> InputUnits { get; set; }
         /// <summary>
         /// potential units that output of this unit can feed
         /// </summary>
         //[InverseProperty("UnitID")]
         public virtual ICollection<Unit> OutputUnits { get; set; }
         //[InverseProperty("UnitOperationID")]
-        public virtual ICollection<EQUnitOperation> AvailableOperations { get; set; }
+        public ICollection<EQUnitOperation> AvailableEQOperations { get; set; }
 
         //[InverseProperty]
         //[InverseProperty("BaseEquipID")]
@@ -182,10 +198,13 @@ namespace BrewMLLib
 
         //        public void AddLoop(EQControlLoop loop) { EQControlLoops.Add(loop); }
 
+        [ForeignKey("Plant")]
+        public int PlantID { get; set; }
         public virtual Plant Plant { get; set; }
         //[Required]
-        //[ForeignKey("Plant")]
-        //public int PlantID { get; set; }
+
+
+        public virtual ICollection<RecUnitOperation> RecUnitOperations { get; set; }
 
     }
 
@@ -248,7 +267,10 @@ namespace BrewMLLib
         public string BatchName { get; set; }
         public string BatchLocation { get; set; }
 
-        public MasterRecipe BatchRecipe { get; set; }
+
+        [ForeignKey("MasterRecipe")]
+        public int MasterRecipeID { get; set; }
+        public virtual MasterRecipe MasterRecipe { get; set; }
 
         public virtual ICollection<Unit> AllocatedUnits { get; set; }
 
@@ -302,13 +324,16 @@ namespace BrewMLLib
 
         //public string Transition_WhatEndsThisOperation { get; set; }
 
-        public List<Transition> Transitions { get; set; }
+        public virtual ICollection<Transition> Transitions { get; set; }
         public bool AllTransitionsTrue { get; set; }
 
         /// <summary>
         /// Navigation property
         /// </summary>
         public virtual ICollection<Unit> AllowedUnits { get; set; }
+
+
+        public virtual ICollection<MasterRecipe> MasterRecipes { get; set; }
 
     }
 
@@ -338,6 +363,9 @@ namespace BrewMLLib
 
         public Operants operant { get; set; }
 
+        public virtual ICollection<RecUnitOperation> RecUnitOperations { get; set; }
+
+
     }
 
 
@@ -354,7 +382,7 @@ namespace BrewMLLib
         public int AmountNeeded { get; set; }
         public int? AmountActuallyRecieved { get; set; }
 
-        public virtual IngredientType IngredientType { get; set; }
+        public IngredientType IngredientType { get; set; }
         [ForeignKey("IngredientType")]
         public int IngredientTypeID { get; set; }
     }

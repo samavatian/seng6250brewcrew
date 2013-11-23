@@ -50,8 +50,12 @@ namespace BrewMLLib
 
         IFluentRecipeOperations SetSetPoint(float SetPoint);
 
-        IFluentRecipeOperations HasTransitions();
-        IFluentRecipeOperations HasAllowedUnits();
+        IFluentTransitions HasTransitions();
+
+        IFluentRecipeOperations AddAllowedUnits(string UnitName);
+        IFluentRecipeOperations AddAllowedUnits(string OpName, string UnitName);
+
+        //IFluentUnit HasAllowedUnits();
 
         //IFluentRecipe Final();
     }
@@ -62,10 +66,11 @@ namespace BrewMLLib
         
 
 //        IFluentTransitions AddTranstion(string Name);
-        IFluentTransitions AddTranstion(string Name, string loopname, Operants op, float SetPoint);
-        IFluentTransitions ForTranstion(string Name);
+//        IFluentTransitions AddTransition(string Name, string loopname, Operants op, float SetPoint);
+        IFluentTransitions AddTransition(string Name);
+        IFluentTransitions ForTransition(string Name);
 
-        IFluentTransitions GetTranstion();
+        IFluentTransitions GetTransition();
 
         IFluentTransitions SetName(string Name);
         IFluentTransitions SetTime(int Time);
@@ -86,7 +91,7 @@ namespace BrewMLLib
         private MasterRecipe _recipe;
         private BrewDBContext contx = new BrewDBContext();
 
-        private bool _isnew;
+        //private bool _isnew;
         
 
         public MasterRecipe GetRecipe()
@@ -99,26 +104,28 @@ namespace BrewMLLib
         {
             //FluentRecipe recactions = new FluentRecipe();
 
-            _recipe = contx.MasterRecipes.FirstOrDefault(g => g.BrandName == s);
-            _isnew = false;
+            _recipe = contx.CreateMasterRecipe(s);
 
-            if (_recipe == null)
-            {
-                _isnew = true;
-                _recipe = new MasterRecipe();
+//            _recipe = contx.MasterRecipes.FirstOrDefault(g => g.BrandName == s);
+            //_isnew = false;
 
-                _recipe.BrandDescription = "default";
-                _recipe.BrandName = s;
-                _recipe.Ingredients = new List<Ingredient>();
-                _recipe.RecOperations = new List<RecUnitOperation>();
-                _recipe.QaulityTargets = "default";
+            //if (_recipe == null)
+            //{
+            //    _isnew = true;
+            //    _recipe = new MasterRecipe();
 
-                _recipe.Plants = new List<Plant>();
+            //    _recipe.BrandDescription = "default";
+            //    _recipe.BrandName = s;
+            //    _recipe.Ingredients = new List<Ingredient>();
+            //    _recipe.RecOperations = new List<RecUnitOperation>();
+            //    _recipe.QaulityTargets = "default";
 
-                contx.MasterRecipes.Add(_recipe);
-                contx.SaveChanges();
+            //    _recipe.Plants = new List<Plant>();
 
-            }
+            //    contx.MasterRecipes.Add(_recipe);
+            //    contx.SaveChanges();
+
+            //}
 
             return this;
 
@@ -162,7 +169,7 @@ namespace BrewMLLib
         {
 
             
-            IFluentRecipeOperations op = new FluentRecipeOperations(this);
+            IFluentRecipeOperations op = new FluentRecipeOperations(this._recipe);
 
             
 
@@ -173,7 +180,7 @@ namespace BrewMLLib
         {
 
 
-            IFluentRecipeOperations op = new FluentRecipeOperations(this,s);
+            IFluentRecipeOperations op = new FluentRecipeOperations(this._recipe,s);
 
 
 
@@ -202,21 +209,21 @@ namespace BrewMLLib
         //}
 
 
-        public IFluentRecipe Final()
-        {
+        //public IFluentRecipe Final()
+        //{
 
-            if (_isnew)
-            {
-                contx.MasterRecipes.Add(_recipe);
-            }
-            //else
-            //{
+        //    if (_isnew)
+        //    {
+        //        contx.MasterRecipes.Add(_recipe);
+        //    }
+        //    //else
+        //    //{
 
-            //    //cont.SaveChanges();
-            //}
-            contx.SaveChanges();
-            return this;
-        }
+        //    //    //cont.SaveChanges();
+        //    //}
+        //    contx.SaveChanges();
+        //    return this;
+        //}
     }
 
 
@@ -229,22 +236,22 @@ namespace BrewMLLib
     {
 
 
-        private IFluentRecipe _parent;
+        //private IFluentRecipe _parent;
         private RecUnitOperation _operation;
+        private MasterRecipe _recipe;
         private BrewDBContext contx = new BrewDBContext();
         private bool _isnew;
 
 
 
-        public FluentRecipeOperations(IFluentRecipe parent, string s)
+        public FluentRecipeOperations(MasterRecipe parent, string s)
         {
-            _isnew = false;
-            _parent = parent;
-            MasterRecipe rec = _parent.GetRecipe();
-
+           
+            //MasterRecipe rec = parent;
+            _recipe = parent;
 //            _operation =_parent.GetRecipe().RecOperations.FirstOrDefault(g=>g.OperationName==s);
             //_operation = contx.MasterRecipes.FirstOrDefault(g => g.BrandName == rec.BrandName).RecOperations.FirstOrDefault(e => e.OperationName == s);
-            _operation = rec.RecOperations.FirstOrDefault(g => g.OperationName == s);
+            _operation = _recipe.RecOperations.FirstOrDefault(g => g.OperationName == s);
 
             //if (_operation == null)
             //{
@@ -254,11 +261,9 @@ namespace BrewMLLib
 
             //}
         }
-        public FluentRecipeOperations(IFluentRecipe parent)
+        public FluentRecipeOperations(MasterRecipe parent)
         {
-            _isnew = false;
-            _parent = parent;
-            MasterRecipe rec = _parent.GetRecipe();
+            _recipe = parent;
         }
 
 
@@ -270,41 +275,48 @@ namespace BrewMLLib
 
 
 
-        public IFluentRecipeOperations AddOperation(string s)
+        public IFluentRecipeOperations AddOperation(string Name)
         {
 
+
+            _operation = contx.AddRecUnitOperation(_recipe,  Name);
+
+            
             //_operation = contx.MasterRecipes.FirstOrDefault(g => g.BrandName == s);
-            MasterRecipe rec = _parent.GetRecipe();
-            _operation = rec.RecOperations.FirstOrDefault(g => g.OperationName == s);
+            //MasterRecipe rec = _parent.GetRecipe();
+            //_operation = rec.RecOperations.FirstOrDefault(g => g.OperationName == s);
 
-            _isnew = false;
+            //_isnew = false;
 
-            if (_operation == null)
-            {
+            //if (_operation == null)
+            //{
 
-                _isnew = true;
-                _operation = new RecUnitOperation();
+            //    _isnew = true;
+            //    _operation = new RecUnitOperation();
 
-                _operation.OperationName = s;
-                _operation.SetPoint = 0;
-                _operation.Transitions = new List<Transition>();
-                _operation.AllowedUnits = new List<Unit>();
-                
+            //    _operation.OperationName = s;
+            //    _operation.SetPoint = 0;
+            //    _operation.Transitions = new List<Transition>();
+            //    _operation.AllowedUnits = new List<Unit>();
 
-                contx.RecUnitOperations.Add(_operation);
-                contx.SaveChanges();
 
-                contx.MasterRecipes.FirstOrDefault(f => f.BrandName == rec.BrandName).RecOperations.Add(_operation);
+            //    contx.RecUnitOperations.Add(_operation);
+            //    contx.SaveChanges();
 
-                contx.SaveChanges();
-            }
+            //    contx.MasterRecipes.FirstOrDefault(f => f.BrandName == rec.BrandName).RecOperations.Add(_operation);
+
+            //    contx.SaveChanges();
+            //}
 
             return this;
         }
 
-        public IFluentRecipeOperations ForOperation(string s)
+        public IFluentRecipeOperations ForOperation(string Name)
         {
-            _operation = contx.RecUnitOperations.FirstOrDefault(g => g.OperationName == s);
+
+            _operation = contx.MasterRecipes.FirstOrDefault(g => g.MasterRecipeID == _recipe.MasterRecipeID).RecOperations.FirstOrDefault(s => s.OperationName == Name);
+
+//            _operation = contx.RecUnitOperations.FirstOrDefault(g => g.OperationName == s);
 
             return this;
         }
@@ -316,16 +328,43 @@ namespace BrewMLLib
             return this;
         }
 
-        public IFluentRecipeOperations HasTransitions()
+        public IFluentTransitions HasTransitions()
         {
+            FluentTransition tran = new FluentTransition(_operation);
+ 
+            return tran;
+        }
+
+        //public IFluentUnit HasAllowedUnits()
+        //{
+
+        //    FluentUnit u = new FluentUnit();
+        //    return u;
+        //}
+        public IFluentRecipeOperations AddAllowedUnits(string OpName, string UnitName)
+        {
+
+           
+                contx.AddUnitToRecUnitOperation(_operation, UnitName);
             
             return this;
         }
-        public IFluentRecipeOperations HasAllowedUnits()
+        public IFluentRecipeOperations AddAllowedUnits(string UnitName)
         {
+            if (_recipe.RecOperations == null)
+            {
+                return this;
+            }
+            else
+            {
+                foreach (RecUnitOperation op in _recipe.RecOperations.ToList())
+                {
+                    //_operation = _recipe.RecOperations.FirstOrDefault();
+                    contx.AddUnitToRecUnitOperation(op, UnitName);
+                }
+            }
             return this;
         }
-
 
         //public IFluentRecipe Final()
         //{
@@ -356,60 +395,61 @@ namespace BrewMLLib
     public class FluentTransition: IFluentTransitions
     {
 
-        private IFluentRecipeOperations _parent;
+        //private IFluentRecipeOperations _parent;
+        private RecUnitOperation _operation;
         private Transition _transition;
         private BrewDBContext contx = new BrewDBContext();
         private bool _isnew;
 
 
 
-        public FluentTransition(IFluentRecipeOperations parent)
+        public FluentTransition(RecUnitOperation op)
         {
-            _parent = parent;
-            _isnew = false;
+            _operation = op;
+
 
         }
-        public FluentTransition()
+        public FluentTransition(RecUnitOperation op, string Name)
         {
-            //_parent = parent;
-            _isnew = false;
+            _transition = contx.RecUnitOperations.FirstOrDefault(i => i.RecUnitOperationID == op.RecUnitOperationID).Transitions.FirstOrDefault(s => s.TransitionName == Name);
+
 
         }
 
 
 
-        public IFluentTransitions AddTranstion(string s, string loopname, Operants op, float SetPoint)
+        public IFluentTransitions AddTransition(string TranName)
         {
-            RecUnitOperation r = _parent.GetRecUnitOperation();
+            //RecUnitOperation r = _parent.GetRecUnitOperation();
 
-            _transition = contx.Transitions.FirstOrDefault(g => g.TransitionName == s);
+            _transition = contx.Transitions.FirstOrDefault(g => g.TransitionName == TranName);
 
-            if (_transition == null)
-            {
+            //if (_transition == null)
+            //{
 
-                _isnew = true;
+            //    _isnew = true;
 
-                _transition.TransitionName = s;
+            //    _transition.TransitionName = s;
                 
-                _transition.loop = contx.EQControlLoops.FirstOrDefault(k => k.EquipName == loopname);
-                _transition.operant = op;
-                //_transition.SetPoint = 
+            //    _transition.loop = contx.EQControlLoops.FirstOrDefault(k => k.EquipName == loopname);
+            //    _transition.operant = op;
+            //    //_transition.SetPoint = 
 
 
 
-            }
+            //}
 
             return this;
 
         }
-        public IFluentTransitions ForTranstion(string s)
+        public IFluentTransitions ForTransition(string s)
         {
 
 
             return this;
         }
 
-        public IFluentTransitions GetTranstion()
+        public IFluentTransitions GetTransition()
         {
 
 

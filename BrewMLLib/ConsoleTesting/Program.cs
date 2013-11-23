@@ -122,14 +122,18 @@ namespace ConsoleTesting
 
             FluentUnit fu = new FluentUnit();
 
+
+            Report.reportUnits();
+
             //fu.AddUnit("test unit 1","Big Jakes");
 
             pd.ForPlant("Big Jakes").HasUnits().AddUnit("test unit 1");
 
-
+            Report.reportUnits();
             pd.ForPlant("Little Jakes").HasUnits().AddUnit("test unit 1");
+            Report.reportUnits(); 
             pd.ForPlant("Big Jakes").HasUnits().AddUnit("test unit 1");
-
+            Report.reportUnits();
             //pd.ForPlant("Little Jakes").HasLoopsInUnit("test unit 1").AddControlLoop("ValveXV1321");
 
             //fu.ForUnit("test unit 1").HasLoops().AddControlLoop("ValveXV1321");
@@ -142,10 +146,9 @@ namespace ConsoleTesting
             //Console.WriteLine(pd.ForPlant("Big Jakes").HasLoops("ValveXV1321").GetSetPoint());
 
             //Console.WriteLine(pd.ForPlant("Big Jakes").HasLoops("ValveXV1321").GetSetPoint());
+            Report.reportUnits();
             Console.WriteLine("---------------------------------------------");
-            Console.WriteLine("-------------------");
-
-            Console.WriteLine("-------------------");
+            
             Console.WriteLine("Recipe Test ");
 
 
@@ -193,9 +196,20 @@ namespace ConsoleTesting
                 .AddOperation("cool phase 4")
                 .SetSetPoint(155);
             //.Final().Final();
+            Console.WriteLine("-------------------");
+            Report.reportMasterRecipes();
+            rec.ForRecipe("So Smooth").HasRecOperations().AddAllowedUnits("again");
 
+            Console.WriteLine("-------------------"); 
+            Report.reportMasterRecipes();
+            rec.ForRecipe("So Smooth").HasRecOperations("cool phase 3").AddAllowedUnits("asdfasdf").AddAllowedUnits("asdfaddsdf");
+            
+            Console.WriteLine("-------------------");
+            Report.reportMasterRecipes();
+            rec.ForRecipe("So Smooth").HasRecOperations().AddAllowedUnits("test unit 1");
 
-
+            Console.WriteLine("-------------------");
+            Report.reportMasterRecipes();
             Console.WriteLine("-------------------");
 
             Console.WriteLine("-------------------");
@@ -205,6 +219,14 @@ namespace ConsoleTesting
 
             Report.reportit();
 
+
+            Report.reportPlants();
+            Console.WriteLine("-------------------");
+
+            Console.WriteLine("-------------------");
+
+            Console.WriteLine("-------------------");
+            Report.reportMasterRecipes();
             Console.WriteLine("hit key");
             var name = Console.ReadLine();
 
@@ -219,6 +241,138 @@ namespace ConsoleTesting
 
         BrewDBContext contx = new BrewDBContext();
         string line = "";
+
+
+        public void reportPlants()
+        {
+                
+            line = " ";
+
+            Console.WriteLine(line);
+            foreach (Plant p in contx.Plants.ToList())
+            {
+                line = "plant-----" + p.PlantName + "------------------------";
+                Console.WriteLine(line);
+                reportUnits(p);
+                
+            }
+
+        }
+
+
+        public void reportUnits(Plant p)
+        {
+
+            foreach (Unit u in contx.Plants.SelectMany(g => g.Units).Where(g => g.PlantID == p.PlantID))
+            {
+                line = "unit--------" + u.UnitName + "   ";
+                Console.WriteLine(line);
+                reportControlLoops(u);
+            }
+
+
+        }
+
+        public void reportControlLoops(Unit u)
+        {
+            foreach (EQControlLoop l in contx.Units.SelectMany(g => g.UnitLoops).Where(g => g.UnitID == u.UnitID))
+            {
+                line = "loop-----------" +l.EquipName + "   ";
+                Console.WriteLine(line);
+            }
+
+        }
+
+        public void reportMasterRecipes()
+        {
+
+
+//            List<MasterRecipe> rr = new List<MasterRecipe>();
+
+            //rr = contx.MasterRecipes.ToList();
+
+
+            foreach (MasterRecipe r in contx.MasterRecipes.ToList())
+            {
+
+                line = "Brand-----------" + r.BrandName + "   ";
+                Console.WriteLine(line);
+                reportUnitOperation(r);
+               
+            }
+
+
+
+        }
+
+        public void reportMasterRecipe(Plant p)
+        {
+            List<MasterRecipe> rr = new List<MasterRecipe>();
+
+            rr = contx.Plants.SelectMany(g => g.ThisPlantsBrands).ToList();
+
+            foreach (MasterRecipe r in rr)
+            {
+                line = "Brand-----------" + r.BrandName + "   ";
+                Console.WriteLine(line);
+                reportUnitOperation(r);
+
+            }
+
+        }
+        public void reportUnitOperation(MasterRecipe r)
+        {
+            //            foreach (RecUnitOperation ru in contx.MasterRecipes.SelectMany(g => g.RecOperations).ToList())
+//            foreach (RecUnitOperation ru in r.RecOperations.ToList())
+
+            List<RecUnitOperation> list = new List<RecUnitOperation>();
+            List<Unit> lunit = new List<Unit>();
+            
+            //list = contx.MasterRecipes.FirstOrDefault(s => s.MasterRecipeID == r.MasterRecipeID).RecOperations.ToList();
+
+            foreach (RecUnitOperation ru in contx.MasterRecipes.FirstOrDefault(s => s.MasterRecipeID == r.MasterRecipeID).RecOperations.ToList()) 
+            {
+                
+                line = "Operation-----------" + ru.OperationName + "   ";
+                Console.WriteLine(line);
+                lunit = contx.RecUnitOperations.FirstOrDefault(g => g.RecUnitOperationID == ru.RecUnitOperationID).AllowedUnits.ToList();
+                
+                reportUnits(lunit);
+            }
+
+        }
+
+        public void reportUnits(List<Unit> units)
+        {
+
+            foreach (Unit ru in units)
+            {   
+                line = "aUnits--------------------" + ru.UnitName + "   ";
+                Console.WriteLine(line);
+
+
+            }
+        }
+
+        public void reportUnits()
+        {
+            line = "Report Units In Plants";
+            Console.WriteLine(line);
+            foreach (Plant p in contx.Plants.ToList())
+            {
+
+                line = " ";
+                Console.WriteLine(line);
+                line = "---" + p.PlantName + "------------------------";
+                Console.WriteLine(line);
+                foreach (Unit u in contx.Plants.SelectMany(g=>g.Units).Where(g=>g.PlantID == p.PlantID))
+                {
+                    line = "  " + u.UnitName + "   ";
+                    Console.WriteLine(line);
+                }
+
+            }
+        }
 
         public void reportit()
         {
@@ -245,8 +399,8 @@ namespace ConsoleTesting
             {
 
                 line = " ";
-                Console.WriteLine(line);
-                Console.WriteLine(line);
+                //Console.WriteLine(line);
+                //Console.WriteLine(line);
                 Console.WriteLine(line);
                 line = "--------------------" + p.PlantName + "------------------------";
                 Console.WriteLine(line);

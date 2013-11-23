@@ -61,7 +61,7 @@ namespace BrewMLLib
         private Plant _plant;
         private List<EQControlLoop> _loops;
         private IFluentPlant _parent;
-        private bool _isnew;
+        //private bool _isnew;
 
         BrewDBContext contx = new BrewDBContext();
 

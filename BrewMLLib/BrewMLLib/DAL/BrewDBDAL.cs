@@ -26,7 +26,7 @@ namespace BrewMLLib
         public BrewDBContext()
             : base("DefaultConnection")
         {
-
+            //this.Configuration.LazyLoadingEnabled = false;
             //Database.SetInitializer(new DropCreateDatabaseIfModelChanges<BrewDBContext>());
 
         }
@@ -60,16 +60,16 @@ namespace BrewMLLib
             //modelBuilder.Entity<Unit>().HasMany(e => e.EQControlLoops).WithRequired(e => e.Unit);
 
 
-            modelBuilder.Entity<Plant>().HasMany(e => e.PlantLoops).WithRequired(g => g.Plant);
+            modelBuilder.Entity<Plant>().HasMany(e => e.PlantLoops).WithRequired(g => g.Plant).WillCascadeOnDelete(false);
                 
-            modelBuilder.Entity<Plant>().HasMany(e => e.PlantAux).WithRequired(e => e.Plant);
+            modelBuilder.Entity<Plant>().HasMany(e => e.PlantAux).WithRequired(e => e.Plant).WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<Plant>().HasMany(e => e.PlantVessels).WithRequired(e => e.Plant);
+            modelBuilder.Entity<Plant>().HasMany(e => e.PlantVessels).WithRequired(e => e.Plant).WillCascadeOnDelete(false);
 
 
             //modelBuilder.Entity<Plant>().HasMany(e=>e.ThisPlantsBrands).WithMany(e=>e.pla
-
-
+            //modelBuilder.Entity<EQControlLoop>().w
+            
         }
 
 
@@ -94,8 +94,16 @@ namespace BrewMLLib
             plant.PlantLocation = newplant.PlantLocation;
             plant.PlantName = newplant.PlantName;
             plant.Units = new List<Unit>();
+            //Unit unit = new Unit();
+            //unit = cont.CreateUnit(plant.PlantID, "default");
+            //plant.Units.Add(unit);
 
             cont.Plants.Add(plant);
+            cont.SaveChanges();
+            Unit unit = new Unit();
+            //plant = cont.GetPlantByPlantName(plant.PlantName);
+            unit = cont.CreateUnit(plant.PlantID, "default");
+            cont.Plants.FirstOrDefault(g => g.PlantID == plant.PlantID).Units.Add(unit);
             cont.SaveChanges();
 
             Plant plantreturn = cont.Plants.FirstOrDefault(e => e.PlantID == plant.PlantID);
@@ -194,7 +202,10 @@ namespace BrewMLLib
             {
                 _loop.Unit = contx.Units.FirstOrDefault(e => e.UnitID == unit.UnitID);
             }
-
+            else
+            {
+                _loop.Unit = _loop.Plant.Units.First();
+            }
             //if (unit != null)
             //{
             //    _loop.Unit = contx.Units.FirstOrDefault(u => u.UnitID == unit.UnitID);
@@ -316,24 +327,28 @@ namespace BrewMLLib
 
 
 
-                unit = new Unit();
+                unit = contx.Units.Create();
 
                 //if (_plant != null)
 //                unit.Plant = contx.Plants.FirstOrDefault(h => h.PlantID == p.PlantID);
                 unit.Plant = p;
                 unit.UnitName = unitname;
-                unit.AvailableOperations = new List<EQUnitOperation>();
+                unit.AvailableEQOperations = new List<EQUnitOperation>();
                 unit.InputUnits = new List<Unit>();
                 unit.OutputUnits = new List<Unit>();
                 unit.UnitAux = new List<EQAuxilary>();
                 unit.UnitLoops = new List<EQControlLoop>();
                 unit.UnitVessels = new List<EQVessel>();
 
-                contx.Units.Add(unit);
+//                contx.Units.Add(unit);
+
+                contx.Plants.FirstOrDefault(g => g.PlantID == p.PlantID).Units.Add(unit);
+
+
                 contx.SaveChanges();
                 //if (_plant != null)
-                contx.Plants.FirstOrDefault(g => g.PlantID == unit.Plant.PlantID).Units.Add(contx.Units.FirstOrDefault(e => e.UnitName == unit.UnitName));
-                contx.SaveChanges();
+                //contx.Plants.FirstOrDefault(g => g.PlantID == unit.Plant.PlantID).Units.Add(contx.Units.FirstOrDefault(e => e.UnitName == unit.UnitName));
+                //contx.SaveChanges();
 
             }
             //else
@@ -347,6 +362,7 @@ namespace BrewMLLib
             //    contx.SaveChanges();
 
             //}
+            contx.SaveChanges();
             unit = contx.Units.FirstOrDefault(l => l.UnitName == unitname);
             return unit;
 
@@ -363,7 +379,116 @@ namespace BrewMLLib
         //----------------------------------------------------------------------------------------------------
 
 
+        public MasterRecipe CreateMasterRecipe(string Name)
+        {
 
+            BrewDBContext cont = new BrewDBContext();
+
+            MasterRecipe _recipe = new MasterRecipe();
+            MasterRecipe recip = cont.MasterRecipes.FirstOrDefault(g => g.BrandName == Name);
+
+            if (recip == null)
+            {
+                _recipe = cont.MasterRecipes.Create();
+
+
+                _recipe.BrandDescription = "default";
+                _recipe.BrandName = Name;
+                _recipe.Ingredients = new List<Ingredient>();
+                _recipe.RecOperations = new List<RecUnitOperation>();
+                _recipe.QaulityTargets = "default";
+
+                _recipe.Plants = new List<Plant>();
+
+                cont.MasterRecipes.Add(_recipe);
+                cont.SaveChanges();
+                recip = cont.MasterRecipes.FirstOrDefault(g => g.MasterRecipeID == _recipe.MasterRecipeID);
+
+            }
+            return recip;
+
+
+        }
+
+
+        public RecUnitOperation AddRecUnitOperation(MasterRecipe recx, string Name)
+        {
+
+            BrewDBContext cont = new BrewDBContext();
+            MasterRecipe rec = cont.MasterRecipes.FirstOrDefault(g=>g.MasterRecipeID == recx.MasterRecipeID);
+            RecUnitOperation operation = cont.RecUnitOperations.Create();
+
+
+            operation = rec.RecOperations.FirstOrDefault(g => g.OperationName == Name);
+
+
+
+            if (operation == null)
+            {
+
+
+                operation = cont.RecUnitOperations.Create();
+
+                operation.OperationName = Name;
+                operation.SetPoint = 0;
+                operation.Transitions = new List<Transition>();
+                operation.AllowedUnits = new List<Unit>();
+
+                cont.MasterRecipes.FirstOrDefault(g => g.MasterRecipeID == recx.MasterRecipeID).RecOperations.Add(operation);
+
+                //cont.RecUnitOperations.Add(operation);
+                cont.SaveChanges();
+
+                //cont.MasterRecipes.FirstOrDefault(f => f.BrandName == rec.BrandName).RecOperations.Add(_operation);
+
+                //cont.SaveChanges();
+
+            }
+            //else
+            //{
+
+
+            //}
+
+
+            return operation;
+
+
+        }
+
+
+        public RecUnitOperation AddUnitToRecUnitOperation(RecUnitOperation op, string Name)
+        {
+            BrewDBContext contx = new BrewDBContext();
+
+            Unit u = contx.Units.FirstOrDefault(s => s.UnitName == Name);
+            RecUnitOperation opx = contx.RecUnitOperations.FirstOrDefault(g => g.RecUnitOperationID == op.RecUnitOperationID);
+
+            if (u != null)
+            {
+                contx.RecUnitOperations.FirstOrDefault(g => g.RecUnitOperationID == op.RecUnitOperationID).AllowedUnits.Add(u);
+
+                contx.SaveChanges();
+
+
+            }
+            return opx;
+
+        }
+
+
+        public Transition AddTransition(RecUnitOperation op, string Name)
+        {
+
+            BrewDBContext cont = new BrewDBContext();
+            //MasterRecipe rec = cont.MasterRecipes.FirstOrDefault(g => g.MasterRecipeID == MasterRecipeID);
+            RecUnitOperation operation = new RecUnitOperation();
+            Transition tran = new Transition();
+
+            tran = cont.RecUnitOperations.FirstOrDefault(i => i.RecUnitOperationID == op.RecUnitOperationID).Transitions.FirstOrDefault(s => s.TransitionName == Name);
+
+            return tran;
+        }
         public List<MasterRecipe> AddMasterRecipeToPlant(int plantID, int masterRecipeID)
         {
 
@@ -388,6 +513,8 @@ namespace BrewMLLib
             List<MasterRecipe> recList = cont.Plants.SelectMany(g => g.ThisPlantsBrands).ToList();
             return recList;
         }
+
+
 
         //----------------------------------------------------------------------------------------------------
         //----------------------------------------------------------------------------------------------------

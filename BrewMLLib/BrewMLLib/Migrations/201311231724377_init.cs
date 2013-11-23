@@ -14,11 +14,11 @@ namespace BrewMLLib.Migrations
                         BatchID = c.Int(nullable: false, identity: true),
                         BatchName = c.String(),
                         BatchLocation = c.String(),
-                        BatchRecipe_MasterRecipeID = c.Int(),
+                        MasterRecipeID = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.BatchID)
-                .ForeignKey("dbo.MasterRecipes", t => t.BatchRecipe_MasterRecipeID)
-                .Index(t => t.BatchRecipe_MasterRecipeID);
+                .ForeignKey("dbo.MasterRecipes", t => t.MasterRecipeID, cascadeDelete: true)
+                .Index(t => t.MasterRecipeID);
             
             CreateTable(
                 "dbo.Units",
@@ -26,23 +26,20 @@ namespace BrewMLLib.Migrations
                     {
                         UnitID = c.Int(nullable: false, identity: true),
                         UnitName = c.String(),
+                        PlantID = c.Int(nullable: false),
                         EQUnitOperation_UnitOperationID = c.Int(),
                         CurrentBatch_BatchID = c.Int(),
                         CurrentEQOperation_UnitOperationID = c.Int(),
-                        RecUnitOperation_RecUnitOperationID = c.Int(),
-                        Plant_PlantID = c.Int(),
                     })
                 .PrimaryKey(t => t.UnitID)
                 .ForeignKey("dbo.EQUnitOperations", t => t.EQUnitOperation_UnitOperationID)
                 .ForeignKey("dbo.Batches", t => t.CurrentBatch_BatchID)
                 .ForeignKey("dbo.EQUnitOperations", t => t.CurrentEQOperation_UnitOperationID)
-                .ForeignKey("dbo.RecUnitOperations", t => t.RecUnitOperation_RecUnitOperationID)
-                .ForeignKey("dbo.Plants", t => t.Plant_PlantID)
+                .ForeignKey("dbo.Plants", t => t.PlantID, cascadeDelete: true)
                 .Index(t => t.EQUnitOperation_UnitOperationID)
                 .Index(t => t.CurrentBatch_BatchID)
                 .Index(t => t.CurrentEQOperation_UnitOperationID)
-                .Index(t => t.RecUnitOperation_RecUnitOperationID)
-                .Index(t => t.Plant_PlantID);
+                .Index(t => t.PlantID);
             
             CreateTable(
                 "dbo.EQUnitOperations",
@@ -76,19 +73,19 @@ namespace BrewMLLib.Migrations
                         OnOff = c.Int(nullable: false),
                         Running = c.Int(nullable: false),
                         PlantID = c.Int(nullable: false),
+                        UnitID = c.Int(nullable: false),
                         EQTypeID = c.Int(nullable: false),
                         EquipName = c.String(),
                         AssetTag = c.String(),
                         Description = c.String(),
-                        Unit_UnitID = c.Int(),
                     })
                 .PrimaryKey(t => t.BaseEquipID)
                 .ForeignKey("dbo.EQTypes", t => t.EQTypeID, cascadeDelete: true)
-                .ForeignKey("dbo.Plants", t => t.PlantID, cascadeDelete: true)
-                .ForeignKey("dbo.Units", t => t.Unit_UnitID)
+                .ForeignKey("dbo.Units", t => t.UnitID, cascadeDelete: true)
+                .ForeignKey("dbo.Plants", t => t.PlantID)
                 .Index(t => t.EQTypeID)
-                .Index(t => t.PlantID)
-                .Index(t => t.Unit_UnitID);
+                .Index(t => t.UnitID)
+                .Index(t => t.PlantID);
             
             CreateTable(
                 "dbo.EQTypes",
@@ -115,20 +112,20 @@ namespace BrewMLLib.Migrations
                         ReverseActing = c.Boolean(),
                         SimMeasValue = c.Single(),
                         EnableTrending = c.Boolean(nullable: false),
+                        PlantID = c.Int(nullable: false),
+                        UnitID = c.Int(nullable: false),
+                        EQTypeID = c.Int(nullable: false),
                         EquipName = c.String(),
                         AssetTag = c.String(),
                         Description = c.String(),
-                        EQType_EQTypeID = c.Int(),
-                        Unit_UnitID = c.Int(),
-                        Plant_PlantID = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.BaseEquipID)
-                .ForeignKey("dbo.EQTypes", t => t.EQType_EQTypeID)
-                .ForeignKey("dbo.Units", t => t.Unit_UnitID)
-                .ForeignKey("dbo.Plants", t => t.Plant_PlantID, cascadeDelete: true)
-                .Index(t => t.EQType_EQTypeID)
-                .Index(t => t.Unit_UnitID)
-                .Index(t => t.Plant_PlantID);
+                .ForeignKey("dbo.EQTypes", t => t.EQTypeID, cascadeDelete: true)
+                .ForeignKey("dbo.Units", t => t.UnitID, cascadeDelete: true)
+                .ForeignKey("dbo.Plants", t => t.PlantID)
+                .Index(t => t.EQTypeID)
+                .Index(t => t.UnitID)
+                .Index(t => t.PlantID);
             
             CreateTable(
                 "dbo.EQVessels",
@@ -140,19 +137,19 @@ namespace BrewMLLib.Migrations
                         MinVolume = c.Single(nullable: false),
                         MaxTemp = c.Single(nullable: false),
                         PlantID = c.Int(nullable: false),
+                        UnitID = c.Int(nullable: false),
                         EQTypeID = c.Int(nullable: false),
                         EquipName = c.String(),
                         AssetTag = c.String(),
                         Description = c.String(),
-                        Unit_UnitID = c.Int(),
                     })
                 .PrimaryKey(t => t.BaseEquipID)
                 .ForeignKey("dbo.EQTypes", t => t.EQTypeID, cascadeDelete: true)
-                .ForeignKey("dbo.Plants", t => t.PlantID, cascadeDelete: true)
-                .ForeignKey("dbo.Units", t => t.Unit_UnitID)
+                .ForeignKey("dbo.Units", t => t.UnitID, cascadeDelete: true)
+                .ForeignKey("dbo.Plants", t => t.PlantID)
                 .Index(t => t.EQTypeID)
-                .Index(t => t.PlantID)
-                .Index(t => t.Unit_UnitID);
+                .Index(t => t.UnitID)
+                .Index(t => t.PlantID);
             
             CreateTable(
                 "dbo.MasterRecipes",
@@ -201,11 +198,8 @@ namespace BrewMLLib.Migrations
                         OperationName = c.String(),
                         SetPoint = c.Single(nullable: false),
                         AllTransitionsTrue = c.Boolean(nullable: false),
-                        MasterRecipe_MasterRecipeID = c.Int(),
                     })
-                .PrimaryKey(t => t.RecUnitOperationID)
-                .ForeignKey("dbo.MasterRecipes", t => t.MasterRecipe_MasterRecipeID)
-                .Index(t => t.MasterRecipe_MasterRecipeID);
+                .PrimaryKey(t => t.RecUnitOperationID);
             
             CreateTable(
                 "dbo.Transitions",
@@ -219,13 +213,10 @@ namespace BrewMLLib.Migrations
                         EvaluateCondition = c.Boolean(),
                         operant = c.Int(nullable: false),
                         loop_BaseEquipID = c.Int(),
-                        RecUnitOperation_RecUnitOperationID = c.Int(),
                     })
                 .PrimaryKey(t => t.TransitionID)
                 .ForeignKey("dbo.EQControlLoops", t => t.loop_BaseEquipID)
-                .ForeignKey("dbo.RecUnitOperations", t => t.RecUnitOperation_RecUnitOperationID)
-                .Index(t => t.loop_BaseEquipID)
-                .Index(t => t.RecUnitOperation_RecUnitOperationID);
+                .Index(t => t.loop_BaseEquipID);
             
             CreateTable(
                 "dbo.CollectionOfTestEntities",
@@ -292,30 +283,72 @@ namespace BrewMLLib.Migrations
                 .Index(t => t.MasterRecipe_MasterRecipeID)
                 .Index(t => t.Plant_PlantID);
             
+            CreateTable(
+                "dbo.RecUnitOperationUnits",
+                c => new
+                    {
+                        RecUnitOperation_RecUnitOperationID = c.Int(nullable: false),
+                        Unit_UnitID = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => new { t.RecUnitOperation_RecUnitOperationID, t.Unit_UnitID })
+                .ForeignKey("dbo.RecUnitOperations", t => t.RecUnitOperation_RecUnitOperationID, cascadeDelete: true)
+                .ForeignKey("dbo.Units", t => t.Unit_UnitID, cascadeDelete: true)
+                .Index(t => t.RecUnitOperation_RecUnitOperationID)
+                .Index(t => t.Unit_UnitID);
+            
+            CreateTable(
+                "dbo.RecUnitOperationMasterRecipes",
+                c => new
+                    {
+                        RecUnitOperation_RecUnitOperationID = c.Int(nullable: false),
+                        MasterRecipe_MasterRecipeID = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => new { t.RecUnitOperation_RecUnitOperationID, t.MasterRecipe_MasterRecipeID })
+                .ForeignKey("dbo.RecUnitOperations", t => t.RecUnitOperation_RecUnitOperationID, cascadeDelete: true)
+                .ForeignKey("dbo.MasterRecipes", t => t.MasterRecipe_MasterRecipeID, cascadeDelete: true)
+                .Index(t => t.RecUnitOperation_RecUnitOperationID)
+                .Index(t => t.MasterRecipe_MasterRecipeID);
+            
+            CreateTable(
+                "dbo.TransitionRecUnitOperations",
+                c => new
+                    {
+                        Transition_TransitionID = c.Int(nullable: false),
+                        RecUnitOperation_RecUnitOperationID = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => new { t.Transition_TransitionID, t.RecUnitOperation_RecUnitOperationID })
+                .ForeignKey("dbo.Transitions", t => t.Transition_TransitionID, cascadeDelete: true)
+                .ForeignKey("dbo.RecUnitOperations", t => t.RecUnitOperation_RecUnitOperationID, cascadeDelete: true)
+                .Index(t => t.Transition_TransitionID)
+                .Index(t => t.RecUnitOperation_RecUnitOperationID);
+            
         }
         
         public override void Down()
         {
             DropForeignKey("dbo.TestEntitieTwoes", "CollectionOfTestEntitie_CollectionOfTestEntitieID", "dbo.CollectionOfTestEntities");
             DropForeignKey("dbo.TestEntities", "CollectionOfTestEntitie_CollectionOfTestEntitieID", "dbo.CollectionOfTestEntities");
-            DropForeignKey("dbo.Batches", "BatchRecipe_MasterRecipeID", "dbo.MasterRecipes");
-            DropForeignKey("dbo.EQVessels", "Unit_UnitID", "dbo.Units");
-            DropForeignKey("dbo.EQAuxilaries", "Unit_UnitID", "dbo.Units");
-            DropForeignKey("dbo.Units", "Plant_PlantID", "dbo.Plants");
-            DropForeignKey("dbo.RecUnitOperations", "MasterRecipe_MasterRecipeID", "dbo.MasterRecipes");
-            DropForeignKey("dbo.Transitions", "RecUnitOperation_RecUnitOperationID", "dbo.RecUnitOperations");
+            DropForeignKey("dbo.Batches", "MasterRecipeID", "dbo.MasterRecipes");
+            DropForeignKey("dbo.Units", "PlantID", "dbo.Plants");
+            DropForeignKey("dbo.TransitionRecUnitOperations", "RecUnitOperation_RecUnitOperationID", "dbo.RecUnitOperations");
+            DropForeignKey("dbo.TransitionRecUnitOperations", "Transition_TransitionID", "dbo.Transitions");
             DropForeignKey("dbo.Transitions", "loop_BaseEquipID", "dbo.EQControlLoops");
-            DropForeignKey("dbo.Units", "RecUnitOperation_RecUnitOperationID", "dbo.RecUnitOperations");
+            DropForeignKey("dbo.RecUnitOperationMasterRecipes", "MasterRecipe_MasterRecipeID", "dbo.MasterRecipes");
+            DropForeignKey("dbo.RecUnitOperationMasterRecipes", "RecUnitOperation_RecUnitOperationID", "dbo.RecUnitOperations");
+            DropForeignKey("dbo.RecUnitOperationUnits", "Unit_UnitID", "dbo.Units");
+            DropForeignKey("dbo.RecUnitOperationUnits", "RecUnitOperation_RecUnitOperationID", "dbo.RecUnitOperations");
             DropForeignKey("dbo.MasterRecipePlants", "Plant_PlantID", "dbo.Plants");
             DropForeignKey("dbo.MasterRecipePlants", "MasterRecipe_MasterRecipeID", "dbo.MasterRecipes");
             DropForeignKey("dbo.Ingredients", "MasterRecipe_MasterRecipeID", "dbo.MasterRecipes");
             DropForeignKey("dbo.Ingredients", "IngredientTypeID", "dbo.IngredientTypes");
             DropForeignKey("dbo.EQVessels", "PlantID", "dbo.Plants");
+            DropForeignKey("dbo.EQVessels", "UnitID", "dbo.Units");
             DropForeignKey("dbo.EQVessels", "EQTypeID", "dbo.EQTypes");
-            DropForeignKey("dbo.EQControlLoops", "Plant_PlantID", "dbo.Plants");
-            DropForeignKey("dbo.EQControlLoops", "Unit_UnitID", "dbo.Units");
-            DropForeignKey("dbo.EQControlLoops", "EQType_EQTypeID", "dbo.EQTypes");
+            DropForeignKey("dbo.EQControlLoops", "PlantID", "dbo.Plants");
+            DropForeignKey("dbo.EQControlLoops", "UnitID", "dbo.Units");
+            DropForeignKey("dbo.EQControlLoops", "EQTypeID", "dbo.EQTypes");
             DropForeignKey("dbo.EQAuxilaries", "PlantID", "dbo.Plants");
+            DropForeignKey("dbo.EQAuxilaries", "UnitID", "dbo.Units");
             DropForeignKey("dbo.EQAuxilaries", "EQTypeID", "dbo.EQTypes");
             DropForeignKey("dbo.UnitUnits", "Unit_UnitID1", "dbo.Units");
             DropForeignKey("dbo.UnitUnits", "Unit_UnitID", "dbo.Units");
@@ -325,24 +358,27 @@ namespace BrewMLLib.Migrations
             DropForeignKey("dbo.Units", "EQUnitOperation_UnitOperationID", "dbo.EQUnitOperations");
             DropIndex("dbo.TestEntitieTwoes", new[] { "CollectionOfTestEntitie_CollectionOfTestEntitieID" });
             DropIndex("dbo.TestEntities", new[] { "CollectionOfTestEntitie_CollectionOfTestEntitieID" });
-            DropIndex("dbo.Batches", new[] { "BatchRecipe_MasterRecipeID" });
-            DropIndex("dbo.EQVessels", new[] { "Unit_UnitID" });
-            DropIndex("dbo.EQAuxilaries", new[] { "Unit_UnitID" });
-            DropIndex("dbo.Units", new[] { "Plant_PlantID" });
-            DropIndex("dbo.RecUnitOperations", new[] { "MasterRecipe_MasterRecipeID" });
-            DropIndex("dbo.Transitions", new[] { "RecUnitOperation_RecUnitOperationID" });
+            DropIndex("dbo.Batches", new[] { "MasterRecipeID" });
+            DropIndex("dbo.Units", new[] { "PlantID" });
+            DropIndex("dbo.TransitionRecUnitOperations", new[] { "RecUnitOperation_RecUnitOperationID" });
+            DropIndex("dbo.TransitionRecUnitOperations", new[] { "Transition_TransitionID" });
             DropIndex("dbo.Transitions", new[] { "loop_BaseEquipID" });
-            DropIndex("dbo.Units", new[] { "RecUnitOperation_RecUnitOperationID" });
+            DropIndex("dbo.RecUnitOperationMasterRecipes", new[] { "MasterRecipe_MasterRecipeID" });
+            DropIndex("dbo.RecUnitOperationMasterRecipes", new[] { "RecUnitOperation_RecUnitOperationID" });
+            DropIndex("dbo.RecUnitOperationUnits", new[] { "Unit_UnitID" });
+            DropIndex("dbo.RecUnitOperationUnits", new[] { "RecUnitOperation_RecUnitOperationID" });
             DropIndex("dbo.MasterRecipePlants", new[] { "Plant_PlantID" });
             DropIndex("dbo.MasterRecipePlants", new[] { "MasterRecipe_MasterRecipeID" });
             DropIndex("dbo.Ingredients", new[] { "MasterRecipe_MasterRecipeID" });
             DropIndex("dbo.Ingredients", new[] { "IngredientTypeID" });
             DropIndex("dbo.EQVessels", new[] { "PlantID" });
+            DropIndex("dbo.EQVessels", new[] { "UnitID" });
             DropIndex("dbo.EQVessels", new[] { "EQTypeID" });
-            DropIndex("dbo.EQControlLoops", new[] { "Plant_PlantID" });
-            DropIndex("dbo.EQControlLoops", new[] { "Unit_UnitID" });
-            DropIndex("dbo.EQControlLoops", new[] { "EQType_EQTypeID" });
+            DropIndex("dbo.EQControlLoops", new[] { "PlantID" });
+            DropIndex("dbo.EQControlLoops", new[] { "UnitID" });
+            DropIndex("dbo.EQControlLoops", new[] { "EQTypeID" });
             DropIndex("dbo.EQAuxilaries", new[] { "PlantID" });
+            DropIndex("dbo.EQAuxilaries", new[] { "UnitID" });
             DropIndex("dbo.EQAuxilaries", new[] { "EQTypeID" });
             DropIndex("dbo.UnitUnits", new[] { "Unit_UnitID1" });
             DropIndex("dbo.UnitUnits", new[] { "Unit_UnitID" });
@@ -350,6 +386,9 @@ namespace BrewMLLib.Migrations
             DropIndex("dbo.Units", new[] { "CurrentBatch_BatchID" });
             DropIndex("dbo.EQUnitOperations", new[] { "Unit_UnitID" });
             DropIndex("dbo.Units", new[] { "EQUnitOperation_UnitOperationID" });
+            DropTable("dbo.TransitionRecUnitOperations");
+            DropTable("dbo.RecUnitOperationMasterRecipes");
+            DropTable("dbo.RecUnitOperationUnits");
             DropTable("dbo.MasterRecipePlants");
             DropTable("dbo.UnitUnits");
             DropTable("dbo.TestEntitieTwoes");

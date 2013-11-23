@@ -115,17 +115,23 @@
         <member name="P:BrewMLLib.Fakes.ShimBatch.BatchNameSetString">
             <summary>Sets the shim of Batch.set_BatchName(String value)</summary>
         </member>
-        <member name="P:BrewMLLib.Fakes.ShimBatch.BatchRecipeGet">
-            <summary>Sets the shim of Batch.get_BatchRecipe()</summary>
-        </member>
-        <member name="P:BrewMLLib.Fakes.ShimBatch.BatchRecipeSetMasterRecipe">
-            <summary>Sets the shim of Batch.set_BatchRecipe(MasterRecipe value)</summary>
-        </member>
         <member name="P:BrewMLLib.Fakes.ShimBatch.Behavior">
             <summary>Assigns the behavior for all methods of the shimmed type</summary>
         </member>
         <member name="P:BrewMLLib.Fakes.ShimBatch.Constructor">
             <summary>Sets the shim of Batch.Batch()</summary>
+        </member>
+        <member name="P:BrewMLLib.Fakes.ShimBatch.MasterRecipeGet">
+            <summary>Sets the shim of Batch.get_MasterRecipe()</summary>
+        </member>
+        <member name="P:BrewMLLib.Fakes.ShimBatch.MasterRecipeIDGet">
+            <summary>Sets the shim of Batch.get_MasterRecipeID()</summary>
+        </member>
+        <member name="P:BrewMLLib.Fakes.ShimBatch.MasterRecipeIDSetInt32">
+            <summary>Sets the shim of Batch.set_MasterRecipeID(Int32 value)</summary>
+        </member>
+        <member name="P:BrewMLLib.Fakes.ShimBatch.MasterRecipeSetMasterRecipe">
+            <summary>Sets the shim of Batch.set_MasterRecipe(MasterRecipe value)</summary>
         </member>
         <member name="T:BrewMLLib.Fakes.ShimBatch.AllInstances">
             <summary>Define shims for all instances members</summary>
@@ -154,11 +160,17 @@
         <member name="P:BrewMLLib.Fakes.ShimBatch.AllInstances.BatchNameSetString">
             <summary>Sets the shim of Batch.set_BatchName(String value)</summary>
         </member>
-        <member name="P:BrewMLLib.Fakes.ShimBatch.AllInstances.BatchRecipeGet">
-            <summary>Sets the shim of Batch.get_BatchRecipe()</summary>
+        <member name="P:BrewMLLib.Fakes.ShimBatch.AllInstances.MasterRecipeGet">
+            <summary>Sets the shim of Batch.get_MasterRecipe()</summary>
         </member>
-        <member name="P:BrewMLLib.Fakes.ShimBatch.AllInstances.BatchRecipeSetMasterRecipe">
-            <summary>Sets the shim of Batch.set_BatchRecipe(MasterRecipe value)</summary>
+        <member name="P:BrewMLLib.Fakes.ShimBatch.AllInstances.MasterRecipeIDGet">
+            <summary>Sets the shim of Batch.get_MasterRecipeID()</summary>
+        </member>
+        <member name="P:BrewMLLib.Fakes.ShimBatch.AllInstances.MasterRecipeIDSetInt32">
+            <summary>Sets the shim of Batch.set_MasterRecipeID(Int32 value)</summary>
+        </member>
+        <member name="P:BrewMLLib.Fakes.ShimBatch.AllInstances.MasterRecipeSetMasterRecipe">
+            <summary>Sets the shim of Batch.set_MasterRecipe(MasterRecipe value)</summary>
         </member>
         <member name="T:BrewMLLib.Fakes.ShimBrewDBContext">
             <summary>Shim type of BrewMLLib.BrewDBContext</summary>
@@ -190,6 +202,15 @@
         <member name="P:BrewMLLib.Fakes.ShimBrewDBContext.AddMasterRecipeToPlantInt32Int32">
             <summary>Sets the shim of BrewDBContext.AddMasterRecipeToPlant(Int32 plantID, Int32 masterRecipeID)</summary>
         </member>
+        <member name="P:BrewMLLib.Fakes.ShimBrewDBContext.AddRecUnitOperationMasterRecipeString">
+            <summary>Sets the shim of BrewDBContext.AddRecUnitOperation(MasterRecipe recx, String Name)</summary>
+        </member>
+        <member name="P:BrewMLLib.Fakes.ShimBrewDBContext.AddTransitionRecUnitOperationString">
+            <summary>Sets the shim of BrewDBContext.AddTransition(RecUnitOperation op, String Name)</summary>
+        </member>
+        <member name="P:BrewMLLib.Fakes.ShimBrewDBContext.AddUnitToRecUnitOperationRecUnitOperationString">
+            <summary>Sets the shim of BrewDBContext.AddUnitToRecUnitOperation(RecUnitOperation op, String Name)</summary>
+        </member>
         <member name="P:BrewMLLib.Fakes.ShimBrewDBContext.BatchsGet">
             <summary>Sets the shim of BrewDBContext.get_Batchs()</summary>
         </member>
@@ -207,6 +228,9 @@
         </member>
         <member name="P:BrewMLLib.Fakes.ShimBrewDBContext.Constructor">
             <summary>Sets the shim of BrewDBContext.BrewDBContext()</summary>
+        </member>
+        <member name="P:BrewMLLib.Fakes.ShimBrewDBContext.CreateMasterRecipeString">
+            <summary>Sets the shim of BrewDBContext.CreateMasterRecipe(String Name)</summary>
         </member>
         <member name="P:BrewMLLib.Fakes.ShimBrewDBContext.CreateNewLoopStringStringPlantUnit">
             <summary>Sets the shim of BrewDBContext.CreateNewLoop(String name, String type, Plant plant, Unit unit)</summary>
@@ -346,6 +370,15 @@
         <member name="P:BrewMLLib.Fakes.ShimBrewDBContext.AllInstances.AddMasterRecipeToPlantInt32Int32">
             <summary>Sets the shim of BrewDBContext.AddMasterRecipeToPlant(Int32 plantID, Int32 masterRecipeID)</summary>
         </member>
+        <member name="P:BrewMLLib.Fakes.ShimBrewDBContext.AllInstances.AddRecUnitOperationMasterRecipeString">
+            <summary>Sets the shim of BrewDBContext.AddRecUnitOperation(MasterRecipe recx, String Name)</summary>
+        </member>
+        <member name="P:BrewMLLib.Fakes.ShimBrewDBContext.AllInstances.AddTransitionRecUnitOperationString">
+            <summary>Sets the shim of BrewDBContext.AddTransition(RecUnitOperation op, String Name)</summary>
+        </member>
+        <member name="P:BrewMLLib.Fakes.ShimBrewDBContext.AllInstances.AddUnitToRecUnitOperationRecUnitOperationString">
+            <summary>Sets the shim of BrewDBContext.AddUnitToRecUnitOperation(RecUnitOperation op, String Name)</summary>
+        </member>
         <member name="P:BrewMLLib.Fakes.ShimBrewDBContext.AllInstances.BatchsGet">
             <summary>Sets the shim of BrewDBContext.get_Batchs()</summary>
         </member>
@@ -357,6 +390,9 @@
         </member>
         <member name="P:BrewMLLib.Fakes.ShimBrewDBContext.AllInstances.CollectionOfTestEntitiesSetDbSetOfCollectionOfTestEntitie">
             <summary>Sets the shim of BrewDBContext.set_CollectionOfTestEntities(DbSet`1&lt;CollectionOfTestEntitie&gt; value)</summary>
+        </member>
+        <member name="P:BrewMLLib.Fakes.ShimBrewDBContext.AllInstances.CreateMasterRecipeString">
+            <summary>Sets the shim of BrewDBContext.CreateMasterRecipe(String Name)</summary>
         </member>
         <member name="P:BrewMLLib.Fakes.ShimBrewDBContext.AllInstances.CreateNewLoopStringStringPlantUnit">
             <summary>Sets the shim of BrewDBContext.CreateNewLoop(String name, String type, Plant plant, Unit unit)</summary>
@@ -667,6 +703,18 @@
         <member name="P:BrewMLLib.Fakes.ShimEQAuxilary.RunningSetInt32">
             <summary>Sets the shim of EQAuxilary.set_Running(Int32 value)</summary>
         </member>
+        <member name="P:BrewMLLib.Fakes.ShimEQAuxilary.UnitGet">
+            <summary>Sets the shim of EQAuxilary.get_Unit()</summary>
+        </member>
+        <member name="P:BrewMLLib.Fakes.ShimEQAuxilary.UnitIDGet">
+            <summary>Sets the shim of EQAuxilary.get_UnitID()</summary>
+        </member>
+        <member name="P:BrewMLLib.Fakes.ShimEQAuxilary.UnitIDSetInt32">
+            <summary>Sets the shim of EQAuxilary.set_UnitID(Int32 value)</summary>
+        </member>
+        <member name="P:BrewMLLib.Fakes.ShimEQAuxilary.UnitSetUnit">
+            <summary>Sets the shim of EQAuxilary.set_Unit(Unit value)</summary>
+        </member>
         <member name="T:BrewMLLib.Fakes.ShimEQAuxilary.AllInstances">
             <summary>Define shims for all instances members</summary>
         </member>
@@ -706,6 +754,18 @@
         <member name="P:BrewMLLib.Fakes.ShimEQAuxilary.AllInstances.RunningSetInt32">
             <summary>Sets the shim of EQAuxilary.set_Running(Int32 value)</summary>
         </member>
+        <member name="P:BrewMLLib.Fakes.ShimEQAuxilary.AllInstances.UnitGet">
+            <summary>Sets the shim of EQAuxilary.get_Unit()</summary>
+        </member>
+        <member name="P:BrewMLLib.Fakes.ShimEQAuxilary.AllInstances.UnitIDGet">
+            <summary>Sets the shim of EQAuxilary.get_UnitID()</summary>
+        </member>
+        <member name="P:BrewMLLib.Fakes.ShimEQAuxilary.AllInstances.UnitIDSetInt32">
+            <summary>Sets the shim of EQAuxilary.set_UnitID(Int32 value)</summary>
+        </member>
+        <member name="P:BrewMLLib.Fakes.ShimEQAuxilary.AllInstances.UnitSetUnit">
+            <summary>Sets the shim of EQAuxilary.set_Unit(Unit value)</summary>
+        </member>
         <member name="T:BrewMLLib.Fakes.ShimEQControlLoop">
             <summary>Shim type of BrewMLLib.EQControlLoop</summary>
         </member>
@@ -732,6 +792,12 @@
         </member>
         <member name="P:BrewMLLib.Fakes.ShimEQControlLoop.EQTypeGet">
             <summary>Sets the shim of EQControlLoop.get_EQType()</summary>
+        </member>
+        <member name="P:BrewMLLib.Fakes.ShimEQControlLoop.EQTypeIDGet">
+            <summary>Sets the shim of EQControlLoop.get_EQTypeID()</summary>
+        </member>
+        <member name="P:BrewMLLib.Fakes.ShimEQControlLoop.EQTypeIDSetInt32">
+            <summary>Sets the shim of EQControlLoop.set_EQTypeID(Int32 value)</summary>
         </member>
         <member name="P:BrewMLLib.Fakes.ShimEQControlLoop.EQTypeSetEQType">
             <summary>Sets the shim of EQControlLoop.set_EQType(EQType value)</summary>
@@ -781,6 +847,12 @@
         <member name="P:BrewMLLib.Fakes.ShimEQControlLoop.PlantGet">
             <summary>Sets the shim of EQControlLoop.get_Plant()</summary>
         </member>
+        <member name="P:BrewMLLib.Fakes.ShimEQControlLoop.PlantIDGet">
+            <summary>Sets the shim of EQControlLoop.get_PlantID()</summary>
+        </member>
+        <member name="P:BrewMLLib.Fakes.ShimEQControlLoop.PlantIDSetInt32">
+            <summary>Sets the shim of EQControlLoop.set_PlantID(Int32 value)</summary>
+        </member>
         <member name="P:BrewMLLib.Fakes.ShimEQControlLoop.PlantSetPlant">
             <summary>Sets the shim of EQControlLoop.set_Plant(Plant value)</summary>
         </member>
@@ -811,6 +883,12 @@
         <member name="P:BrewMLLib.Fakes.ShimEQControlLoop.UnitGet">
             <summary>Sets the shim of EQControlLoop.get_Unit()</summary>
         </member>
+        <member name="P:BrewMLLib.Fakes.ShimEQControlLoop.UnitIDGet">
+            <summary>Sets the shim of EQControlLoop.get_UnitID()</summary>
+        </member>
+        <member name="P:BrewMLLib.Fakes.ShimEQControlLoop.UnitIDSetInt32">
+            <summary>Sets the shim of EQControlLoop.set_UnitID(Int32 value)</summary>
+        </member>
         <member name="P:BrewMLLib.Fakes.ShimEQControlLoop.UnitSetUnit">
             <summary>Sets the shim of EQControlLoop.set_Unit(Unit value)</summary>
         </member>
@@ -822,6 +900,12 @@
         </member>
         <member name="P:BrewMLLib.Fakes.ShimEQControlLoop.AllInstances.EQTypeGet">
             <summary>Sets the shim of EQControlLoop.get_EQType()</summary>
+        </member>
+        <member name="P:BrewMLLib.Fakes.ShimEQControlLoop.AllInstances.EQTypeIDGet">
+            <summary>Sets the shim of EQControlLoop.get_EQTypeID()</summary>
+        </member>
+        <member name="P:BrewMLLib.Fakes.ShimEQControlLoop.AllInstances.EQTypeIDSetInt32">
+            <summary>Sets the shim of EQControlLoop.set_EQTypeID(Int32 value)</summary>
         </member>
         <member name="P:BrewMLLib.Fakes.ShimEQControlLoop.AllInstances.EQTypeSetEQType">
             <summary>Sets the shim of EQControlLoop.set_EQType(EQType value)</summary>
@@ -871,6 +955,12 @@
         <member name="P:BrewMLLib.Fakes.ShimEQControlLoop.AllInstances.PlantGet">
             <summary>Sets the shim of EQControlLoop.get_Plant()</summary>
         </member>
+        <member name="P:BrewMLLib.Fakes.ShimEQControlLoop.AllInstances.PlantIDGet">
+            <summary>Sets the shim of EQControlLoop.get_PlantID()</summary>
+        </member>
+        <member name="P:BrewMLLib.Fakes.ShimEQControlLoop.AllInstances.PlantIDSetInt32">
+            <summary>Sets the shim of EQControlLoop.set_PlantID(Int32 value)</summary>
+        </member>
         <member name="P:BrewMLLib.Fakes.ShimEQControlLoop.AllInstances.PlantSetPlant">
             <summary>Sets the shim of EQControlLoop.set_Plant(Plant value)</summary>
         </member>
@@ -900,6 +990,12 @@
         </member>
         <member name="P:BrewMLLib.Fakes.ShimEQControlLoop.AllInstances.UnitGet">
             <summary>Sets the shim of EQControlLoop.get_Unit()</summary>
+        </member>
+        <member name="P:BrewMLLib.Fakes.ShimEQControlLoop.AllInstances.UnitIDGet">
+            <summary>Sets the shim of EQControlLoop.get_UnitID()</summary>
+        </member>
+        <member name="P:BrewMLLib.Fakes.ShimEQControlLoop.AllInstances.UnitIDSetInt32">
+            <summary>Sets the shim of EQControlLoop.set_UnitID(Int32 value)</summary>
         </member>
         <member name="P:BrewMLLib.Fakes.ShimEQControlLoop.AllInstances.UnitSetUnit">
             <summary>Sets the shim of EQControlLoop.set_Unit(Unit value)</summary>
@@ -1081,6 +1177,18 @@
         <member name="P:BrewMLLib.Fakes.ShimEQVessel.PlantSetPlant">
             <summary>Sets the shim of EQVessel.set_Plant(Plant value)</summary>
         </member>
+        <member name="P:BrewMLLib.Fakes.ShimEQVessel.UnitGet">
+            <summary>Sets the shim of EQVessel.get_Unit()</summary>
+        </member>
+        <member name="P:BrewMLLib.Fakes.ShimEQVessel.UnitIDGet">
+            <summary>Sets the shim of EQVessel.get_UnitID()</summary>
+        </member>
+        <member name="P:BrewMLLib.Fakes.ShimEQVessel.UnitIDSetInt32">
+            <summary>Sets the shim of EQVessel.set_UnitID(Int32 value)</summary>
+        </member>
+        <member name="P:BrewMLLib.Fakes.ShimEQVessel.UnitSetUnit">
+            <summary>Sets the shim of EQVessel.set_Unit(Unit value)</summary>
+        </member>
         <member name="T:BrewMLLib.Fakes.ShimEQVessel.AllInstances">
             <summary>Define shims for all instances members</summary>
         </member>
@@ -1131,6 +1239,18 @@
         </member>
         <member name="P:BrewMLLib.Fakes.ShimEQVessel.AllInstances.PlantSetPlant">
             <summary>Sets the shim of EQVessel.set_Plant(Plant value)</summary>
+        </member>
+        <member name="P:BrewMLLib.Fakes.ShimEQVessel.AllInstances.UnitGet">
+            <summary>Sets the shim of EQVessel.get_Unit()</summary>
+        </member>
+        <member name="P:BrewMLLib.Fakes.ShimEQVessel.AllInstances.UnitIDGet">
+            <summary>Sets the shim of EQVessel.get_UnitID()</summary>
+        </member>
+        <member name="P:BrewMLLib.Fakes.ShimEQVessel.AllInstances.UnitIDSetInt32">
+            <summary>Sets the shim of EQVessel.set_UnitID(Int32 value)</summary>
+        </member>
+        <member name="P:BrewMLLib.Fakes.ShimEQVessel.AllInstances.UnitSetUnit">
+            <summary>Sets the shim of EQVessel.set_Unit(Unit value)</summary>
         </member>
         <member name="T:BrewMLLib.Fakes.ShimFluentControlLoop">
             <summary>Shim type of BrewMLLib.FluentControlLoop</summary>
@@ -1354,9 +1474,6 @@
         <member name="P:BrewMLLib.Fakes.ShimFluentRecipe.Constructor">
             <summary>Sets the shim of FluentRecipe.FluentRecipe()</summary>
         </member>
-        <member name="P:BrewMLLib.Fakes.ShimFluentRecipe.Final">
-            <summary>Sets the shim of FluentRecipe.Final()</summary>
-        </member>
         <member name="P:BrewMLLib.Fakes.ShimFluentRecipe.ForRecipeString">
             <summary>Sets the shim of FluentRecipe.ForRecipe(String s)</summary>
         </member>
@@ -1386,9 +1503,6 @@
         </member>
         <member name="P:BrewMLLib.Fakes.ShimFluentRecipe.AllInstances.AddRecipeString">
             <summary>Sets the shim of FluentRecipe.AddRecipe(String s)</summary>
-        </member>
-        <member name="P:BrewMLLib.Fakes.ShimFluentRecipe.AllInstances.Final">
-            <summary>Sets the shim of FluentRecipe.Final()</summary>
         </member>
         <member name="P:BrewMLLib.Fakes.ShimFluentRecipe.AllInstances.ForRecipeString">
             <summary>Sets the shim of FluentRecipe.ForRecipe(String s)</summary>
@@ -1432,26 +1546,29 @@
         <member name="M:BrewMLLib.Fakes.ShimFluentRecipeOperations.Bind(BrewMLLib.IFluentRecipeOperations)">
             <summary>Binds the members of the interface to the shim.</summary>
         </member>
+        <member name="P:BrewMLLib.Fakes.ShimFluentRecipeOperations.AddAllowedUnitsString">
+            <summary>Sets the shim of FluentRecipeOperations.AddAllowedUnits(String UnitName)</summary>
+        </member>
+        <member name="P:BrewMLLib.Fakes.ShimFluentRecipeOperations.AddAllowedUnitsStringString">
+            <summary>Sets the shim of FluentRecipeOperations.AddAllowedUnits(String OpName, String UnitName)</summary>
+        </member>
         <member name="P:BrewMLLib.Fakes.ShimFluentRecipeOperations.AddOperationString">
-            <summary>Sets the shim of FluentRecipeOperations.AddOperation(String s)</summary>
+            <summary>Sets the shim of FluentRecipeOperations.AddOperation(String Name)</summary>
         </member>
         <member name="P:BrewMLLib.Fakes.ShimFluentRecipeOperations.Behavior">
             <summary>Assigns the behavior for all methods of the shimmed type</summary>
         </member>
-        <member name="P:BrewMLLib.Fakes.ShimFluentRecipeOperations.ConstructorIFluentRecipe">
-            <summary>Sets the shim of FluentRecipeOperations.FluentRecipeOperations(IFluentRecipe parent)</summary>
+        <member name="P:BrewMLLib.Fakes.ShimFluentRecipeOperations.ConstructorMasterRecipe">
+            <summary>Sets the shim of FluentRecipeOperations.FluentRecipeOperations(MasterRecipe parent)</summary>
         </member>
-        <member name="P:BrewMLLib.Fakes.ShimFluentRecipeOperations.ConstructorIFluentRecipeString">
-            <summary>Sets the shim of FluentRecipeOperations.FluentRecipeOperations(IFluentRecipe parent, String s)</summary>
+        <member name="P:BrewMLLib.Fakes.ShimFluentRecipeOperations.ConstructorMasterRecipeString">
+            <summary>Sets the shim of FluentRecipeOperations.FluentRecipeOperations(MasterRecipe parent, String s)</summary>
         </member>
         <member name="P:BrewMLLib.Fakes.ShimFluentRecipeOperations.ForOperationString">
-            <summary>Sets the shim of FluentRecipeOperations.ForOperation(String s)</summary>
+            <summary>Sets the shim of FluentRecipeOperations.ForOperation(String Name)</summary>
         </member>
         <member name="P:BrewMLLib.Fakes.ShimFluentRecipeOperations.GetRecUnitOperation">
             <summary>Sets the shim of FluentRecipeOperations.GetRecUnitOperation()</summary>
-        </member>
-        <member name="P:BrewMLLib.Fakes.ShimFluentRecipeOperations.HasAllowedUnits">
-            <summary>Sets the shim of FluentRecipeOperations.HasAllowedUnits()</summary>
         </member>
         <member name="P:BrewMLLib.Fakes.ShimFluentRecipeOperations.HasTransitions">
             <summary>Sets the shim of FluentRecipeOperations.HasTransitions()</summary>
@@ -1462,17 +1579,20 @@
         <member name="T:BrewMLLib.Fakes.ShimFluentRecipeOperations.AllInstances">
             <summary>Define shims for all instances members</summary>
         </member>
+        <member name="P:BrewMLLib.Fakes.ShimFluentRecipeOperations.AllInstances.AddAllowedUnitsString">
+            <summary>Sets the shim of FluentRecipeOperations.AddAllowedUnits(String UnitName)</summary>
+        </member>
+        <member name="P:BrewMLLib.Fakes.ShimFluentRecipeOperations.AllInstances.AddAllowedUnitsStringString">
+            <summary>Sets the shim of FluentRecipeOperations.AddAllowedUnits(String OpName, String UnitName)</summary>
+        </member>
         <member name="P:BrewMLLib.Fakes.ShimFluentRecipeOperations.AllInstances.AddOperationString">
-            <summary>Sets the shim of FluentRecipeOperations.AddOperation(String s)</summary>
+            <summary>Sets the shim of FluentRecipeOperations.AddOperation(String Name)</summary>
         </member>
         <member name="P:BrewMLLib.Fakes.ShimFluentRecipeOperations.AllInstances.ForOperationString">
-            <summary>Sets the shim of FluentRecipeOperations.ForOperation(String s)</summary>
+            <summary>Sets the shim of FluentRecipeOperations.ForOperation(String Name)</summary>
         </member>
         <member name="P:BrewMLLib.Fakes.ShimFluentRecipeOperations.AllInstances.GetRecUnitOperation">
             <summary>Sets the shim of FluentRecipeOperations.GetRecUnitOperation()</summary>
-        </member>
-        <member name="P:BrewMLLib.Fakes.ShimFluentRecipeOperations.AllInstances.HasAllowedUnits">
-            <summary>Sets the shim of FluentRecipeOperations.HasAllowedUnits()</summary>
         </member>
         <member name="P:BrewMLLib.Fakes.ShimFluentRecipeOperations.AllInstances.HasTransitions">
             <summary>Sets the shim of FluentRecipeOperations.HasTransitions()</summary>
@@ -1498,23 +1618,23 @@
         <member name="M:BrewMLLib.Fakes.ShimFluentTransition.Bind(BrewMLLib.IFluentTransitions)">
             <summary>Binds the members of the interface to the shim.</summary>
         </member>
-        <member name="P:BrewMLLib.Fakes.ShimFluentTransition.AddTranstionStringStringOperantsSingle">
-            <summary>Sets the shim of FluentTransition.AddTranstion(String s, String loopname, Operants op, Single SetPoint)</summary>
+        <member name="P:BrewMLLib.Fakes.ShimFluentTransition.AddTransitionString">
+            <summary>Sets the shim of FluentTransition.AddTransition(String TranName)</summary>
         </member>
         <member name="P:BrewMLLib.Fakes.ShimFluentTransition.Behavior">
             <summary>Assigns the behavior for all methods of the shimmed type</summary>
         </member>
-        <member name="P:BrewMLLib.Fakes.ShimFluentTransition.Constructor">
-            <summary>Sets the shim of FluentTransition.FluentTransition()</summary>
+        <member name="P:BrewMLLib.Fakes.ShimFluentTransition.ConstructorRecUnitOperation">
+            <summary>Sets the shim of FluentTransition.FluentTransition(RecUnitOperation op)</summary>
         </member>
-        <member name="P:BrewMLLib.Fakes.ShimFluentTransition.ConstructorIFluentRecipeOperations">
-            <summary>Sets the shim of FluentTransition.FluentTransition(IFluentRecipeOperations parent)</summary>
+        <member name="P:BrewMLLib.Fakes.ShimFluentTransition.ConstructorRecUnitOperationString">
+            <summary>Sets the shim of FluentTransition.FluentTransition(RecUnitOperation op, String Name)</summary>
         </member>
-        <member name="P:BrewMLLib.Fakes.ShimFluentTransition.ForTranstionString">
-            <summary>Sets the shim of FluentTransition.ForTranstion(String s)</summary>
+        <member name="P:BrewMLLib.Fakes.ShimFluentTransition.ForTransitionString">
+            <summary>Sets the shim of FluentTransition.ForTransition(String s)</summary>
         </member>
-        <member name="P:BrewMLLib.Fakes.ShimFluentTransition.GetTranstion">
-            <summary>Sets the shim of FluentTransition.GetTranstion()</summary>
+        <member name="P:BrewMLLib.Fakes.ShimFluentTransition.GetTransition">
+            <summary>Sets the shim of FluentTransition.GetTransition()</summary>
         </member>
         <member name="P:BrewMLLib.Fakes.ShimFluentTransition.HasLoopString">
             <summary>Sets the shim of FluentTransition.HasLoop(String s)</summary>
@@ -1531,14 +1651,14 @@
         <member name="T:BrewMLLib.Fakes.ShimFluentTransition.AllInstances">
             <summary>Define shims for all instances members</summary>
         </member>
-        <member name="P:BrewMLLib.Fakes.ShimFluentTransition.AllInstances.AddTranstionStringStringOperantsSingle">
-            <summary>Sets the shim of FluentTransition.AddTranstion(String s, String loopname, Operants op, Single SetPoint)</summary>
+        <member name="P:BrewMLLib.Fakes.ShimFluentTransition.AllInstances.AddTransitionString">
+            <summary>Sets the shim of FluentTransition.AddTransition(String TranName)</summary>
         </member>
-        <member name="P:BrewMLLib.Fakes.ShimFluentTransition.AllInstances.ForTranstionString">
-            <summary>Sets the shim of FluentTransition.ForTranstion(String s)</summary>
+        <member name="P:BrewMLLib.Fakes.ShimFluentTransition.AllInstances.ForTransitionString">
+            <summary>Sets the shim of FluentTransition.ForTransition(String s)</summary>
         </member>
-        <member name="P:BrewMLLib.Fakes.ShimFluentTransition.AllInstances.GetTranstion">
-            <summary>Sets the shim of FluentTransition.GetTranstion()</summary>
+        <member name="P:BrewMLLib.Fakes.ShimFluentTransition.AllInstances.GetTransition">
+            <summary>Sets the shim of FluentTransition.GetTransition()</summary>
         </member>
         <member name="P:BrewMLLib.Fakes.ShimFluentTransition.AllInstances.HasLoopString">
             <summary>Sets the shim of FluentTransition.HasLoop(String s)</summary>
@@ -2086,6 +2206,12 @@
         <member name="P:BrewMLLib.Fakes.ShimRecUnitOperation.Constructor">
             <summary>Sets the shim of RecUnitOperation.RecUnitOperation()</summary>
         </member>
+        <member name="P:BrewMLLib.Fakes.ShimRecUnitOperation.MasterRecipesGet">
+            <summary>Sets the shim of RecUnitOperation.get_MasterRecipes()</summary>
+        </member>
+        <member name="P:BrewMLLib.Fakes.ShimRecUnitOperation.MasterRecipesSetICollectionOfMasterRecipe">
+            <summary>Sets the shim of RecUnitOperation.set_MasterRecipes(ICollection`1&lt;MasterRecipe&gt; value)</summary>
+        </member>
         <member name="P:BrewMLLib.Fakes.ShimRecUnitOperation.OperationNameGet">
             <summary>Sets the shim of RecUnitOperation.get_OperationName()</summary>
         </member>
@@ -2107,8 +2233,8 @@
         <member name="P:BrewMLLib.Fakes.ShimRecUnitOperation.TransitionsGet">
             <summary>Sets the shim of RecUnitOperation.get_Transitions()</summary>
         </member>
-        <member name="P:BrewMLLib.Fakes.ShimRecUnitOperation.TransitionsSetListOfTransition">
-            <summary>Sets the shim of RecUnitOperation.set_Transitions(List`1&lt;Transition&gt; value)</summary>
+        <member name="P:BrewMLLib.Fakes.ShimRecUnitOperation.TransitionsSetICollectionOfTransition">
+            <summary>Sets the shim of RecUnitOperation.set_Transitions(ICollection`1&lt;Transition&gt; value)</summary>
         </member>
         <member name="T:BrewMLLib.Fakes.ShimRecUnitOperation.AllInstances">
             <summary>Define shims for all instances members</summary>
@@ -2124,6 +2250,12 @@
         </member>
         <member name="P:BrewMLLib.Fakes.ShimRecUnitOperation.AllInstances.AllowedUnitsSetICollectionOfUnit">
             <summary>Sets the shim of RecUnitOperation.set_AllowedUnits(ICollection`1&lt;Unit&gt; value)</summary>
+        </member>
+        <member name="P:BrewMLLib.Fakes.ShimRecUnitOperation.AllInstances.MasterRecipesGet">
+            <summary>Sets the shim of RecUnitOperation.get_MasterRecipes()</summary>
+        </member>
+        <member name="P:BrewMLLib.Fakes.ShimRecUnitOperation.AllInstances.MasterRecipesSetICollectionOfMasterRecipe">
+            <summary>Sets the shim of RecUnitOperation.set_MasterRecipes(ICollection`1&lt;MasterRecipe&gt; value)</summary>
         </member>
         <member name="P:BrewMLLib.Fakes.ShimRecUnitOperation.AllInstances.OperationNameGet">
             <summary>Sets the shim of RecUnitOperation.get_OperationName()</summary>
@@ -2146,8 +2278,8 @@
         <member name="P:BrewMLLib.Fakes.ShimRecUnitOperation.AllInstances.TransitionsGet">
             <summary>Sets the shim of RecUnitOperation.get_Transitions()</summary>
         </member>
-        <member name="P:BrewMLLib.Fakes.ShimRecUnitOperation.AllInstances.TransitionsSetListOfTransition">
-            <summary>Sets the shim of RecUnitOperation.set_Transitions(List`1&lt;Transition&gt; value)</summary>
+        <member name="P:BrewMLLib.Fakes.ShimRecUnitOperation.AllInstances.TransitionsSetICollectionOfTransition">
+            <summary>Sets the shim of RecUnitOperation.set_Transitions(ICollection`1&lt;Transition&gt; value)</summary>
         </member>
         <member name="T:BrewMLLib.Fakes.ShimTestEntitie">
             <summary>Shim type of BrewMLLib.TestEntitie</summary>
@@ -2374,6 +2506,12 @@
         <member name="P:BrewMLLib.Fakes.ShimTransition.EvaluateConditionSetNullableOfBoolean">
             <summary>Sets the shim of Transition.set_EvaluateCondition(Nullable`1&lt;Boolean&gt; value)</summary>
         </member>
+        <member name="P:BrewMLLib.Fakes.ShimTransition.RecUnitOperationsGet">
+            <summary>Sets the shim of Transition.get_RecUnitOperations()</summary>
+        </member>
+        <member name="P:BrewMLLib.Fakes.ShimTransition.RecUnitOperationsSetICollectionOfRecUnitOperation">
+            <summary>Sets the shim of Transition.set_RecUnitOperations(ICollection`1&lt;RecUnitOperation&gt; value)</summary>
+        </member>
         <member name="P:BrewMLLib.Fakes.ShimTransition.SetPointGet">
             <summary>Sets the shim of Transition.get_SetPoint()</summary>
         </member>
@@ -2424,6 +2562,12 @@
         </member>
         <member name="P:BrewMLLib.Fakes.ShimTransition.AllInstances.EvaluateConditionSetNullableOfBoolean">
             <summary>Sets the shim of Transition.set_EvaluateCondition(Nullable`1&lt;Boolean&gt; value)</summary>
+        </member>
+        <member name="P:BrewMLLib.Fakes.ShimTransition.AllInstances.RecUnitOperationsGet">
+            <summary>Sets the shim of Transition.get_RecUnitOperations()</summary>
+        </member>
+        <member name="P:BrewMLLib.Fakes.ShimTransition.AllInstances.RecUnitOperationsSetICollectionOfRecUnitOperation">
+            <summary>Sets the shim of Transition.set_RecUnitOperations(ICollection`1&lt;RecUnitOperation&gt; value)</summary>
         </member>
         <member name="P:BrewMLLib.Fakes.ShimTransition.AllInstances.SetPointGet">
             <summary>Sets the shim of Transition.get_SetPoint()</summary>
@@ -2482,11 +2626,11 @@
         <member name="M:BrewMLLib.Fakes.ShimUnit.BehaveAsNotImplemented">
             <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
         </member>
-        <member name="P:BrewMLLib.Fakes.ShimUnit.AvailableOperationsGet">
-            <summary>Sets the shim of Unit.get_AvailableOperations()</summary>
+        <member name="P:BrewMLLib.Fakes.ShimUnit.AvailableEQOperationsGet">
+            <summary>Sets the shim of Unit.get_AvailableEQOperations()</summary>
         </member>
-        <member name="P:BrewMLLib.Fakes.ShimUnit.AvailableOperationsSetICollectionOfEQUnitOperation">
-            <summary>Sets the shim of Unit.set_AvailableOperations(ICollection`1&lt;EQUnitOperation&gt; value)</summary>
+        <member name="P:BrewMLLib.Fakes.ShimUnit.AvailableEQOperationsSetICollectionOfEQUnitOperation">
+            <summary>Sets the shim of Unit.set_AvailableEQOperations(ICollection`1&lt;EQUnitOperation&gt; value)</summary>
         </member>
         <member name="P:BrewMLLib.Fakes.ShimUnit.Behavior">
             <summary>Assigns the behavior for all methods of the shimmed type</summary>
@@ -2521,8 +2665,20 @@
         <member name="P:BrewMLLib.Fakes.ShimUnit.PlantGet">
             <summary>Sets the shim of Unit.get_Plant()</summary>
         </member>
+        <member name="P:BrewMLLib.Fakes.ShimUnit.PlantIDGet">
+            <summary>Sets the shim of Unit.get_PlantID()</summary>
+        </member>
+        <member name="P:BrewMLLib.Fakes.ShimUnit.PlantIDSetInt32">
+            <summary>Sets the shim of Unit.set_PlantID(Int32 value)</summary>
+        </member>
         <member name="P:BrewMLLib.Fakes.ShimUnit.PlantSetPlant">
             <summary>Sets the shim of Unit.set_Plant(Plant value)</summary>
+        </member>
+        <member name="P:BrewMLLib.Fakes.ShimUnit.RecUnitOperationsGet">
+            <summary>Sets the shim of Unit.get_RecUnitOperations()</summary>
+        </member>
+        <member name="P:BrewMLLib.Fakes.ShimUnit.RecUnitOperationsSetICollectionOfRecUnitOperation">
+            <summary>Sets the shim of Unit.set_RecUnitOperations(ICollection`1&lt;RecUnitOperation&gt; value)</summary>
         </member>
         <member name="P:BrewMLLib.Fakes.ShimUnit.UnitAuxGet">
             <summary>Sets the shim of Unit.get_UnitAux()</summary>
@@ -2557,11 +2713,11 @@
         <member name="T:BrewMLLib.Fakes.ShimUnit.AllInstances">
             <summary>Define shims for all instances members</summary>
         </member>
-        <member name="P:BrewMLLib.Fakes.ShimUnit.AllInstances.AvailableOperationsGet">
-            <summary>Sets the shim of Unit.get_AvailableOperations()</summary>
+        <member name="P:BrewMLLib.Fakes.ShimUnit.AllInstances.AvailableEQOperationsGet">
+            <summary>Sets the shim of Unit.get_AvailableEQOperations()</summary>
         </member>
-        <member name="P:BrewMLLib.Fakes.ShimUnit.AllInstances.AvailableOperationsSetICollectionOfEQUnitOperation">
-            <summary>Sets the shim of Unit.set_AvailableOperations(ICollection`1&lt;EQUnitOperation&gt; value)</summary>
+        <member name="P:BrewMLLib.Fakes.ShimUnit.AllInstances.AvailableEQOperationsSetICollectionOfEQUnitOperation">
+            <summary>Sets the shim of Unit.set_AvailableEQOperations(ICollection`1&lt;EQUnitOperation&gt; value)</summary>
         </member>
         <member name="P:BrewMLLib.Fakes.ShimUnit.AllInstances.CurrentBatchGet">
             <summary>Sets the shim of Unit.get_CurrentBatch()</summary>
@@ -2590,8 +2746,20 @@
         <member name="P:BrewMLLib.Fakes.ShimUnit.AllInstances.PlantGet">
             <summary>Sets the shim of Unit.get_Plant()</summary>
         </member>
+        <member name="P:BrewMLLib.Fakes.ShimUnit.AllInstances.PlantIDGet">
+            <summary>Sets the shim of Unit.get_PlantID()</summary>
+        </member>
+        <member name="P:BrewMLLib.Fakes.ShimUnit.AllInstances.PlantIDSetInt32">
+            <summary>Sets the shim of Unit.set_PlantID(Int32 value)</summary>
+        </member>
         <member name="P:BrewMLLib.Fakes.ShimUnit.AllInstances.PlantSetPlant">
             <summary>Sets the shim of Unit.set_Plant(Plant value)</summary>
+        </member>
+        <member name="P:BrewMLLib.Fakes.ShimUnit.AllInstances.RecUnitOperationsGet">
+            <summary>Sets the shim of Unit.get_RecUnitOperations()</summary>
+        </member>
+        <member name="P:BrewMLLib.Fakes.ShimUnit.AllInstances.RecUnitOperationsSetICollectionOfRecUnitOperation">
+            <summary>Sets the shim of Unit.set_RecUnitOperations(ICollection`1&lt;RecUnitOperation&gt; value)</summary>
         </member>
         <member name="P:BrewMLLib.Fakes.ShimUnit.AllInstances.UnitAuxGet">
             <summary>Sets the shim of Unit.get_UnitAux()</summary>
@@ -2656,8 +2824,17 @@
         <member name="M:BrewMLLib.Fakes.StubBatch.AttachBackingFieldToAllocatedUnits">
             <summary>Attaches delegates to emulate StubBatch.AllocatedUnits as a property with a backing field.</summary>
         </member>
+        <member name="M:BrewMLLib.Fakes.StubBatch.AttachBackingFieldToMasterRecipe">
+            <summary>Attaches delegates to emulate StubBatch.MasterRecipe as a property with a backing field.</summary>
+        </member>
         <member name="M:BrewMLLib.Fakes.StubBatch.InitializeStub">
             <summary>Initializes a new instance of type StubBatch</summary>
+        </member>
+        <member name="F:BrewMLLib.Fakes.StubBatch.MasterRecipeGet">
+            <summary>Sets the stub of Batch.get_MasterRecipe()</summary>
+        </member>
+        <member name="F:BrewMLLib.Fakes.StubBatch.MasterRecipeSetMasterRecipe">
+            <summary>Sets the stub of Batch.set_MasterRecipe(MasterRecipe value)</summary>
         </member>
         <member name="P:BrewMLLib.Fakes.StubBatch.AllocatedUnits">
             <summary>Sets the stub of Batch.get_AllocatedUnits()</summary>
@@ -2670,6 +2847,9 @@
         </member>
         <member name="P:BrewMLLib.Fakes.StubBatch.InstanceObserver">
             <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="P:BrewMLLib.Fakes.StubBatch.MasterRecipe">
+            <summary>Sets the stub of Batch.get_MasterRecipe()</summary>
         </member>
         <member name="T:BrewMLLib.Fakes.StubBrewDBContext">
             <summary>Stub type of BrewMLLib.BrewDBContext</summary>
@@ -2797,6 +2977,9 @@
         <member name="M:BrewMLLib.Fakes.StubEQAuxilary.AttachBackingFieldToPlant">
             <summary>Attaches delegates to emulate StubEQAuxilary.Plant as a property with a backing field.</summary>
         </member>
+        <member name="M:BrewMLLib.Fakes.StubEQAuxilary.AttachBackingFieldToUnit">
+            <summary>Attaches delegates to emulate StubEQAuxilary.Unit as a property with a backing field.</summary>
+        </member>
         <member name="F:BrewMLLib.Fakes.StubEQAuxilary.EQTypeGet">
             <summary>Sets the stub of EQAuxilary.get_EQType()</summary>
         </member>
@@ -2812,6 +2995,12 @@
         <member name="F:BrewMLLib.Fakes.StubEQAuxilary.PlantSetPlant">
             <summary>Sets the stub of EQAuxilary.set_Plant(Plant value)</summary>
         </member>
+        <member name="F:BrewMLLib.Fakes.StubEQAuxilary.UnitGet">
+            <summary>Sets the stub of EQAuxilary.get_Unit()</summary>
+        </member>
+        <member name="F:BrewMLLib.Fakes.StubEQAuxilary.UnitSetUnit">
+            <summary>Sets the stub of EQAuxilary.set_Unit(Unit value)</summary>
+        </member>
         <member name="P:BrewMLLib.Fakes.StubEQAuxilary.CallBase">
             <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
         </member>
@@ -2826,6 +3015,9 @@
         </member>
         <member name="P:BrewMLLib.Fakes.StubEQAuxilary.Plant">
             <summary>Sets the stub of EQAuxilary.get_Plant()</summary>
+        </member>
+        <member name="P:BrewMLLib.Fakes.StubEQAuxilary.Unit">
+            <summary>Sets the stub of EQAuxilary.get_Unit()</summary>
         </member>
         <member name="T:BrewMLLib.Fakes.StubEQControlLoop">
             <summary>Stub type of BrewMLLib.EQControlLoop</summary>
@@ -2941,6 +3133,9 @@
         <member name="M:BrewMLLib.Fakes.StubEQVessel.AttachBackingFieldToPlant">
             <summary>Attaches delegates to emulate StubEQVessel.Plant as a property with a backing field.</summary>
         </member>
+        <member name="M:BrewMLLib.Fakes.StubEQVessel.AttachBackingFieldToUnit">
+            <summary>Attaches delegates to emulate StubEQVessel.Unit as a property with a backing field.</summary>
+        </member>
         <member name="F:BrewMLLib.Fakes.StubEQVessel.EQTypeGet">
             <summary>Sets the stub of EQVessel.get_EQType()</summary>
         </member>
@@ -2956,6 +3151,12 @@
         <member name="F:BrewMLLib.Fakes.StubEQVessel.PlantSetPlant">
             <summary>Sets the stub of EQVessel.set_Plant(Plant value)</summary>
         </member>
+        <member name="F:BrewMLLib.Fakes.StubEQVessel.UnitGet">
+            <summary>Sets the stub of EQVessel.get_Unit()</summary>
+        </member>
+        <member name="F:BrewMLLib.Fakes.StubEQVessel.UnitSetUnit">
+            <summary>Sets the stub of EQVessel.set_Unit(Unit value)</summary>
+        </member>
         <member name="P:BrewMLLib.Fakes.StubEQVessel.CallBase">
             <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
         </member>
@@ -2970,6 +3171,9 @@
         </member>
         <member name="P:BrewMLLib.Fakes.StubEQVessel.Plant">
             <summary>Sets the stub of EQVessel.get_Plant()</summary>
+        </member>
+        <member name="P:BrewMLLib.Fakes.StubEQVessel.Unit">
+            <summary>Sets the stub of EQVessel.get_Unit()</summary>
         </member>
         <member name="T:BrewMLLib.Fakes.StubFluentControlLoop">
             <summary>Stub type of BrewMLLib.FluentControlLoop</summary>
@@ -3052,10 +3256,10 @@
         <member name="T:BrewMLLib.Fakes.StubFluentRecipeOperations">
             <summary>Stub type of BrewMLLib.FluentRecipeOperations</summary>
         </member>
-        <member name="M:BrewMLLib.Fakes.StubFluentRecipeOperations.#ctor(BrewMLLib.IFluentRecipe)">
+        <member name="M:BrewMLLib.Fakes.StubFluentRecipeOperations.#ctor(BrewMLLib.MasterRecipe)">
             <summary>Initializes a new instance</summary>
         </member>
-        <member name="M:BrewMLLib.Fakes.StubFluentRecipeOperations.#ctor(BrewMLLib.IFluentRecipe,System.String)">
+        <member name="M:BrewMLLib.Fakes.StubFluentRecipeOperations.#ctor(BrewMLLib.MasterRecipe,System.String)">
             <summary>Initializes a new instance</summary>
         </member>
         <member name="M:BrewMLLib.Fakes.StubFluentRecipeOperations.InitializeStub">
@@ -3073,10 +3277,10 @@
         <member name="T:BrewMLLib.Fakes.StubFluentTransition">
             <summary>Stub type of BrewMLLib.FluentTransition</summary>
         </member>
-        <member name="M:BrewMLLib.Fakes.StubFluentTransition.#ctor">
+        <member name="M:BrewMLLib.Fakes.StubFluentTransition.#ctor(BrewMLLib.RecUnitOperation)">
             <summary>Initializes a new instance</summary>
         </member>
-        <member name="M:BrewMLLib.Fakes.StubFluentTransition.#ctor(BrewMLLib.IFluentRecipeOperations)">
+        <member name="M:BrewMLLib.Fakes.StubFluentTransition.#ctor(BrewMLLib.RecUnitOperation,System.String)">
             <summary>Initializes a new instance</summary>
         </member>
         <member name="M:BrewMLLib.Fakes.StubFluentTransition.InitializeStub">
@@ -3331,8 +3535,20 @@
         <member name="M:BrewMLLib.Fakes.StubIFluentRecipeOperations.#ctor">
             <summary>Initializes a new instance of type StubIFluentRecipeOperations</summary>
         </member>
+        <member name="F:BrewMLLib.Fakes.StubIFluentRecipeOperations.AddAllowedUnitsString">
+            <summary>Sets the stub of IFluentRecipeOperations.AddAllowedUnits(String UnitName)</summary>
+        </member>
+        <member name="F:BrewMLLib.Fakes.StubIFluentRecipeOperations.AddAllowedUnitsStringString">
+            <summary>Sets the stub of IFluentRecipeOperations.AddAllowedUnits(String OpName, String UnitName)</summary>
+        </member>
         <member name="F:BrewMLLib.Fakes.StubIFluentRecipeOperations.AddOperationString">
             <summary>Sets the stub of IFluentRecipeOperations.AddOperation(String Name)</summary>
+        </member>
+        <member name="M:BrewMLLib.Fakes.StubIFluentRecipeOperations.bmll::BrewMLLib#IFluentRecipeOperations#AddAllowedUnits(System.String)">
+            <summary>Sets the stub of IFluentRecipeOperations.AddAllowedUnits(String UnitName)</summary>
+        </member>
+        <member name="M:BrewMLLib.Fakes.StubIFluentRecipeOperations.bmll::BrewMLLib#IFluentRecipeOperations#AddAllowedUnits(System.String,System.String)">
+            <summary>Sets the stub of IFluentRecipeOperations.AddAllowedUnits(String OpName, String UnitName)</summary>
         </member>
         <member name="M:BrewMLLib.Fakes.StubIFluentRecipeOperations.bmll::BrewMLLib#IFluentRecipeOperations#AddOperation(System.String)">
             <summary>Sets the stub of IFluentRecipeOperations.AddOperation(String Name)</summary>
@@ -3342,9 +3558,6 @@
         </member>
         <member name="M:BrewMLLib.Fakes.StubIFluentRecipeOperations.bmll::BrewMLLib#IFluentRecipeOperations#GetRecUnitOperation">
             <summary>Sets the stub of IFluentRecipeOperations.GetRecUnitOperation()</summary>
-        </member>
-        <member name="M:BrewMLLib.Fakes.StubIFluentRecipeOperations.bmll::BrewMLLib#IFluentRecipeOperations#HasAllowedUnits">
-            <summary>Sets the stub of IFluentRecipeOperations.HasAllowedUnits()</summary>
         </member>
         <member name="M:BrewMLLib.Fakes.StubIFluentRecipeOperations.bmll::BrewMLLib#IFluentRecipeOperations#HasTransitions">
             <summary>Sets the stub of IFluentRecipeOperations.HasTransitions()</summary>
@@ -3357,9 +3570,6 @@
         </member>
         <member name="F:BrewMLLib.Fakes.StubIFluentRecipeOperations.GetRecUnitOperation">
             <summary>Sets the stub of IFluentRecipeOperations.GetRecUnitOperation()</summary>
-        </member>
-        <member name="F:BrewMLLib.Fakes.StubIFluentRecipeOperations.HasAllowedUnits">
-            <summary>Sets the stub of IFluentRecipeOperations.HasAllowedUnits()</summary>
         </member>
         <member name="F:BrewMLLib.Fakes.StubIFluentRecipeOperations.HasTransitions">
             <summary>Sets the stub of IFluentRecipeOperations.HasTransitions()</summary>
@@ -3391,17 +3601,17 @@
         <member name="M:BrewMLLib.Fakes.StubIFluentTransitions.#ctor">
             <summary>Initializes a new instance of type StubIFluentTransitions</summary>
         </member>
-        <member name="F:BrewMLLib.Fakes.StubIFluentTransitions.AddTranstionStringStringOperantsSingle">
-            <summary>Sets the stub of IFluentTransitions.AddTranstion(String Name, String loopname, Operants op, Single SetPoint)</summary>
+        <member name="F:BrewMLLib.Fakes.StubIFluentTransitions.AddTransitionString">
+            <summary>Sets the stub of IFluentTransitions.AddTransition(String Name)</summary>
         </member>
-        <member name="M:BrewMLLib.Fakes.StubIFluentTransitions.bmll::BrewMLLib#IFluentTransitions#AddTranstion(System.String,System.String,BrewMLLib.Operants,System.Single)">
-            <summary>Sets the stub of IFluentTransitions.AddTranstion(String Name, String loopname, Operants op, Single SetPoint)</summary>
+        <member name="M:BrewMLLib.Fakes.StubIFluentTransitions.bmll::BrewMLLib#IFluentTransitions#AddTransition(System.String)">
+            <summary>Sets the stub of IFluentTransitions.AddTransition(String Name)</summary>
         </member>
-        <member name="M:BrewMLLib.Fakes.StubIFluentTransitions.bmll::BrewMLLib#IFluentTransitions#ForTranstion(System.String)">
-            <summary>Sets the stub of IFluentTransitions.ForTranstion(String Name)</summary>
+        <member name="M:BrewMLLib.Fakes.StubIFluentTransitions.bmll::BrewMLLib#IFluentTransitions#ForTransition(System.String)">
+            <summary>Sets the stub of IFluentTransitions.ForTransition(String Name)</summary>
         </member>
-        <member name="M:BrewMLLib.Fakes.StubIFluentTransitions.bmll::BrewMLLib#IFluentTransitions#GetTranstion">
-            <summary>Sets the stub of IFluentTransitions.GetTranstion()</summary>
+        <member name="M:BrewMLLib.Fakes.StubIFluentTransitions.bmll::BrewMLLib#IFluentTransitions#GetTransition">
+            <summary>Sets the stub of IFluentTransitions.GetTransition()</summary>
         </member>
         <member name="M:BrewMLLib.Fakes.StubIFluentTransitions.bmll::BrewMLLib#IFluentTransitions#HasLoop(System.String)">
             <summary>Sets the stub of IFluentTransitions.HasLoop(String LoopName)</summary>
@@ -3412,11 +3622,11 @@
         <member name="M:BrewMLLib.Fakes.StubIFluentTransitions.bmll::BrewMLLib#IFluentTransitions#SetTime(System.Int32)">
             <summary>Sets the stub of IFluentTransitions.SetTime(Int32 Time)</summary>
         </member>
-        <member name="F:BrewMLLib.Fakes.StubIFluentTransitions.ForTranstionString">
-            <summary>Sets the stub of IFluentTransitions.ForTranstion(String Name)</summary>
+        <member name="F:BrewMLLib.Fakes.StubIFluentTransitions.ForTransitionString">
+            <summary>Sets the stub of IFluentTransitions.ForTransition(String Name)</summary>
         </member>
-        <member name="F:BrewMLLib.Fakes.StubIFluentTransitions.GetTranstion">
-            <summary>Sets the stub of IFluentTransitions.GetTranstion()</summary>
+        <member name="F:BrewMLLib.Fakes.StubIFluentTransitions.GetTransition">
+            <summary>Sets the stub of IFluentTransitions.GetTransition()</summary>
         </member>
         <member name="F:BrewMLLib.Fakes.StubIFluentTransitions.HasLoopString">
             <summary>Sets the stub of IFluentTransitions.HasLoop(String LoopName)</summary>
@@ -3487,23 +3697,11 @@
         <member name="M:BrewMLLib.Fakes.StubIngredient.#ctor">
             <summary>Initializes a new instance</summary>
         </member>
-        <member name="M:BrewMLLib.Fakes.StubIngredient.AttachBackingFieldToIngredientType">
-            <summary>Attaches delegates to emulate StubIngredient.IngredientType as a property with a backing field.</summary>
-        </member>
-        <member name="F:BrewMLLib.Fakes.StubIngredient.IngredientTypeGet">
-            <summary>Sets the stub of Ingredient.get_IngredientType()</summary>
-        </member>
-        <member name="F:BrewMLLib.Fakes.StubIngredient.IngredientTypeSetIngredientType">
-            <summary>Sets the stub of Ingredient.set_IngredientType(IngredientType value)</summary>
-        </member>
         <member name="M:BrewMLLib.Fakes.StubIngredient.InitializeStub">
             <summary>Initializes a new instance of type StubIngredient</summary>
         </member>
         <member name="P:BrewMLLib.Fakes.StubIngredient.CallBase">
             <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
-        </member>
-        <member name="P:BrewMLLib.Fakes.StubIngredient.IngredientType">
-            <summary>Sets the stub of Ingredient.get_IngredientType()</summary>
         </member>
         <member name="P:BrewMLLib.Fakes.StubIngredient.InstanceBehavior">
             <summary>Gets or sets the instance behavior.</summary>
@@ -3676,8 +3874,26 @@
         <member name="M:BrewMLLib.Fakes.StubRecUnitOperation.AttachBackingFieldToAllowedUnits">
             <summary>Attaches delegates to emulate StubRecUnitOperation.AllowedUnits as a property with a backing field.</summary>
         </member>
+        <member name="M:BrewMLLib.Fakes.StubRecUnitOperation.AttachBackingFieldToMasterRecipes">
+            <summary>Attaches delegates to emulate StubRecUnitOperation.MasterRecipes as a property with a backing field.</summary>
+        </member>
+        <member name="M:BrewMLLib.Fakes.StubRecUnitOperation.AttachBackingFieldToTransitions">
+            <summary>Attaches delegates to emulate StubRecUnitOperation.Transitions as a property with a backing field.</summary>
+        </member>
         <member name="M:BrewMLLib.Fakes.StubRecUnitOperation.InitializeStub">
             <summary>Initializes a new instance of type StubRecUnitOperation</summary>
+        </member>
+        <member name="F:BrewMLLib.Fakes.StubRecUnitOperation.MasterRecipesGet">
+            <summary>Sets the stub of RecUnitOperation.get_MasterRecipes()</summary>
+        </member>
+        <member name="F:BrewMLLib.Fakes.StubRecUnitOperation.MasterRecipesSetICollectionOfMasterRecipe">
+            <summary>Sets the stub of RecUnitOperation.set_MasterRecipes(ICollection`1&lt;MasterRecipe&gt; value)</summary>
+        </member>
+        <member name="F:BrewMLLib.Fakes.StubRecUnitOperation.TransitionsGet">
+            <summary>Sets the stub of RecUnitOperation.get_Transitions()</summary>
+        </member>
+        <member name="F:BrewMLLib.Fakes.StubRecUnitOperation.TransitionsSetICollectionOfTransition">
+            <summary>Sets the stub of RecUnitOperation.set_Transitions(ICollection`1&lt;Transition&gt; value)</summary>
         </member>
         <member name="P:BrewMLLib.Fakes.StubRecUnitOperation.AllowedUnits">
             <summary>Sets the stub of RecUnitOperation.get_AllowedUnits()</summary>
@@ -3690,6 +3906,12 @@
         </member>
         <member name="P:BrewMLLib.Fakes.StubRecUnitOperation.InstanceObserver">
             <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="P:BrewMLLib.Fakes.StubRecUnitOperation.MasterRecipes">
+            <summary>Sets the stub of RecUnitOperation.get_MasterRecipes()</summary>
+        </member>
+        <member name="P:BrewMLLib.Fakes.StubRecUnitOperation.Transitions">
+            <summary>Sets the stub of RecUnitOperation.get_Transitions()</summary>
         </member>
         <member name="T:BrewMLLib.Fakes.StubTestEntitie">
             <summary>Stub type of BrewMLLib.TestEntitie</summary>
@@ -3754,8 +3976,17 @@
         <member name="M:BrewMLLib.Fakes.StubTransition.#ctor">
             <summary>Initializes a new instance</summary>
         </member>
+        <member name="M:BrewMLLib.Fakes.StubTransition.AttachBackingFieldToRecUnitOperations">
+            <summary>Attaches delegates to emulate StubTransition.RecUnitOperations as a property with a backing field.</summary>
+        </member>
         <member name="M:BrewMLLib.Fakes.StubTransition.InitializeStub">
             <summary>Initializes a new instance of type StubTransition</summary>
+        </member>
+        <member name="F:BrewMLLib.Fakes.StubTransition.RecUnitOperationsGet">
+            <summary>Sets the stub of Transition.get_RecUnitOperations()</summary>
+        </member>
+        <member name="F:BrewMLLib.Fakes.StubTransition.RecUnitOperationsSetICollectionOfRecUnitOperation">
+            <summary>Sets the stub of Transition.set_RecUnitOperations(ICollection`1&lt;RecUnitOperation&gt; value)</summary>
         </member>
         <member name="P:BrewMLLib.Fakes.StubTransition.CallBase">
             <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
@@ -3766,23 +3997,23 @@
         <member name="P:BrewMLLib.Fakes.StubTransition.InstanceObserver">
             <summary>Gets or sets the instance observer.</summary>
         </member>
+        <member name="P:BrewMLLib.Fakes.StubTransition.RecUnitOperations">
+            <summary>Sets the stub of Transition.get_RecUnitOperations()</summary>
+        </member>
         <member name="T:BrewMLLib.Fakes.StubUnit">
             <summary>Stub type of BrewMLLib.Unit</summary>
         </member>
         <member name="M:BrewMLLib.Fakes.StubUnit.#ctor">
             <summary>Initializes a new instance</summary>
         </member>
-        <member name="M:BrewMLLib.Fakes.StubUnit.AttachBackingFieldToAvailableOperations">
-            <summary>Attaches delegates to emulate StubUnit.AvailableOperations as a property with a backing field.</summary>
-        </member>
-        <member name="M:BrewMLLib.Fakes.StubUnit.AttachBackingFieldToInputUnits">
-            <summary>Attaches delegates to emulate StubUnit.InputUnits as a property with a backing field.</summary>
-        </member>
         <member name="M:BrewMLLib.Fakes.StubUnit.AttachBackingFieldToOutputUnits">
             <summary>Attaches delegates to emulate StubUnit.OutputUnits as a property with a backing field.</summary>
         </member>
         <member name="M:BrewMLLib.Fakes.StubUnit.AttachBackingFieldToPlant">
             <summary>Attaches delegates to emulate StubUnit.Plant as a property with a backing field.</summary>
+        </member>
+        <member name="M:BrewMLLib.Fakes.StubUnit.AttachBackingFieldToRecUnitOperations">
+            <summary>Attaches delegates to emulate StubUnit.RecUnitOperations as a property with a backing field.</summary>
         </member>
         <member name="M:BrewMLLib.Fakes.StubUnit.AttachBackingFieldToUnitAux">
             <summary>Attaches delegates to emulate StubUnit.UnitAux as a property with a backing field.</summary>
@@ -3793,20 +4024,8 @@
         <member name="M:BrewMLLib.Fakes.StubUnit.AttachBackingFieldToUnitVessels">
             <summary>Attaches delegates to emulate StubUnit.UnitVessels as a property with a backing field.</summary>
         </member>
-        <member name="F:BrewMLLib.Fakes.StubUnit.AvailableOperationsGet">
-            <summary>Sets the stub of Unit.get_AvailableOperations()</summary>
-        </member>
-        <member name="F:BrewMLLib.Fakes.StubUnit.AvailableOperationsSetICollectionOfEQUnitOperation">
-            <summary>Sets the stub of Unit.set_AvailableOperations(ICollection`1&lt;EQUnitOperation&gt; value)</summary>
-        </member>
         <member name="M:BrewMLLib.Fakes.StubUnit.InitializeStub">
             <summary>Initializes a new instance of type StubUnit</summary>
-        </member>
-        <member name="F:BrewMLLib.Fakes.StubUnit.InputUnitsGet">
-            <summary>Sets the stub of Unit.get_InputUnits()</summary>
-        </member>
-        <member name="F:BrewMLLib.Fakes.StubUnit.InputUnitsSetICollectionOfUnit">
-            <summary>Sets the stub of Unit.set_InputUnits(ICollection`1&lt;Unit&gt; value)</summary>
         </member>
         <member name="F:BrewMLLib.Fakes.StubUnit.OutputUnitsGet">
             <summary>Sets the stub of Unit.get_OutputUnits()</summary>
@@ -3819,6 +4038,12 @@
         </member>
         <member name="F:BrewMLLib.Fakes.StubUnit.PlantSetPlant">
             <summary>Sets the stub of Unit.set_Plant(Plant value)</summary>
+        </member>
+        <member name="F:BrewMLLib.Fakes.StubUnit.RecUnitOperationsGet">
+            <summary>Sets the stub of Unit.get_RecUnitOperations()</summary>
+        </member>
+        <member name="F:BrewMLLib.Fakes.StubUnit.RecUnitOperationsSetICollectionOfRecUnitOperation">
+            <summary>Sets the stub of Unit.set_RecUnitOperations(ICollection`1&lt;RecUnitOperation&gt; value)</summary>
         </member>
         <member name="F:BrewMLLib.Fakes.StubUnit.UnitAuxGet">
             <summary>Sets the stub of Unit.get_UnitAux()</summary>
@@ -3838,14 +4063,8 @@
         <member name="F:BrewMLLib.Fakes.StubUnit.UnitVesselsSetICollectionOfEQVessel">
             <summary>Sets the stub of Unit.set_UnitVessels(ICollection`1&lt;EQVessel&gt; value)</summary>
         </member>
-        <member name="P:BrewMLLib.Fakes.StubUnit.AvailableOperations">
-            <summary>Sets the stub of Unit.get_AvailableOperations()</summary>
-        </member>
         <member name="P:BrewMLLib.Fakes.StubUnit.CallBase">
             <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
-        </member>
-        <member name="P:BrewMLLib.Fakes.StubUnit.InputUnits">
-            <summary>Sets the stub of Unit.get_InputUnits()</summary>
         </member>
         <member name="P:BrewMLLib.Fakes.StubUnit.InstanceBehavior">
             <summary>Gets or sets the instance behavior.</summary>
@@ -3858,6 +4077,9 @@
         </member>
         <member name="P:BrewMLLib.Fakes.StubUnit.Plant">
             <summary>Sets the stub of Unit.get_Plant()</summary>
+        </member>
+        <member name="P:BrewMLLib.Fakes.StubUnit.RecUnitOperations">
+            <summary>Sets the stub of Unit.get_RecUnitOperations()</summary>
         </member>
         <member name="P:BrewMLLib.Fakes.StubUnit.UnitAux">
             <summary>Sets the stub of Unit.get_UnitAux()</summary>

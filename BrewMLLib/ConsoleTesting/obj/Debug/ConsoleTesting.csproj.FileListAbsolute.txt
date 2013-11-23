@@ -32,9 +32,10 @@ C:\JamesWorkingFolders\Visual Studio 2012\Projects\BrewMLLib\ConsoleTesting\obj\
 C:\JamesWorkingFolders\Visual Studio 2012\Projects\BrewMLLib\ConsoleTesting\obj\Debug\Fakes\bmll\o\f.csproj.FileListAbsolute.txt
 C:\JamesWorkingFolders\Visual Studio 2012\Projects\BrewMLLib\ConsoleTesting\obj\Debug\Fakes\bmll\o\f.csprojResolveAssemblyReference.cache
 C:\JamesWorkingFolders\Visual Studio 2012\Projects\BrewMLLib\ConsoleTesting\obj\Debug\Fakes\fakes.args
+C:\Users\stacy\Documents\GitHub\seng6250brewcrew\BrewMLLib\ConsoleTesting\bin\Debug\ConsoleTesting.exe.config
+C:\Users\stacy\Documents\GitHub\seng6250brewcrew\BrewMLLib\ConsoleTesting\obj\Debug\ConsoleTesting.exe
+C:\Users\stacy\Documents\GitHub\seng6250brewcrew\BrewMLLib\ConsoleTesting\obj\Debug\ConsoleTesting.pdb
 C:\JamesWorkingFolders\Visual Studio 2012\Projects\NewRepBrewMLLib\seng6250brewcrew-master\seng6250brewcrew-master\seng6250brewcrew\BrewMLLib\ConsoleTesting\bin\Debug\ConsoleTesting.exe.config
-C:\JamesWorkingFolders\Visual Studio 2012\Projects\NewRepBrewMLLib\seng6250brewcrew-master\seng6250brewcrew-master\seng6250brewcrew\BrewMLLib\ConsoleTesting\obj\Debug\ConsoleTesting.exe
-C:\JamesWorkingFolders\Visual Studio 2012\Projects\NewRepBrewMLLib\seng6250brewcrew-master\seng6250brewcrew-master\seng6250brewcrew\BrewMLLib\ConsoleTesting\obj\Debug\ConsoleTesting.pdb
 C:\JamesWorkingFolders\Visual Studio 2012\Projects\NewRepBrewMLLib\seng6250brewcrew-master\seng6250brewcrew-master\seng6250brewcrew\BrewMLLib\ConsoleTesting\bin\Debug\ConsoleTesting.exe
 C:\JamesWorkingFolders\Visual Studio 2012\Projects\NewRepBrewMLLib\seng6250brewcrew-master\seng6250brewcrew-master\seng6250brewcrew\BrewMLLib\ConsoleTesting\bin\Debug\ConsoleTesting.pdb
 C:\JamesWorkingFolders\Visual Studio 2012\Projects\NewRepBrewMLLib\seng6250brewcrew-master\seng6250brewcrew-master\seng6250brewcrew\BrewMLLib\ConsoleTesting\bin\Debug\BrewMLLib.dll
@@ -64,8 +65,6 @@ C:\JamesWorkingFolders\Visual Studio 2012\Projects\NewRepBrewMLLib\seng6250brewc
 C:\JamesWorkingFolders\Visual Studio 2012\Projects\NewRepBrewMLLib\seng6250brewcrew-master\seng6250brewcrew-master\seng6250brewcrew\BrewMLLib\ConsoleTesting\obj\Debug\Fakes\bmll\o\f.csproj.FileListAbsolute.txt
 C:\JamesWorkingFolders\Visual Studio 2012\Projects\NewRepBrewMLLib\seng6250brewcrew-master\seng6250brewcrew-master\seng6250brewcrew\BrewMLLib\ConsoleTesting\obj\Debug\Fakes\bmll\o\f.csprojResolveAssemblyReference.cache
 C:\JamesWorkingFolders\Visual Studio 2012\Projects\NewRepBrewMLLib\seng6250brewcrew-master\seng6250brewcrew-master\seng6250brewcrew\BrewMLLib\ConsoleTesting\obj\Debug\Fakes\fakes.args
-C:\Users\stacy\Documents\GitHub\seng6250brewcrew\BrewMLLib\ConsoleTesting\bin\Debug\ConsoleTesting.exe.config
-C:\Users\stacy\Documents\GitHub\seng6250brewcrew\BrewMLLib\ConsoleTesting\obj\Debug\ConsoleTesting.exe
-C:\Users\stacy\Documents\GitHub\seng6250brewcrew\BrewMLLib\ConsoleTesting\obj\Debug\ConsoleTesting.pdb
-C:\JamesWorkingFolders\Visual Studio 2012\Projects\NewRepBrewMLLib\seng6250brewcrew-master\seng6250brewcrew-master\seng6250brewcrew\BrewMLLib\ConsoleTesting\obj\Debug\ConsoleTesting.csprojResolveAssemblyReference.cache
+C:\JamesWorkingFolders\Visual Studio 2012\Projects\NewRepBrewMLLib\seng6250brewcrew-master\seng6250brewcrew-master\seng6250brewcrew\BrewMLLib\ConsoleTesting\obj\Debug\ConsoleTesting.exe
+C:\JamesWorkingFolders\Visual Studio 2012\Projects\NewRepBrewMLLib\seng6250brewcrew-master\seng6250brewcrew-master\seng6250brewcrew\BrewMLLib\ConsoleTesting\obj\Debug\ConsoleTesting.pdb
 C:\JamesWorkingFolders\Visual Studio 2012\Projects\NewRepBrewMLLib\seng6250brewcrew-master\seng6250brewcrew-master\seng6250brewcrew\BrewMLLib\ConsoleTesting\bin\Debug\BrewMLLib.Fakes.fakesconfig
