@@ -1,0 +1,16 @@
+C:\Users\Arman\Documents\GitHub\seng6250brewcrew\BrewMLLib\FormTesting\obj\Debug\FormTesting.csprojResolveAssemblyReference.cache
+C:\Users\Arman\Documents\GitHub\seng6250brewcrew\BrewMLLib\FormTesting\obj\Debug\FormTesting.Properties.Resources.resources
+C:\Users\Arman\Documents\GitHub\seng6250brewcrew\BrewMLLib\FormTesting\obj\Debug\FormTesting.csproj.GenerateResource.Cache
+C:\Users\Arman\Documents\GitHub\seng6250brewcrew\BrewMLLib\FormTesting\bin\Debug\FormTesting.exe.config
+C:\Users\Arman\Documents\GitHub\seng6250brewcrew\BrewMLLib\FormTesting\bin\Debug\FormTesting.exe
+C:\Users\Arman\Documents\GitHub\seng6250brewcrew\BrewMLLib\FormTesting\bin\Debug\FormTesting.pdb
+C:\Users\Arman\Documents\GitHub\seng6250brewcrew\BrewMLLib\FormTesting\bin\Debug\BrewMLLib.dll
+C:\Users\Arman\Documents\GitHub\seng6250brewcrew\BrewMLLib\FormTesting\bin\Debug\EntityFramework.dll
+C:\Users\Arman\Documents\GitHub\seng6250brewcrew\BrewMLLib\FormTesting\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Arman\Documents\GitHub\seng6250brewcrew\BrewMLLib\FormTesting\bin\Debug\BrewMLLib.pdb
+C:\Users\Arman\Documents\GitHub\seng6250brewcrew\BrewMLLib\FormTesting\bin\Debug\EntityFramework.xml
+C:\Users\Arman\Documents\GitHub\seng6250brewcrew\BrewMLLib\FormTesting\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Arman\Documents\GitHub\seng6250brewcrew\BrewMLLib\FormTesting\obj\Debug\FormTesting.exe
+C:\Users\Arman\Documents\GitHub\seng6250brewcrew\BrewMLLib\FormTesting\obj\Debug\FormTesting.pdb
+C:\Users\Arman\Documents\GitHub\seng6250brewcrew\BrewMLLib\FormTesting\obj\Debug\FormTesting.PlantForm.resources
+C:\Users\Arman\Documents\GitHub\seng6250brewcrew\BrewMLLib\FormTesting\obj\Debug\FormTesting.MDIParent1.resources

@@ -81,7 +81,7 @@ namespace ConsoleTesting
                .HasLoops()
                .AddControlLoop("TempControl122", "TempController")
                .SetSetPoint(678)
-               .HasType("Valve");
+               .HasType("Valve"); //// WHAT IS THIS?
                //.Final();
 
             pd.ForPlant("Little Jakes").HasLoops().ForControlLoop("TempControl1").SetSetPoint(353);
@@ -251,10 +251,11 @@ namespace ConsoleTesting
         BrewDBContext contx = new BrewDBContext();
         string line = "";
 
-
+        
+        
         public void reportPlants()
         {
-                
+                    
             line = " ";
 
             Console.WriteLine(line);

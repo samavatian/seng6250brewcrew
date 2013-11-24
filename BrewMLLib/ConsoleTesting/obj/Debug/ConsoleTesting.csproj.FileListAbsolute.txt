@@ -69,3 +69,36 @@ C:\JamesWorkingFolders\Visual Studio 2012\Projects\NewRepBrewMLLib\seng6250brewc
 C:\JamesWorkingFolders\Visual Studio 2012\Projects\NewRepBrewMLLib\seng6250brewcrew-master\seng6250brewcrew-master\seng6250brewcrew\BrewMLLib\ConsoleTesting\obj\Debug\ConsoleTesting.pdb
 C:\JamesWorkingFolders\Visual Studio 2012\Projects\NewRepBrewMLLib\seng6250brewcrew-master\seng6250brewcrew-master\seng6250brewcrew\BrewMLLib\ConsoleTesting\obj\Debug\ConsoleTesting.csprojResolveAssemblyReference.cache
 C:\JamesWorkingFolders\Visual Studio 2012\Projects\NewRepBrewMLLib\seng6250brewcrew-master\seng6250brewcrew-master\seng6250brewcrew\BrewMLLib\ConsoleTesting\bin\Debug\BrewMLLib.Fakes.fakesconfig
+C:\Users\Arman\Documents\GitHub\seng6250brewcrew\BrewMLLib\ConsoleTesting\bin\Debug\ConsoleTesting.exe.config
+C:\Users\Arman\Documents\GitHub\seng6250brewcrew\BrewMLLib\ConsoleTesting\obj\Debug\ConsoleTesting.exe
+C:\Users\Arman\Documents\GitHub\seng6250brewcrew\BrewMLLib\ConsoleTesting\obj\Debug\ConsoleTesting.pdb
+C:\Users\Arman\Documents\GitHub\seng6250brewcrew\BrewMLLib\ConsoleTesting\bin\Debug\ConsoleTesting.exe
+C:\Users\Arman\Documents\GitHub\seng6250brewcrew\BrewMLLib\ConsoleTesting\bin\Debug\ConsoleTesting.pdb
+C:\Users\Arman\Documents\GitHub\seng6250brewcrew\BrewMLLib\ConsoleTesting\bin\Debug\BrewMLLib.dll
+C:\Users\Arman\Documents\GitHub\seng6250brewcrew\BrewMLLib\ConsoleTesting\bin\Debug\EntityFramework.dll
+C:\Users\Arman\Documents\GitHub\seng6250brewcrew\BrewMLLib\ConsoleTesting\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Arman\Documents\GitHub\seng6250brewcrew\BrewMLLib\ConsoleTesting\bin\Debug\Microsoft.QualityTools.Testing.Fakes.dll
+C:\Users\Arman\Documents\GitHub\seng6250brewcrew\BrewMLLib\ConsoleTesting\bin\Debug\BrewMLLib.pdb
+C:\Users\Arman\Documents\GitHub\seng6250brewcrew\BrewMLLib\ConsoleTesting\bin\Debug\EntityFramework.xml
+C:\Users\Arman\Documents\GitHub\seng6250brewcrew\BrewMLLib\ConsoleTesting\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Arman\Documents\GitHub\seng6250brewcrew\BrewMLLib\ConsoleTesting\obj\Debug\ConsoleTesting.csprojFakesResolveAssemblyReference.cache
+C:\Users\Arman\Documents\GitHub\seng6250brewcrew\BrewMLLib\ConsoleTesting\obj\Debug\Fakes\bmll\b\BrewMLLib.dll
+C:\Users\Arman\Documents\GitHub\seng6250brewcrew\BrewMLLib\ConsoleTesting\obj\Debug\Fakes\bmll\b\BrewMLLib.Fakes.dll
+C:\Users\Arman\Documents\GitHub\seng6250brewcrew\BrewMLLib\ConsoleTesting\obj\Debug\Fakes\bmll\b\BrewMLLib.Fakes.pdb
+C:\Users\Arman\Documents\GitHub\seng6250brewcrew\BrewMLLib\ConsoleTesting\obj\Debug\Fakes\bmll\b\BrewMLLib.Fakes.xml
+C:\Users\Arman\Documents\GitHub\seng6250brewcrew\BrewMLLib\ConsoleTesting\obj\Debug\Fakes\bmll\b\BrewMLLib.pdb
+C:\Users\Arman\Documents\GitHub\seng6250brewcrew\BrewMLLib\ConsoleTesting\obj\Debug\Fakes\bmll\b\EntityFramework.dll
+C:\Users\Arman\Documents\GitHub\seng6250brewcrew\BrewMLLib\ConsoleTesting\obj\Debug\Fakes\bmll\b\EntityFramework.xml
+C:\Users\Arman\Documents\GitHub\seng6250brewcrew\BrewMLLib\ConsoleTesting\obj\Debug\Fakes\bmll\b\Microsoft.QualityTools.Testing.Fakes.dll
+C:\Users\Arman\Documents\GitHub\seng6250brewcrew\BrewMLLib\ConsoleTesting\obj\Debug\Fakes\bmll\f.ah
+C:\Users\Arman\Documents\GitHub\seng6250brewcrew\BrewMLLib\ConsoleTesting\obj\Debug\Fakes\bmll\f.ch
+C:\Users\Arman\Documents\GitHub\seng6250brewcrew\BrewMLLib\ConsoleTesting\obj\Debug\Fakes\bmll\f.cs
+C:\Users\Arman\Documents\GitHub\seng6250brewcrew\BrewMLLib\ConsoleTesting\obj\Debug\Fakes\bmll\f.csproj
+C:\Users\Arman\Documents\GitHub\seng6250brewcrew\BrewMLLib\ConsoleTesting\obj\Debug\Fakes\bmll\f.fakes
+C:\Users\Arman\Documents\GitHub\seng6250brewcrew\BrewMLLib\ConsoleTesting\obj\Debug\Fakes\bmll\f.fakesconfig
+C:\Users\Arman\Documents\GitHub\seng6250brewcrew\BrewMLLib\ConsoleTesting\obj\Debug\Fakes\bmll\o\BrewMLLib.Fakes.dll
+C:\Users\Arman\Documents\GitHub\seng6250brewcrew\BrewMLLib\ConsoleTesting\obj\Debug\Fakes\bmll\o\BrewMLLib.Fakes.pdb
+C:\Users\Arman\Documents\GitHub\seng6250brewcrew\BrewMLLib\ConsoleTesting\obj\Debug\Fakes\bmll\o\f.csproj.FileListAbsolute.txt
+C:\Users\Arman\Documents\GitHub\seng6250brewcrew\BrewMLLib\ConsoleTesting\obj\Debug\Fakes\bmll\o\f.csprojResolveAssemblyReference.cache
+C:\Users\Arman\Documents\GitHub\seng6250brewcrew\BrewMLLib\ConsoleTesting\obj\Debug\Fakes\fakes.args
+C:\Users\Arman\Documents\GitHub\seng6250brewcrew\BrewMLLib\ConsoleTesting\bin\Debug\BrewMLLib.Fakes.fakesconfig

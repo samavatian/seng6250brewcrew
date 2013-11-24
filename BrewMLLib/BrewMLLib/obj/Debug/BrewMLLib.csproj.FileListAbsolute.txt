@@ -20,3 +20,19 @@ C:\JamesWorkingFolders\Visual Studio 2012\Projects\NewRepBrewMLLib\seng6250brewc
 C:\JamesWorkingFolders\Visual Studio 2012\Projects\NewRepBrewMLLib\seng6250brewcrew-master\seng6250brewcrew-master\seng6250brewcrew\BrewMLLib\BrewMLLib\bin\Debug\BrewMLLib.pdb
 C:\JamesWorkingFolders\Visual Studio 2012\Projects\NewRepBrewMLLib\seng6250brewcrew-master\seng6250brewcrew-master\seng6250brewcrew\BrewMLLib\BrewMLLib\obj\Debug\BrewMLLib.Migrations.init.resources
 C:\JamesWorkingFolders\Visual Studio 2012\Projects\NewRepBrewMLLib\seng6250brewcrew-master\seng6250brewcrew-master\seng6250brewcrew\BrewMLLib\BrewMLLib\obj\Debug\BrewMLLib.csproj.GenerateResource.Cache
+<<<<<<< HEAD
+=======
+C:\JamesWorkingFolders\Visual Studio 2012\Projects\NewRepBrewMLLib\seng6250brewcrew-master\seng6250brewcrew-master\seng6250brewcrew\BrewMLLib\BrewMLLib\obj\Debug\BrewMLLib.csprojResolveAssemblyReference.cache
+C:\Users\Arman\Documents\GitHub\seng6250brewcrew\BrewMLLib\BrewMLLib\bin\Debug\BrewMLLib.dll.config
+C:\Users\Arman\Documents\GitHub\seng6250brewcrew\BrewMLLib\BrewMLLib\bin\Debug\BrewMLLib.dll
+C:\Users\Arman\Documents\GitHub\seng6250brewcrew\BrewMLLib\BrewMLLib\bin\Debug\BrewMLLib.pdb
+C:\Users\Arman\Documents\GitHub\seng6250brewcrew\BrewMLLib\BrewMLLib\bin\Debug\EntityFramework.dll
+C:\Users\Arman\Documents\GitHub\seng6250brewcrew\BrewMLLib\BrewMLLib\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Arman\Documents\GitHub\seng6250brewcrew\BrewMLLib\BrewMLLib\bin\Debug\EntityFramework.xml
+C:\Users\Arman\Documents\GitHub\seng6250brewcrew\BrewMLLib\BrewMLLib\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Arman\Documents\GitHub\seng6250brewcrew\BrewMLLib\BrewMLLib\obj\Debug\BrewMLLib.csprojResolveAssemblyReference.cache
+C:\Users\Arman\Documents\GitHub\seng6250brewcrew\BrewMLLib\BrewMLLib\obj\Debug\BrewMLLib.Migrations.init.resources
+C:\Users\Arman\Documents\GitHub\seng6250brewcrew\BrewMLLib\BrewMLLib\obj\Debug\BrewMLLib.csproj.GenerateResource.Cache
+C:\Users\Arman\Documents\GitHub\seng6250brewcrew\BrewMLLib\BrewMLLib\obj\Debug\BrewMLLib.dll
+C:\Users\Arman\Documents\GitHub\seng6250brewcrew\BrewMLLib\BrewMLLib\obj\Debug\BrewMLLib.pdb
+>>>>>>> 8e3bbde59987315955d197a7697a2c3c6e237588

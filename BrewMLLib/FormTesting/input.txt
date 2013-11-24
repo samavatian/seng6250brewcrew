@@ -1,0 +1,36 @@
+Add_EQType Pump
+Add_EQType Valve
+Add_EQType TempController
+Add_Plant Little_Jakes
+Add_Plant Big_Jakes
+Add_Recipe Big_Eddy
+Add_Recipe So_Smooth
+--------------------------------------------
+Plant Little_Jakes
+Add_ControlLoop WaterPump Pump 215
+Add_ControlLoop TempControl1 TempController 222
+Update_ControlLoop TempControl1 678
+Add_ControlLoop TempControl2 TempController 678
+Update_ControlLoop TempControl1 353
+Add_Unit TestUnit1
+--------------------------------------------
+Plant Big_Jakes
+Add_ControlLoop ValveXV1321 Valve 33
+Add_ControlLoop DumpValve12 Valve 123
+Update_ControlLoop ValveXV1321 678
+Add_Unit TestUnit1
+--------------------------------------------
+Recipe Big_Eddy
+SetBrandDescription Hey_this_is_big_stuff!
+SetQualityTarget Always_high_quality
+Add_Operation Heat_12 33
+--------------------------------------------
+Recipe So_Smooth
+SetQualityTarget Top_notch
+Add_Operation Heat_Phase_1 170
+Add_Operation Heat_Phase_2 33
+Add_Operation Heat_Phase_3 34
+Add_Operation Test_Chain_3 55
+Add_Operation Cool_Phase_3 123
+Add_Operation Cool_Phase_4 155
+--------------------------------------------
